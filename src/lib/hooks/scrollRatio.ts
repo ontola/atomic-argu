@@ -11,7 +11,6 @@ const buildTresholdList = (numSteps: number) => {
 };
 
 export const scrollRatio = (node: HTMLElement, range?: [min: number, max: number]) => {
-	console.log('node', node);
 	const observer = new IntersectionObserver(
 		(entries) => {
 			for (const entry of entries) {

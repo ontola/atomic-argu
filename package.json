@@ -34,5 +34,10 @@
 		"vite": "^4.0.0",
 		"vitest": "^0.25.3"
 	},
-	"type": "module"
+	"type": "module",
+	"dependencies": {
+		"@tomic/lib": "^0.34.12",
+		"@tomic/svelte": "^0.34.10",
+		"svelte-exmarkdown": "^1.1.6"
+	}
 }

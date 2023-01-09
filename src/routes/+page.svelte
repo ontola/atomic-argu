@@ -1,46 +1,30 @@
-<script>
+<script lang="ts">
+	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
 	import Container from '$lib/components/Container.svelte';
 	import HeroPage from '$lib/components/HeroPage.svelte';
+	import { urls } from '@tomic/lib';
+	import { getValue } from '@tomic/svelte';
+	import type { PageData } from './$types';
+
+	export let data: PageData;
+
+	let { resource } = data;
+
+	const name = getValue(resource, urls.properties.name);
+	const description = getValue(resource, urls.properties.description);
 </script>
 
+<svelte:head>
+	<title>{$name}</title>
+</svelte:head>
 <HeroPage src="/home_hero.jpeg">
 	<svelte:fragment slot="title-card">
-		<h1>Wonen at the Park</h1>
-		<p>Op deze website vindt u alle informatie omtrent wonen At the Park</p>
+		<h1>{$name}</h1>
+		<p>{$description}</p>
 	</svelte:fragment>
 
 	<Container>
-		<h2>The lorum</h2>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur exercitationem deserunt
-			perspiciatis, debitis ea iure tempora assumenda dicta delectus consequuntur eaque, nemo quia
-			ab doloremque, quidem fugit optio esse temporibus!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur exercitationem deserunt
-			perspiciatis, debitis ea iure tempora assumenda dicta delectus consequuntur eaque, nemo quia
-			ab doloremque, quidem fugit optio esse temporibus!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur exercitationem deserunt
-			perspiciatis, debitis ea iure tempora assumenda dicta delectus consequuntur eaque, nemo quia
-			ab doloremque, quidem fugit optio esse temporibus!
-		</p>
-		<p>
-			Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur exercitationem deserunt
-			perspiciatis, debitis ea iure tempora assumenda dicta delectus consequuntur eaque, nemo quia
-			ab doloremque, quidem fugit optio esse temporibus! Lorem ipsum dolor sit amet consectetur
-			adipisicing elit. Consequatur exercitationem deserunt perspiciatis, debitis ea iure tempora
-			assumenda dicta delectus consequuntur eaque, nemo quia ab doloremque, quidem fugit optio esse
-			temporibus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur
-			exercitationem deserunt perspiciatis, debitis ea iure tempora assumenda dicta delectus
-			consequuntur eaque, nemo quia ab doloremque, quidem fugit optio esse temporibus! Lorem ipsum
-			dolor sit amet consectetur adipisicing elit. Consequatur exercitationem deserunt perspiciatis,
-			debitis ea iure tempora assumenda dicta delectus consequuntur eaque, nemo quia ab doloremque,
-			quidem fugit optio esse temporibus! Lorem ipsum dolor sit amet consectetur adipisicing elit.
-			Consequatur exercitationem deserunt perspiciatis, debitis ea iure tempora assumenda dicta
-			delectus consequuntur eaque, nemo quia ab doloremque, quidem fugit optio esse temporibus!
-		</p>
+		<ArticleCollection {resource} />
 	</Container>
 </HeroPage>
 
