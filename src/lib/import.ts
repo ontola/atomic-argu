@@ -1,6 +1,6 @@
 export async function importFiles() {
   // Data consists of `Thread`, `Message` and `User` keys, each with an array of resources
-	const data = await import('../../data-export/data.json');
+	const data = await import('./data-export/data.json');
 	console.log(data);
 
   const resources = [
@@ -9,21 +9,26 @@ export async function importFiles() {
     ...data.Update,
   ];
 
-  for (const resource of resources) {
-    const resourceData = mapResource(resource);
-    console.log(resourceData);
-  }
-
+  const atomicResources =  resources.map(mapResource)
+  console.log(atomicResources);
 }
 
 /** Converts */
 function mapResource(resource: any) {
   const description = resource.description;
-  const name = resource.name;
-  const localId = resource.iri.split('/').pop();
+  const name = resource.display_name;
+  // Here we use a regex to match the entire path:
+  // e.g. `https://wonenatthepark.nl/m/60`
+  // becomes `m/60`
+  const localId =resource.iri.match(/\/\w+\/\w+/)[0].substring(1);
+  // Only the date part of the ISO string
+  const published_at = resource.published_at.substring(0, 10);
 
   return {
+    "https://atomicdata.dev/properties/isA": ["https://atomicdata.dev/classes/Article"],
     "https://atomicdata.dev/properties/localId": localId,
+    "https://atomicdata.dev/properties/original-url": resource.iri,
+    "https://atomicdata.dev/properties/published-at": published_at,
     "https://atomicdata.dev/properties/name": name,
     "https://atomicdata.dev/properties/description": description
   };
