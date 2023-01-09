@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { importFiles } from '$lib/import';
 	import Container from './Container.svelte';
 </script>
 
@@ -9,7 +8,6 @@
 			<a href="/">
 				<img src="/watp_logo.png" alt="" class="logo" />
 			</a>
-			<button on:click={importFiles}>import</button>
 		</nav>
 	</Container>
 </header>

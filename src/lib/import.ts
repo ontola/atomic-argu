@@ -1,7 +1,5 @@
 export async function importFiles() {
-  // Data consists of `Thread`, `Message` and `User` keys, each with an array of resources
 	const data = await import('./data-export/data.json');
-	console.log(data);
 
   const resources = [
     ...data.Thread,
@@ -13,7 +11,6 @@ export async function importFiles() {
   console.log(atomicResources);
 }
 
-/** Converts */
 function mapResource(resource: any) {
   const description = resource.description;
   const name = resource.display_name;

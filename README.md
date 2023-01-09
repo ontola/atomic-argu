@@ -2,7 +2,7 @@
 
 Static page for replacing https://wonenatthepark.nl/
 
-Atomic Drive: https://atomicdata.dev/drive/xzpv34r5ibr
+Base Site resource: https://atomicdata.dev/wonenatthepark/site
 
 ## Data
 
