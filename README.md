@@ -2,8 +2,6 @@
 
 Static page for replacing https://wonenatthepark.nl/
 
-Base Site resource: https://atomicdata.dev/wonenatthepark/site
-
 ## Data
 
 The `./data-export` folder contains an export containing the current content.
@@ -13,6 +11,7 @@ Probably beats copy-pasting.
 ## Developing
 
 ```bash
+cp template.env .env
 npm i
 npm run dev
 ```
