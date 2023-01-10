@@ -1,9 +1,10 @@
 <script lang="ts">
 	export let href: string;
 	export let type: 'text' | 'image' = 'text';
+	export let title: string | undefined = undefined;
 </script>
 
-<a {href} class:image={type === 'image'}>
+<a {href} class:image={type === 'image'} {title}>
 	<slot />
 </a>
 

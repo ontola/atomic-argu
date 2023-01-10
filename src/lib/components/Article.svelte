@@ -17,8 +17,9 @@
 	@import 'open-props/media';
 
 	h1 {
-		font-size: 2.2rem;
+		font-size: var(--font-size-fluid-2);
 		margin-bottom: 1rem;
+		color: var(--t-text-heading);
 	}
 	@media (--sm-n-below) {
 		h1 {
@@ -31,7 +32,7 @@
 	}
 	article :global(p) {
 		margin-bottom: 1rem;
-		max-width: 90ch;
+		/* max-width: 90ch; */
 	}
 
 	article :global(a) {
@@ -41,5 +42,11 @@
 	article :global(a:hover),
 	article :global(a:focus) {
 		text-decoration: underline;
+	}
+
+	article :global(img) {
+		border-radius: var(--t-radius);
+		margin-bottom: 1rem;
+		box-shadow: var(--shadow-2);
 	}
 </style>

@@ -10,11 +10,15 @@
 
 	const name = getValue<string>(resource, urls.properties.name);
 	const description = getValue<string>(resource, urls.properties.description);
+
+	$: trimmedDescription = `${$description?.slice(0, 200)}${
+		($description?.length ?? 0) > 200 ? '...' : ''
+	}`;
 </script>
 
 <a class="card" href={constructArticleUrl(subject)}>
 	<h3>{$name}</h3>
-	<Markdown md={$description?.slice(0, 200) ?? ''} />
+	<Markdown md={trimmedDescription} />
 </a>
 
 <style>
@@ -34,6 +38,14 @@
 		transform: scale(1.05);
 	}
 	h3 {
+		font-size: 1.2rem;
+		color: var(--t-text-heading);
+	}
+
+	.card :global(p) {
+		font-size: 0.9rem;
+	}
+	.card :global(h2) {
 		font-size: 1.2rem;
 	}
 </style>

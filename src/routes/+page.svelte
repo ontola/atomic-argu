@@ -19,6 +19,7 @@
 
 <svelte:head>
 	<title>{$name}</title>
+	<meta name="description" content={$description} />
 </svelte:head>
 
 <HeroPage coverSubject={$cover}>
@@ -38,6 +39,9 @@
 </HeroPage>
 
 <style>
+	h1 {
+		color: var(--t-text-heading);
+	}
 	.page-description {
 		margin-bottom: 1rem;
 		max-width: 70ch;

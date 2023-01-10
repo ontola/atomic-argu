@@ -15,7 +15,7 @@
 		<nav>
 			<ul>
 				<li>
-					<NavLink href="/" type="image">
+					<NavLink href="/" type="image" title="Homepagina">
 						<img src="/watp_logo.png" alt="Wonen at the park logo" class="logo" />
 					</NavLink>
 				</li>
@@ -52,7 +52,6 @@
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		gap: 1rem;
 		margin: 0;
 	}
 </style>

@@ -17,6 +17,10 @@
 	$: cover = getValue<string>(resource, domain.coverImage);
 </script>
 
+<svelte:head>
+	<title>{$name}</title>
+	<meta name="description" content={$description?.slice(0, 100) + '...'} />
+</svelte:head>
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
 		<Article title={$name ?? ''} markdown={$description ?? ''} />

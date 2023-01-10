@@ -13,7 +13,7 @@
 </script>
 
 <div class="hero-page-wrapper">
-	{#if $src}
+	{#if src && $src}
 		<div class="nothing" style={`--image: url(${$src})`}>
 			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
 		</div>
