@@ -1,0 +1,1 @@
+import{P as t}from"./public-2f4d956d.js";import{z as s,S as n,m as a,w as o}from"./urls-98b34cbf.js";import{L as r}from"./index-bd36da04.js";const c=()=>{const e=new n;a(e)},i=async()=>{let e=r(o);return e===void 0&&(c(),e=r(o)),{resource:s(t)}},u=Object.freeze(Object.defineProperty({__proto__:null,load:i},Symbol.toStringTag,{value:"Module"}));export{u as _,i as l};
