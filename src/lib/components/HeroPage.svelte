@@ -1,12 +1,25 @@
 <script lang="ts">
+	import { urls } from '@tomic/lib';
 	import { scrollRatio } from '$lib/hooks/scrollRatio';
+	import { getResource, getValue } from '@tomic/svelte';
 	import Container from './Container.svelte';
 
-	export let src: string;
+	export let coverSubject: string | undefined;
+
+	const coverResource = coverSubject ? getResource(coverSubject) : undefined;
+	const src = coverSubject
+		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
+		: undefined;
 </script>
 
-<div class="hero-page-wrapper" style={`--image: url(${src})`}>
-	<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
+<div class="hero-page-wrapper">
+	{#if $src}
+		<div class="nothing" style={`--image: url(${$src})`}>
+			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
+		</div>
+	{:else}
+		<div class="filler" />
+	{/if}
 	<Container>
 		<div class="title-card">
 			<slot name="title-card" />
@@ -20,6 +33,10 @@
 <style>
 	@import 'open-props/media';
 
+	.nothing {
+		display: contents;
+	}
+
 	.hero-image {
 		--blur: calc((1 - var(--ratio)) * 5px);
 		opacity: var(--ratio, 1);
@@ -28,7 +45,7 @@
 		background-size: cover;
 		background-position: center;
 		transition: opacity 30ms;
-		will-change: opacity filter;
+		will-change: opacity, filter;
 		background-attachment: fixed;
 		/* background-repeat: no-repeat; */
 		height: 30rem;
@@ -39,6 +56,10 @@
 			height: 17rem;
 			background-position-y: -10rem;
 		}
+	}
+
+	.filler {
+		height: 10rem;
 	}
 
 	.title-card {

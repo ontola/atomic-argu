@@ -1,12 +1,25 @@
 <script lang="ts">
 	import { scrollRatio } from '$lib/hooks/scrollRatio';
+	import { urls } from '@tomic/lib';
+	import { getResource, getValue } from '@tomic/svelte';
 	import Container from './Container.svelte';
 
-	export let src: string;
+	export let coverSubject: string | undefined;
+
+	const coverResource = coverSubject ? getResource(coverSubject) : undefined;
+	const src = coverSubject
+		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
+		: undefined;
 </script>
 
-<div style={`--image: url(${src})`}>
-	<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
+<div>
+	{#if $src}
+		<div class="nothing" style={`--image: url(${$src})`}>
+			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
+		</div>
+	{:else}
+		<div class="filler" />
+	{/if}
 	<Container>
 		<div class="article">
 			<slot name="article" />
@@ -41,6 +54,9 @@
 		}
 	}
 
+	.filler {
+		height: 10rem;
+	}
 	.article {
 		position: relative;
 		background-color: var(--t-bg);

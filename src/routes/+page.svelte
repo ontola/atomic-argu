@@ -2,6 +2,7 @@
 	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
 	import Container from '$lib/components/Container.svelte';
 	import HeroPage from '$lib/components/HeroPage.svelte';
+	import { domain } from '$lib/helpers/domainSubjects';
 	import { urls } from '@tomic/lib';
 	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
@@ -10,26 +11,34 @@
 
 	let { resource } = data;
 
-	const name = getValue(resource, urls.properties.name);
-	const description = getValue(resource, urls.properties.description);
+	const name = getValue<string>(resource, urls.properties.name);
+	const description = getValue<string>(resource, urls.properties.description);
+	const articleCollection = getValue<string>(resource, domain.articlesCollection);
+	const cover = getValue<string>(resource, domain.coverImage);
 </script>
 
 <svelte:head>
 	<title>{$name}</title>
 </svelte:head>
-<HeroPage src="/home_hero.jpeg">
+
+<HeroPage coverSubject={$cover}>
 	<svelte:fragment slot="title-card">
 		<h1>{$name}</h1>
-		<p>{$description}</p>
+		<p class="page-description">{$description}</p>
 	</svelte:fragment>
 
 	<Container>
-		<ArticleCollection {resource} />
+		<h2>Onderwerpen</h2>
+		{#if $articleCollection}
+			<ArticleCollection subject={$articleCollection} />
+		{:else}
+			<p>Er zijn geen onderwerpen gevonden.</p>
+		{/if}
 	</Container>
 </HeroPage>
 
 <style>
-	p {
+	.page-description {
 		margin-bottom: 1rem;
 		max-width: 70ch;
 	}

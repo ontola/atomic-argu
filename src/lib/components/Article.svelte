@@ -9,13 +9,37 @@
 		{title}
 	</h1>
 
+	<div class="divider" />
 	<Markdown md={markdown} />
 </article>
 
 <style>
-	.article :global(p) {
+	@import 'open-props/media';
+
+	h1 {
+		font-size: 2.2rem;
 		margin-bottom: 1rem;
-		max-width: 70ch;
-		color: red;
+	}
+	@media (--sm-n-below) {
+		h1 {
+			font-size: 1.8rem;
+		}
+	}
+	.divider {
+		border-bottom: 1px solid var(--gray-3);
+		margin-bottom: 1.5rem;
+	}
+	article :global(p) {
+		margin-bottom: 1rem;
+		max-width: 90ch;
+	}
+
+	article :global(a) {
+		color: var(--blue-9);
+	}
+
+	article :global(a:hover),
+	article :global(a:focus) {
+		text-decoration: underline;
 	}
 </style>

@@ -15,6 +15,7 @@ export const load = (async () => {
 		init();
 		store = get(storeStore);
 	}
+
 	const resource = getResource(PUBLIC_SITE);
 
 	return {

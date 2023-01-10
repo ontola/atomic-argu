@@ -1,25 +1,28 @@
 <script lang="ts">
-	import { domain } from '$lib/helpers/domainSubjects';
-	import { urls, type Resource } from '@tomic/lib';
+	import { urls } from '@tomic/lib';
 	import { getResource, getValue } from '@tomic/svelte';
-	import type { Readable } from 'svelte/store';
+	import ArticleCard from './ArticleCard.svelte';
 
-	export let resource: Readable<Resource>;
+	export let subject: string;
 
-	const articleCollectionResource = getValue<string>(resource, domain.articlesCollection);
-	const articleCollection = getResource($articleCollectionResource!);
+	let resource = getResource(subject);
 
-	const articles = getValue<string[]>(articleCollection, urls.properties.collection.members);
+	const articles = getValue<string[]>(resource, urls.properties.collection.members);
 </script>
 
 <ul>
 	{#each $articles ?? [] as article}
-		<li><a href={article ?? '#'}>{article}</a></li>
+		<li>
+			<ArticleCard subject={article} />
+		</li>
 	{/each}
 </ul>
 
 <style>
 	ul {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 1rem;
 		list-style: none;
 		padding: 0;
 	}
