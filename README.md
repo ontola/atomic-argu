@@ -2,6 +2,8 @@
 
 Static page for replacing https://wonenatthepark.nl/
 
+Demo at https://nieuw.wonenatthepark.nl/
+
 ## Data
 
 The `./data-export` folder contains an export containing the current content.
@@ -24,4 +26,7 @@ pnpm build
 
 ## Deploy
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+```bash
+# Deploys to github pages
+pnpm run deploy
+```
