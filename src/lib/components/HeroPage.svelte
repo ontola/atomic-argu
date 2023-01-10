@@ -6,8 +6,8 @@
 
 	export let coverSubject: string | undefined;
 
-	const coverResource = coverSubject ? getResource(coverSubject) : undefined;
-	const src = coverSubject
+	$: coverResource = coverSubject ? getResource(coverSubject) : undefined;
+	$: src = coverSubject
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
 </script>
