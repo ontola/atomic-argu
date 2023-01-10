@@ -24,9 +24,7 @@ export const load = (async ({ params }) => {
 		throw error(500, r.error.message);
 	}
 
-	const resource = getResource(subject);
-
 	return {
-		resource
+		subject
 	};
 }) satisfies PageLoad;
