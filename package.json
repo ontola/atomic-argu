@@ -39,7 +39,7 @@
 	"type": "module",
 	"dependencies": {
 		"@tomic/lib": "^0.34.12",
-		"@tomic/svelte": "^0.34.10",
+		"@tomic/svelte": "^0.34.11",
 		"gh-pages": "^4.0.0",
 		"svelte-exmarkdown": "^1.1.6"
 	}

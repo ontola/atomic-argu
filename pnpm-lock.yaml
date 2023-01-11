@@ -6,7 +6,7 @@ specifiers:
   '@sveltejs/adapter-static': ^1.0.1
   '@sveltejs/kit': ^1.0.0
   '@tomic/lib': ^0.34.12
-  '@tomic/svelte': ^0.34.10
+  '@tomic/svelte': ^0.34.11
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   eslint: ^8.28.0
@@ -28,7 +28,7 @@ specifiers:
 
 dependencies:
   '@tomic/lib': 0.34.12
-  '@tomic/svelte': 0.34.10_@tomic+lib@0.34.12
+  '@tomic/svelte': 0.34.11_@tomic+lib@0.34.12
   gh-pages: 4.0.0
   svelte-exmarkdown: 1.1.6
 
@@ -443,8 +443,8 @@ packages:
       - encoding
     dev: false
 
-  /@tomic/svelte/0.34.10_@tomic+lib@0.34.12:
-    resolution: {integrity: sha512-NtN4Jy0zxWjNAWiCPfv3wK8n0cTnkftAzB1Z541vMcyeLlXmch+btUYh/xThB2Qmd7mBr4Jl+rgmvymKy/PRDQ==}
+  /@tomic/svelte/0.34.11_@tomic+lib@0.34.12:
+    resolution: {integrity: sha512-BhRmI4cYtVavKIBHWMBXtrOCXolDMXMFFHLoalvk/JAU8oiDGvq+zMqXqJIcybCyml2pKYfG1iianrjDiq5cPQ==}
     peerDependencies:
       '@tomic/lib': 0.34.x
     dependencies:

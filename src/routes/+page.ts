@@ -1,6 +1,7 @@
 import { PUBLIC_SITE } from '$env/static/public';
-import { Store } from '@tomic/lib';
-import { getResource, initStore, store as storeStore } from '@tomic/svelte';
+import { domain } from '$lib/helpers/domainSubjects';
+import { Store, urls } from '@tomic/lib';
+import { getResource, initStore, loadResourceTree, store as storeStore } from '@tomic/svelte';
 import { get } from 'svelte/store';
 import type { PageLoad } from './$types';
 
@@ -15,6 +16,16 @@ export const load = (async () => {
 		init();
 		store = get(storeStore);
 	}
+
+	await loadResourceTree(PUBLIC_SITE, {
+		[domain.pages]: true,
+		[domain.coverImage]: true,
+		[domain.articlesCollection]: {
+			[urls.properties.collection.members]: {
+				[domain.coverImage]: true
+			}
+		}
+	});
 
 	const resource = getResource(PUBLIC_SITE);
 

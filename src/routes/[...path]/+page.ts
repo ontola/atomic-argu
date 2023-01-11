@@ -1,7 +1,7 @@
 import { PUBLIC_RESOURCE_PARENT } from '$env/static/public';
 import { error } from '@sveltejs/kit';
 import { Store } from '@tomic/lib';
-import { getResource, initStore, store as atomicStore } from '@tomic/svelte';
+import { initStore, store as atomicStore } from '@tomic/svelte';
 import { get } from 'svelte/store';
 import type { PageLoad } from './$types';
 
