@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { dev } from '$app/environment';
 	import { PUBLIC_SITE } from '$env/static/public';
 	import { domain } from '$lib/helpers/domainSubjects';
+	import { importFiles } from '$lib/import';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from '../Container.svelte';
 	import NavLink from './NavLink.svelte';
@@ -24,6 +26,9 @@
 						<ResourceNavLink subject={page} />
 					</li>
 				{/each}
+				{#if dev}
+					<button on:click={importFiles}>run import</button>
+				{/if}
 			</ul>
 		</nav>
 	</Container>

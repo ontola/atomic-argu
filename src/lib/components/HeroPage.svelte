@@ -4,7 +4,7 @@
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from './Container.svelte';
 
-	export let coverSubject: string | undefined;
+	export let coverSubject: string | undefined = undefined;
 
 	$: coverResource = coverSubject ? getResource(coverSubject) : undefined;
 	$: src = coverSubject
