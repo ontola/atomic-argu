@@ -6,7 +6,7 @@ specifiers:
   '@sveltejs/adapter-static': ^1.0.1
   '@sveltejs/kit': ^1.0.0
   '@tomic/lib': ^0.34.12
-  '@tomic/svelte': ^0.34.11
+  '@tomic/svelte': 0.34.11
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   eslint: ^8.28.0
