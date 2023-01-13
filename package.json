@@ -10,7 +10,7 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"test:unit": "vitest",
-		"deploy": "pnpm build && touch ./build/.nojekyll && echo 'nieuw.wonenatthepark.nl' > ./build/CNAME && gh-pages -d build",
+		"deploy": "pnpm build && touch ./build/.nojekyll && echo 'wonenatthepark.nl' > ./build/CNAME && gh-pages -d build",
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write ."
 	},

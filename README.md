@@ -1,8 +1,6 @@
 # Wonen At The Park
 
-Static page for replacing https://wonenatthepark.nl/
-
-Demo at https://nieuw.wonenatthepark.nl/
+Visible at https://wonenatthepark.nl/
 
 ## Data
 
