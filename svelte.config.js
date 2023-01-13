@@ -1,5 +1,7 @@
 // import adapter from '@sveltejs/adapter-auto';
-import adapter from '@sveltejs/adapter-static';
+// import adapter from '@sveltejs/adapter-static';
+import adapterGhpages from "svelte-adapter-ghpages";
+
 
 import { vitePreprocess } from '@sveltejs/kit/vite';
 
@@ -10,10 +12,10 @@ const config = {
 	preprocess: vitePreprocess(),
 
   kit: {
-    adapter: adapter({
+    adapter: adapterGhpages({
       pages: 'build',
       assets: 'build',
-      fallback: '200.html',
+      fallback: '404.html',
       precompress: false,
       strict: true
     }),
