@@ -47,7 +47,6 @@
 		transition: opacity 30ms;
 		will-change: opacity, filter;
 		background-attachment: fixed;
-		/* background-repeat: no-repeat; */
 		height: 30rem;
 	}
 
@@ -59,7 +58,7 @@
 	}
 
 	.filler {
-		height: 10rem;
+		height: 30rem;
 	}
 
 	.title-card {

@@ -9,13 +9,15 @@ const init = () => {
 	const serverStore = new Store();
 	initStore(serverStore);
 };
-export const load = (async () => {
+export const load = (async ({ fetch }) => {
 	let store = get(storeStore);
 
 	if (store === undefined) {
 		init();
 		store = get(storeStore);
 	}
+
+	store.injectFetch(fetch);
 
 	await loadResourceTree(PUBLIC_SITE, {
 		[domain.pages]: true,

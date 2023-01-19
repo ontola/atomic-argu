@@ -9,7 +9,7 @@ const init = () => {
 	const serverStore = new Store();
 	initStore(serverStore);
 };
-export const load = (async ({ params }) => {
+export const load = (async ({ params, fetch }) => {
 	let store = get(atomicStore);
 
 	if (store === undefined) {
@@ -17,6 +17,9 @@ export const load = (async ({ params }) => {
 		init();
 		store = get(atomicStore);
 	}
+
+	store.injectFetch(fetch);
+
 	const subject = `${PUBLIC_RESOURCE_PARENT}/${params.path}`;
 	const r = await store.getResourceAsync(subject);
 

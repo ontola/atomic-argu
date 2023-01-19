@@ -6,5 +6,5 @@ export const constructArticleUrl = (subject: string): string => {
 
 	const path = subject.replace(PUBLIC_RESOURCE_PARENT, '');
 
-	return new URL(path, currentURL).href;
+	return path;
 };

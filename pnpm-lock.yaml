@@ -5,8 +5,8 @@ specifiers:
   '@sveltejs/adapter-auto': ^1.0.0
   '@sveltejs/adapter-static': ^1.0.1
   '@sveltejs/kit': ^1.0.0
-  '@tomic/lib': ^0.34.12
-  '@tomic/svelte': 0.34.11
+  '@tomic/lib': ^0.35.0-beta.0
+  '@tomic/svelte': ^0.35.0
   '@typescript-eslint/eslint-plugin': ^5.45.0
   '@typescript-eslint/parser': ^5.45.0
   eslint: ^8.28.0
@@ -28,8 +28,8 @@ specifiers:
   vitest: ^0.25.3
 
 dependencies:
-  '@tomic/lib': 0.34.12
-  '@tomic/svelte': 0.34.11_@tomic+lib@0.34.12
+  '@tomic/lib': 0.35.0-beta.0
+  '@tomic/svelte': 0.35.0_@tomic+lib@0.35.0-beta.0
   gh-pages: 4.0.0
   svelte-exmarkdown: 1.1.6
 
@@ -433,8 +433,8 @@ packages:
       - supports-color
     dev: true
 
-  /@tomic/lib/0.34.12:
-    resolution: {integrity: sha512-LK/CCL/GX+R413u7vN86cNhkekyFe/yTX/K35vWPRG+ZjPeZI85WQ5wDJZWz7vn+qOhmct12OCHaju8jjN78ig==}
+  /@tomic/lib/0.35.0-beta.0:
+    resolution: {integrity: sha512-HyOLUsDbGaoIAaWHqJNGvrru11u4bBVD4iaRqYDjRZkhNDrsLCafw+7bbal1hanMxRVN1FFfSU96B5Wnkv6fkA==}
     dependencies:
       '@noble/ed25519': 1.6.0
       '@noble/hashes': 0.5.9
@@ -445,12 +445,12 @@ packages:
       - encoding
     dev: false
 
-  /@tomic/svelte/0.34.11_@tomic+lib@0.34.12:
-    resolution: {integrity: sha512-BhRmI4cYtVavKIBHWMBXtrOCXolDMXMFFHLoalvk/JAU8oiDGvq+zMqXqJIcybCyml2pKYfG1iianrjDiq5cPQ==}
+  /@tomic/svelte/0.35.0_@tomic+lib@0.35.0-beta.0:
+    resolution: {integrity: sha512-Vw9IHvEJoYy3eJc+9OegRcRwuL/TZtFtuDyOcvy/MSUFhblJzIT0F7jVzUNzHkOGbUd1hIYIK+iDRoa11UHrqg==}
     peerDependencies:
-      '@tomic/lib': 0.34.x
+      '@tomic/lib': 0.35.x
     dependencies:
-      '@tomic/lib': 0.34.12
+      '@tomic/lib': 0.35.0-beta.0
       eslint: 8.31.0
       svelte: 3.55.0
     transitivePeerDependencies:

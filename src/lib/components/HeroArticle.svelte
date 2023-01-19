@@ -2,7 +2,6 @@
 	import { scrollRatio } from '$lib/hooks/scrollRatio';
 	import { urls } from '@tomic/lib';
 	import { getResource, getValue } from '@tomic/svelte';
-	import { fade, fly, slide } from 'svelte/transition';
 	import Container from './Container.svelte';
 
 	export let coverSubject: string | undefined;

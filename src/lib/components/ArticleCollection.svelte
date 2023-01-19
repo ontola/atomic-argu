@@ -10,13 +10,17 @@
 	const articles = getValue<string[]>(resource, urls.properties.collection.members);
 </script>
 
-<ul>
-	{#each $articles ?? [] as article}
-		<li>
-			<ArticleCard subject={article} />
-		</li>
-	{/each}
-</ul>
+{#if $resource.loading}
+	<p>Loading...</p>
+{:else}
+	<ul>
+		{#each $articles ?? [] as article}
+			<li>
+				<ArticleCard subject={article} />
+			</li>
+		{/each}
+	</ul>
+{/if}
 
 <style>
 	ul {
