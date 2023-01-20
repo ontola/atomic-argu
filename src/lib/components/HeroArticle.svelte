@@ -54,6 +54,9 @@
 		}
 	}
 
+	.nothing {
+		display: contents;
+	}
 	.filler {
 		height: 10rem;
 	}

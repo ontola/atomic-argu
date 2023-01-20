@@ -22,8 +22,8 @@ const config = {
 		prerender: {
 			crawl: true,
 			entries: ['/'],
-			// origin: 'https://wonenatthepark.nl',
-			origin: 'http://localhost:4174',
+			origin: 'https://wonenatthepark.nl',
+			// origin: 'http://localhost:4174',
 		},
 		// If you are not using a .nojekyll file, change your appDir to something not starting with an underscore.
 		// For example, instead of '_app', use 'app_', 'internal', etc.

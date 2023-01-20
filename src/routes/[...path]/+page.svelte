@@ -3,14 +3,12 @@
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
 	import { urls } from '@tomic/lib';
-	import { getResource, getValue } from '@tomic/svelte';
+	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
 
 	export let data: PageData;
 
-	$: ({ subject } = data);
-
-	$: resource = getResource(subject);
+	$: ({ resource } = data);
 
 	$: name = getValue<string>(resource, urls.properties.name);
 	$: description = getValue<string>(resource, urls.properties.description);

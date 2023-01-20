@@ -1,7 +1,8 @@
 import { PUBLIC_RESOURCE_PARENT } from '$env/static/public';
+import { domain } from '$lib/helpers/domainSubjects';
 import { error } from '@sveltejs/kit';
 import { Store } from '@tomic/lib';
-import { initStore, store as atomicStore } from '@tomic/svelte';
+import { getResource, initStore, loadResourceTree, store as atomicStore } from '@tomic/svelte';
 import { get } from 'svelte/store';
 import type { PageLoad } from './$types';
 
@@ -23,11 +24,15 @@ export const load = (async ({ params, fetch }) => {
 	const subject = `${PUBLIC_RESOURCE_PARENT}/${params.path}`;
 	const r = await store.getResourceAsync(subject);
 
+	await loadResourceTree(subject, {
+		[domain.coverImage]: true
+	});
+
 	if (r.error) {
 		throw error(500, r.error.message);
 	}
 
 	return {
-		subject
+		resource: getResource(subject)
 	};
 }) satisfies PageLoad;
