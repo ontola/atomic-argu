@@ -1,0 +1,1 @@
+import{a as t}from"./public-7422a655.js";import{L as e}from"./index-bd36da04.js";import{s as o}from"./singletons-25e609bb.js";const a=()=>{const s=o;return{page:{subscribe:s.page.subscribe},navigating:{subscribe:s.navigating.subscribe},updated:s.updated}},c={subscribe(s){return a().page.subscribe(s)}},p=s=>(e(c).url,s.replace(t,""));export{p as c};
