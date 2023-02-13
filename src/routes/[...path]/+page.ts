@@ -1,23 +1,12 @@
 import { PUBLIC_RESOURCE_PARENT } from '$env/static/public';
 import { domain } from '$lib/helpers/domainSubjects';
+import { getStore } from '$lib/helpers/getStore';
 import { error } from '@sveltejs/kit';
-import { Store } from '@tomic/lib';
-import { getResource, initStore, loadResourceTree, store as atomicStore } from '@tomic/svelte';
-import { get } from 'svelte/store';
+import { getResource, loadResourceTree } from '@tomic/svelte';
 import type { PageLoad } from './$types';
 
-const init = () => {
-	const serverStore = new Store();
-	initStore(serverStore);
-};
 export const load = (async ({ params, fetch }) => {
-	let store = get(atomicStore);
-
-	if (store === undefined) {
-		console.log('store is undefined');
-		init();
-		store = get(atomicStore);
-	}
+	const store = getStore();
 
 	store.injectFetch(fetch);
 

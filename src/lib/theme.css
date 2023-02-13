@@ -1,5 +1,5 @@
 :root {
-  --t-color-main: hsl(138, 15%, 44%);
+  --t-color-main: hsl(212deg 20% 34%); /* Default main color */
   --t-color-main-dark: hsl(137, 17%, 24%);
   --t-color-main-text: white;
   --t-text-heading: var(--gray-7);
