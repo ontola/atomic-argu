@@ -64131,7 +64131,7 @@
       }
     }
   ],
-  "Enquête": [
+  "Enqute": [
     {
       "rdf_type": "https://argu.co/ns/core#Survey",
       "created_at": "2022-06-20T07:30:03.859Z",
