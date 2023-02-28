@@ -1,5 +1,5 @@
+import { currentSiteConfig } from './../lib/siteConfigs';
 import type { LayoutLoad } from './$types';
-import { PUBLIC_SITE } from '$env/static/public';
 import { getStore } from '$lib/helpers/getStore';
 import { domain } from '$lib/helpers/domainSubjects';
 
@@ -9,7 +9,7 @@ export const prerender = true;
 export const load = (async () => {
 	const store = getStore();
 
-	const site = await store.getResourceAsync(PUBLIC_SITE);
+	const site = await store.getResourceAsync(currentSiteConfig.atomicSite);
 
 	const color = site.get(domain.color);
 

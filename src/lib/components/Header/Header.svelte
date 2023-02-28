@@ -1,14 +1,15 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
-	import { PUBLIC_SITE } from '$env/static/public';
 	import { domain } from '$lib/helpers/domainSubjects';
 	import { importFiles } from '$lib/import';
+	import { currentSiteConfig } from '$lib/siteConfigs';
+	import { generatedTemplate } from '$lib/template';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from '../Container.svelte';
 	import NavLink from './NavLink.svelte';
 	import ResourceNavLink from './ResourceNavLink.svelte';
 
-	const page = getResource(PUBLIC_SITE);
+	const page = getResource(currentSiteConfig.atomicSite);
 	const pages = getValue<string[]>(page, domain.pages);
 </script>
 
@@ -27,7 +28,8 @@
 					</li>
 				{/each}
 				{#if dev}
-					<button on:click={importFiles}>run import</button>
+					<button on:click={importFiles}>import</button>
+					<button on:click={generatedTemplate}>template</button>
 				{/if}
 			</ul>
 		</nav>

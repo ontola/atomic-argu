@@ -1,4 +1,4 @@
-import { PUBLIC_SITE } from '$env/static/public';
+import { currentSiteConfig } from '$lib/siteConfigs';
 import { domain } from '$lib/helpers/domainSubjects';
 import { getStore } from '$lib/helpers/getStore';
 import { urls } from '@tomic/lib';
@@ -10,7 +10,9 @@ export const load = (async ({ fetch }) => {
 
 	store.injectFetch(fetch);
 
-	await loadResourceTree(PUBLIC_SITE, {
+	const subject = currentSiteConfig.atomicSite;
+
+	await loadResourceTree(subject, {
 		[domain.pages]: true,
 		[domain.coverImage]: true,
 		[domain.articlesCollection]: {
@@ -20,9 +22,26 @@ export const load = (async ({ fetch }) => {
 		}
 	});
 
-	const resource = getResource(PUBLIC_SITE);
+	// We create a collection that contains all children of the current Subject
+	const generatedCollectionURL = new URL(subject);
+	generatedCollectionURL.pathname = '/collections';
+	generatedCollectionURL.searchParams.set(
+		'sort_by',
+		'https://atomicdata.dev/properties/published-at'
+	);
+	generatedCollectionURL.searchParams.set('property', urls.properties.parent);
+	generatedCollectionURL.searchParams.set('value', subject);
+
+	const childrenCollection = generatedCollectionURL.toString();
+
+	await loadResourceTree(childrenCollection, {
+		[urls.properties.collection.members]: true
+	});
+
+	const resource = getResource(subject);
 
 	return {
-		resource
+		resource,
+		childrenCollection
 	};
 }) satisfies PageLoad;

@@ -9,11 +9,10 @@
 
 	export let data: PageData;
 
-	let { resource } = data;
+	let { resource, childrenCollection } = data;
 
 	const name = getValue<string>(resource, urls.properties.name);
 	const description = getValue<string>(resource, urls.properties.description);
-	const articleCollection = getValue<string>(resource, domain.articlesCollection);
 	const cover = getValue<string>(resource, domain.coverImage);
 </script>
 
@@ -30,8 +29,8 @@
 
 	<Container>
 		<h2>Onderwerpen</h2>
-		{#if $articleCollection}
-			<ArticleCollection subject={$articleCollection} />
+		{#if childrenCollection}
+			<ArticleCollection subject={childrenCollection} />
 		{:else}
 			<p>Er zijn geen onderwerpen gevonden.</p>
 		{/if}
