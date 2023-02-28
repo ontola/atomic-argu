@@ -1,7 +1,17 @@
-import { PUBLIC_SITE } from '$env/static/public';
-import { siteConfigs, type SiteConfig } from './siteConfigs';
+import { currentSiteConfig, type SiteConfig } from './siteConfigs';
+import { Store, Agent } from '@tomic/lib';
+import { PUBLIC_AGENT_PASSPHRASE } from '$env/static/public';
 
-export async function importFiles(siteConfig: SiteConfig = siteConfigs.wonenAtThePark) {
+export async function importFiles() {
+	const siteConfig = currentSiteConfig;
+	if (!PUBLIC_AGENT_PASSPHRASE) {
+		throw new Error('No AGENT_PASSPHRASE found in env');
+	}
+	const agent = Agent.fromSecret(PUBLIC_AGENT_PASSPHRASE);
+	const store = new Store({
+		serverUrl: siteConfig.serverUrl,
+		agent
+	});
 	const data = await import(siteConfig.jsonPath);
 
 	// The order should be dependent on the parent-child relationship,
@@ -20,7 +30,7 @@ export async function importFiles(siteConfig: SiteConfig = siteConfigs.wonenAtTh
 		...data.Reactie
 	];
 
-	const atomicResources = resources.map((r) => mapResource(r, siteConfig));
+	const atomicResources = resources.map((r) => mapResource(r, siteConfig, store));
 
 	// Copy to clipboard
 	console.log(atomicResources);
@@ -32,7 +42,7 @@ export async function importFiles(siteConfig: SiteConfig = siteConfigs.wonenAtTh
 // e.g. `https://wonenatthepark.nl/m/60`
 // becomes `m/60`.
 // But `https://wonenatthepark.nl`
-// becomes `PUBLIC_SITE` - the root resource and default parent.
+// becomes `atomicSite` - the root resource and default parent.
 function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	// regex selects anything starting from '.co/edam_volendam/'
 	const matches = iri.match(siteConfig.regex);
@@ -40,14 +50,16 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 		return matches[1];
 	}
 	// This should only happen if the iri is the root, in which case we use the `site` resource as the parent
-	return PUBLIC_SITE;
+	return siteConfig.atomicSite;
 }
 
 // Takes an Argu export JSON resource, creates a JSON-AD Article
-function mapResource(resource: any, siteConfig: SiteConfig) {
+async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) {
 	if (resource.is_draft) {
 		return;
 	}
+
+	// const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
 
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	const parent = convertToLocalId(resource.parent.data.id, siteConfig);
@@ -60,9 +72,35 @@ function mapResource(resource: any, siteConfig: SiteConfig) {
 		'https://atomicdata.dev/properties/published-at': published_at,
 		'https://atomicdata.dev/properties/parent': parent,
 		'https://atomicdata.dev/properties/name': resource.display_name,
+		// Cover image
+		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
 		'https://atomicdata.dev/properties/description': resource.description || resource.bio || ''
 	};
 
 	// Remove null values
 	return Object.fromEntries(Object.entries(out).filter(([, v]) => v != null));
+}
+
+//
+async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
+	const pic = resource?.default_cover_photo?.data?.id;
+	if (!pic) {
+		return;
+	}
+	const fullPic = `${pic}/content/cover`;
+
+	if (siteConfig.filesDir === undefined) {
+		console.log('No filesDir specified in siteConfig, skipping upload');
+		return;
+	}
+
+	// download as bytes
+	const response = await fetch(fullPic);
+	const blob = await response.blob();
+	const file = new File([blob], 'test.jpg', { type: 'image/jpeg' });
+
+	// upload to Atomic
+	const parent = siteConfig.filesDir;
+	const [created] = await store.uploadFiles([file], parent);
+	return created;
 }
