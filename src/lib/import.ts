@@ -59,7 +59,7 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 		return;
 	}
 
-	// const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
+	const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
 
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	const parent = convertToLocalId(resource.parent.data.id, siteConfig);
@@ -83,6 +83,7 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 
 //
 async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
+	return null;
 	const pic = resource?.default_cover_photo?.data?.id;
 	if (!pic) {
 		return;

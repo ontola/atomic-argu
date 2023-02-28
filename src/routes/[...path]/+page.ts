@@ -1,4 +1,4 @@
-import { PUBLIC_RESOURCE_PARENT } from '$env/static/public';
+import { currentSiteConfig } from './../../lib/siteConfigs';
 import { domain } from '$lib/helpers/domainSubjects';
 import { getStore } from '$lib/helpers/getStore';
 import { error } from '@sveltejs/kit';
@@ -10,7 +10,7 @@ export const load = (async ({ params, fetch }) => {
 
 	store.injectFetch(fetch);
 
-	const subject = `${PUBLIC_RESOURCE_PARENT}/${params.path}`;
+	const subject = `${currentSiteConfig.parentRoot}/${params.path}`;
 	const r = await store.getResourceAsync(subject);
 
 	await loadResourceTree(subject, {

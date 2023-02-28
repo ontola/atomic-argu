@@ -15,12 +15,12 @@ Each of these websites uses data that is hosted on Atomic-Server.
 - Create a new drive on Atomic Server.
   - Create a new [`Argu Site`](https://atomicdata.dev/Folder/wp8ame4nqf/MYJkFKGEKz). This serves as an entrypoint.
   - make sure the site is publicly available
-  - Create an importer
-  - Create an `Articles Collection`
 - When migrating from Argu
   - Download an export using Argu's export feature
   - Unzip and save to `.src/lib/data-{name}`
   - Open the ASA (Atomic Svelte Argu) app locally, you'll see an import button
+  - Create a `./src/lib/siteConfigs.ts` for the new site
+  - Run this repo `pnpm dev` and visit `localhost`
   - Press the import button. Now the JSON-AD will be copied to your clipboard
   - Paste the JSON-AD into the importer mentioned above
 - Managing content
@@ -44,8 +44,8 @@ Probably beats copy-pasting.
 
 ```bash
 cp template.env .env
-npm i
-npm run dev
+pnpm i
+pnpm dev
 ```
 
 ### Test prerender
@@ -63,5 +63,5 @@ pnpm build
 ```bash
 # This works only for ONE domain at the moment: wonenatthepark.nl.
 # See https://github.com/ontola/wonenatthepark/issues/4
-pnpm run deploy
+pnpm deploy
 ```

@@ -3,8 +3,7 @@
 	import type { LayoutData } from './$types';
 
 	export let data: LayoutData;
-	let style: string;
-	$: style = `--t-color-main: ${data.color}`;
+	$: style = `--t-color-main: ${data.color || 'rgb(30,30,30)'}`;
 </script>
 
 <div class="wrapper" {style}>
