@@ -1,8 +1,8 @@
 import { currentSiteConfig } from './../siteConfigs';
-import { page } from '$app/stores';
-import { get } from 'svelte/store';
 export const constructArticleUrl = (subject: string): string => {
-	const currentURL = get(page).url;
+	// const currentURL = get(page).url;
+
+	if (subject === currentSiteConfig.atomicSite) return '/';
 
 	const path = subject.replace(currentSiteConfig.parentRoot, '');
 
