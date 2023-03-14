@@ -28,6 +28,7 @@ const siteTemplate: TemplateResource[] = [
 				id: 'article-demo',
 				name: 'some article',
 				description: 'This is a demo article',
+				'https://atomicdata.dev/properties/published-at': 1678798959855000,
 				class: 'https://atomicdata.dev/classes/Article'
 			}
 		]
