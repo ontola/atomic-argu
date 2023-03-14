@@ -3,13 +3,18 @@
 	import { scrollRatio } from '$lib/hooks/scrollRatio';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from './Container.svelte';
+	import { writable } from 'svelte/store';
 
 	export let coverSubject: string | undefined = undefined;
 
-	$: coverResource = coverSubject ? getResource(coverSubject) : undefined;
+	const writeableSubject = writable(coverSubject);
+	$: writeableSubject.set(coverSubject);
+
+	$: coverResource = coverSubject ? getResource(writeableSubject) : undefined;
 	$: src = coverSubject
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
+	$: console.log('inside HeroPage', coverSubject, $coverResource);
 </script>
 
 <div class="hero-page-wrapper">

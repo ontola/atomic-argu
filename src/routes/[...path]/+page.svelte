@@ -17,7 +17,6 @@
 	$: description = getValue<string>(resource, urls.properties.description);
 	$: parent = getValue<string>(resource, urls.properties.parent);
 	$: cover = getValue<string>(resource, domain.coverImage);
-	$: console.log('render page with childrencollection', childrenCollection);
 </script>
 
 <svelte:head>

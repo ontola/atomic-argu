@@ -3,10 +3,14 @@
 	import { currentSiteConfig } from '$lib/siteConfigs';
 	import { urls } from '@tomic/lib';
 	import { getResource, getValue } from '@tomic/svelte';
+	import { writable } from 'svelte/store';
 	import Icon from './ParentIcon.svelte';
 
 	export let subject: string = currentSiteConfig.atomicSite;
-	let resource = getResource(subject);
+
+	const writeableSubject = writable(subject);
+	$: writeableSubject.set(subject);
+	const resource = getResource(writeableSubject);
 
 	const title = getValue<string[]>(resource, urls.properties.name);
 </script>
@@ -22,7 +26,7 @@
 
 <style>
 	a {
-		opacity: 0.8;
+		opacity: 0.7;
 		display: flex;
 		align-items: center;
 		color: var(--t-text-heading);
