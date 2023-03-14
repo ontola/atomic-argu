@@ -1,4 +1,4 @@
-import { urls, properties } from '@tomic/lib';
+import { properties } from '@tomic/lib';
 type Template = TemplateResource[];
 
 /** Will be converted */
