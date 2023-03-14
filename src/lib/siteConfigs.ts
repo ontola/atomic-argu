@@ -54,7 +54,7 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		regex: /\.co\/edam_volendam\/(.*)/
 	},
 	localArgu: {
-		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9/',
+		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
 		domain: 'localhost',
 		jsonPath: './data-argu-nl/data.json'
 	}

@@ -36,9 +36,12 @@ export async function importFiles() {
 		resources.map(async (r) => await mapResource(r, siteConfig, store))
 	);
 
+	const atomicResourcesLimited = atomicResources.slice(0, 10).filter((r) => r !== undefined);
+
 	// Copy to clipboard
 	console.log(atomicResources);
-	await navigator.clipboard.writeText(JSON.stringify(atomicResources));
+	const pretty = JSON.stringify(atomicResourcesLimited, null, 2);
+	await navigator.clipboard.writeText(pretty);
 	window.alert('JSON copied to clipboard');
 }
 
@@ -49,7 +52,7 @@ export async function importFiles() {
 // becomes `atomicSite` - the root resource and default parent.
 function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	const matches = iri.match(siteConfig.regex);
-	if (matches) {
+	if (matches && matches[1].length > 0) {
 		return matches[1];
 	}
 	// This should only happen if the iri is the root, in which case we use the `site` resource as the parent
