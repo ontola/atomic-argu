@@ -2,6 +2,20 @@ import { currentSiteConfig, type SiteConfig } from './siteConfigs';
 import { Store, Agent } from '@tomic/lib';
 import { PUBLIC_AGENT_PASSPHRASE } from '$env/static/public';
 
+function shouldInclude(r: any, ids: Set<string>) {
+	if (r == undefined) {
+		return false;
+	}
+	const parent = r['https://atomicdata.dev/properties/parent'];
+	// Skip items that do not have a parent
+	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
+		console.log('skipping', r);
+		return false;
+	}
+	ids.add(r['https://atomicdata.dev/properties/localId']);
+	return true;
+}
+
 export async function importFiles() {
 	const siteConfig = currentSiteConfig;
 	if (!PUBLIC_AGENT_PASSPHRASE) {
@@ -36,11 +50,12 @@ export async function importFiles() {
 		resources.map(async (r) => await mapResource(r, siteConfig, store))
 	);
 
-	const atomicResourcesLimited = atomicResources.slice(0, 10).filter((r) => r !== undefined);
+	const ids: Set<string> = new Set();
+	const atomicResourcesFiltered = atomicResources.filter((r) => shouldInclude(r, ids));
 
 	// Copy to clipboard
 	console.log(atomicResources);
-	const pretty = JSON.stringify(atomicResourcesLimited, null, 2);
+	const pretty = JSON.stringify(atomicResourcesFiltered, null, 2);
 	await navigator.clipboard.writeText(pretty);
 	window.alert('JSON copied to clipboard');
 }
@@ -65,8 +80,6 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 		return;
 	}
 
-	console.log('Mapping resource', resource);
-
 	const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
 
 	const localId = convertToLocalId(resource.iri, siteConfig);
@@ -79,7 +92,7 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 		'https://atomicdata.dev/properties/original-url': resource.iri,
 		'https://atomicdata.dev/properties/published-at': published_at,
 		'https://atomicdata.dev/properties/parent': parent,
-		'https://atomicdata.dev/properties/name': resource.display_name,
+		'https://atomicdata.dev/properties/name': resource.display_name || 'reactie',
 		// Cover image
 		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
 		'https://atomicdata.dev/properties/description': resource.description || resource.bio || ''

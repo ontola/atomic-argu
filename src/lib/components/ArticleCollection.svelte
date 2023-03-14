@@ -7,6 +7,7 @@
 
 	let resource = getResource(subject);
 
+	$: console.log('inside ArticleCollection', subject, $resource);
 	const articles = getValue<string[]>(resource, urls.properties.collection.members);
 </script>
 
