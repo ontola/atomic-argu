@@ -21,7 +21,7 @@ specifiers:
   svelte: ^3.54.0
   svelte-adapter-ghpages: ^0.0.2
   svelte-check: ^2.9.2
-  svelte-exmarkdown: ^1.1.6
+  svelte-exmarkdown: ^1.1.8
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -31,7 +31,7 @@ dependencies:
   '@tomic/lib': 0.35.0-beta.1
   '@tomic/svelte': link:../../atomicdata-dev/atomic-svelte
   gh-pages: 4.0.0
-  svelte-exmarkdown: 1.1.6
+  svelte-exmarkdown: 1.1.8_svelte@3.55.0
 
 devDependencies:
   '@playwright/test': 1.29.2
@@ -2439,12 +2439,15 @@ packages:
       - sugarss
     dev: true
 
-  /svelte-exmarkdown/1.1.6:
-    resolution: {integrity: sha512-cEX/YPEeFMJlw/Nvz8/kgu8+Zx0yfSLH5ibosDKDcgUGjmiPDu/ILxv+HT3fVWbdUEleIEg9W/65f1lDSHPP/Q==}
+  /svelte-exmarkdown/1.1.8_svelte@3.55.0:
+    resolution: {integrity: sha512-3yzfVjJSbeHYxG1q+WskD75fzqd8OcjhcvhwoU5S81VdBab0pXzcT49IPH0T2X0JKJE12iwOjZFddZXeODdQvA==}
+    peerDependencies:
+      svelte: ^3.47.0
     dependencies:
       remark-gfm: 3.0.1
       remark-parse: 10.0.1
       remark-rehype: 10.1.0
+      svelte: 3.55.0
       unified: 10.1.2
     transitivePeerDependencies:
       - supports-color
@@ -2513,7 +2516,6 @@ packages:
   /svelte/3.55.0:
     resolution: {integrity: sha512-uGu2FVMlOuey4JoKHKrpZFkoYyj0VLjJdz47zX5+gVK5odxHM40RVhar9/iK2YFRVxvfg9FkhfVlR0sjeIrOiA==}
     engines: {node: '>= 8'}
-    dev: true
 
   /text-table/0.2.0:
     resolution: {integrity: sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw==}

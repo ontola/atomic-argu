@@ -12,7 +12,6 @@ export async function buildCollection(subject: string) {
 			}
 		}
 	});
-	console.log('buildCollection', subject);
 
 	// We create a collection that contains all children of the current Subject
 	const generatedCollectionURL = new URL(subject);
