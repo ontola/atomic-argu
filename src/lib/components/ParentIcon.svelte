@@ -19,7 +19,7 @@
 
 <style>
 	svg {
-		height: 1.2rem;
-		width: 1.2rem;
+		height: 1rem;
+		width: 1rem;
 	}
 </style>
