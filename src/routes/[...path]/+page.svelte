@@ -8,7 +8,7 @@
 	import { urls } from '@tomic/lib';
 	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
-
+	import { dev } from '$app/environment';
 	export let data: PageData;
 
 	$: ({ resource, childrenCollection } = data);
@@ -17,6 +17,7 @@
 	$: description = getValue<string>(resource, urls.properties.description);
 	$: parent = getValue<string>(resource, urls.properties.parent);
 	$: cover = getValue<string>(resource, domain.coverImage);
+	$: originalUrl = getValue<string>(resource, 'https://atomicdata.dev/properties/original-url');
 </script>
 
 <svelte:head>
@@ -26,6 +27,9 @@
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
 		<Parent subject={$parent} />
+		{#if dev}
+			<a href={$originalUrl}>go to source</a>
+		{/if}
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
 	{#if childrenCollection}

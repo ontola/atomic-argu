@@ -11,11 +11,10 @@
 	$: src = coverSubject
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
-	$: console.log('hero', $src, coverSubject, $coverResource);
 </script>
 
 <div>
-	{#if $src}
+	{#if src && $src}
 		<div class="nothing" style={`--image: url(${$src})`}>
 			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
 		</div>
@@ -44,7 +43,8 @@
 		background-position: center;
 		transition: opacity 30ms;
 		will-change: opacity filter;
-		background-attachment: fixed;
+		/* Centers the image at the top */
+		/* background-attachment: fixed; */
 		/* background-repeat: no-repeat; */
 		height: 30rem;
 	}
