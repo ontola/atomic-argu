@@ -1,3 +1,4 @@
+import { urls, properties } from '@tomic/lib';
 type Template = TemplateResource[];
 
 /** Will be converted */
@@ -6,6 +7,8 @@ type TemplateResource = {
 	id: string;
 	/** URL of the Class. Will be converted to a ResourceArray */
 	class: string;
+	name?: string;
+	description?: string;
 	parent?: string;
 	children?: TemplateResource[];
 	// Note: needs to be atomic data property-value!
@@ -24,13 +27,16 @@ const siteTemplate: TemplateResource[] = [
 			{
 				id: 'article-demo',
 				name: 'some article',
+				description: 'This is a demo article',
 				class: 'https://atomicdata.dev/classes/Article'
 			}
 		]
 	},
 	{
 		id: 'images-folder',
-		class: 'https://atomicdata.dev/classes/Folder'
+		class: 'https://atomicdata.dev/classes/Folder',
+		name: 'Images folder',
+		'https://atomicdata.dev/property/display-style': 'https://atomicdata.dev/display-style/list'
 	}
 ];
 
@@ -44,15 +50,20 @@ function toJSONAD(template: Template) {
 }
 
 function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
-	const { id, children, name, class: klass, ...rest } = resource;
+	const { id, children, name, description, class: klass, ...rest } = resource;
 
 	const out: any[] = [];
 
+	// Since we don't have dynamic children showing yet, we should add sub-resources instead
+	const subResources = children?.map((child) => child.id);
+
 	out.push({
 		'https://atomicdata.dev/properties/localId': id,
-		'https://atomicdata.dev/properties/name': name,
-		'https://atomicdata.dev/properties/parent': parent,
-		'https://atomicdata.dev/properties/isA': [klass],
+		[properties.isA]: [klass],
+		[properties.name]: name,
+		[properties.description]: description,
+		[properties.parent]: parent,
+		[properties.subResources]: subResources,
 		...rest
 		// Children is omitted, processed below
 	});
@@ -73,5 +84,7 @@ function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
 export const generatedTemplate = async () => {
 	const arr = toJSONAD(siteTemplate);
 	console.log(arr);
-	await navigator.clipboard.writeText(JSON.stringify(arr));
+
+	const pretty = JSON.stringify(arr, null, 2);
+	await navigator.clipboard.writeText(pretty);
 };

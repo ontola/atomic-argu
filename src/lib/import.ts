@@ -9,7 +9,7 @@ export async function importFiles() {
 	}
 	const agent = Agent.fromSecret(PUBLIC_AGENT_PASSPHRASE);
 	const store = new Store({
-		serverUrl: siteConfig.serverUrl,
+		serverUrl: new URL(siteConfig.atomicSite).origin,
 		agent
 	});
 	const data = await import(siteConfig.jsonPath);
@@ -24,13 +24,17 @@ export async function importFiles() {
 		...data.Idee,
 		...data.Update,
 		// NOTE: adjust the key here, because the special char is not iterable in JSON
-		...data.Enqute,
+		// ...data.Enqute,
 		...data.Nadeel,
 		...data.Voordeel,
 		...data.Reactie
 	];
 
-	const atomicResources = resources.map((r) => mapResource(r, siteConfig, store));
+	// const atomicResources = resources.map(async (r) => await mapResource(r, siteConfig, store));
+	const atomicResources = await Promise.all(
+		// Instead of trying all resources in one batch, we
+		resources.map(async (r) => await mapResource(r, siteConfig, store))
+	);
 
 	// Copy to clipboard
 	console.log(atomicResources);
@@ -44,7 +48,6 @@ export async function importFiles() {
 // But `https://wonenatthepark.nl`
 // becomes `atomicSite` - the root resource and default parent.
 function convertToLocalId(iri: string, siteConfig: SiteConfig) {
-	// regex selects anything starting from '.co/edam_volendam/'
 	const matches = iri.match(siteConfig.regex);
 	if (matches) {
 		return matches[1];
@@ -58,6 +61,8 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 	if (resource.is_draft) {
 		return;
 	}
+
+	console.log('Mapping resource', resource);
 
 	const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
 
