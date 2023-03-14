@@ -1,32 +1,26 @@
 type SiteConfigIn = {
-	// URL of the parent resource, used as the base of all resources
 	parentRoot: string;
-	// URL of an Argu-Site resource. Is generated from `parentRoot` by default.
 	atomicSite?: string;
-	// URL of folder where to upload files. Is generated from `parentRoot` by default.
 	filesDir?: string;
-	domain: string;
+	domain?: string;
 	deployType?: 'gh-pages' | 'netlify';
-	// Path to the JSON file containing the Argu export, relative to the root of the project
 	jsonPath: string;
-	// Reges that matches the end of the path.
-	// When unspecified, defaults
 	regex?: RegExp;
 };
 
 export interface SiteConfig extends SiteConfigIn {
-	// URL of the parent resource, used as the base of all resources
+	/** URL of the parent resource, used as the base of all resources */
 	parentRoot: string;
-	// URL of an Argu-Site resource. Is generated from `parentRoot` by default.
+	/** URL of the Argu-Site resource, is shown on the home page */
 	atomicSite: string;
-	// URL of folder where to upload files. Is generated from `parentRoot` by default.
+	/** URL of folder where to upload files. Is generated from `parentRoot` by default. */
 	filesDir: string;
+	/** DNS domain name, e.g. argu.nl */
 	domain: string;
 	deployType: 'gh-pages' | 'netlify';
-	// Path to the JSON file containing the Argu export, relative to the root of the project
+	/** Path to the JSON file containing the Argu export, relative to the root of the project */
 	jsonPath: string;
-	// Reges that matches the end of the path.
-	// When unspecified, defaults
+	/** Regex that matches the end of the path.*/
 	regex: RegExp;
 }
 
@@ -39,36 +33,32 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		jsonPath: './data-wonenatthepark/data.json'
 	},
 	localEdam: {
-		atomicSite: 'http://localhost:9883/argu-site-demo',
-		parentRoot: 'http://localhost:9883/importer/7rg1o2n5l1',
-		domain: 'localhost',
+		parentRoot: 'http://localhost:9883/drive/aphjefochpg',
 		jsonPath: './data-edamvolendam/data.json',
-		regex: /\.co\/edam_volendam\/(.*)/,
-		filesDir: 'http://localhost:9883/drive/75hhx0fjqgr/folder/xznlgeu7qf'
+		regex: /\.co\/edam_volendam\/(.*)/
 	},
 	edam: {
 		atomicSite: 'https://atomicdata.dev/edamvolendam/site',
 		parentRoot: 'https://atomicdata.dev/importer/7n4ecrni2n',
-		domain: 'localhost',
 		jsonPath: './data-edamvolendam/data.json',
 		regex: /\.co\/edam_volendam\/(.*)/
 	},
 	localArgu: {
 		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
-		domain: 'localhost',
 		jsonPath: './data-argu-nl/data.json'
 	}
 };
 
-// Fills default vals
+// Fills default vals, builds derived values from required fields.
 function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	return {
 		atomicSite: config.atomicSite || `${config.parentRoot}/site`,
-		filesDir: config.filesDir || `${config.parentRoot}/image-files`,
+		filesDir: config.filesDir || `${config.parentRoot}/images-folder`,
 		deployType: config.deployType || 'netlify',
 		regex: config.regex || /\.nl\/(.*)/,
+		domain: config.domain || new URL(config.parentRoot).hostname,
 		...config
 	};
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.localArgu);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.localEdam);

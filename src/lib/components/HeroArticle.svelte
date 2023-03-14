@@ -10,10 +10,12 @@
 	$: src = coverSubject
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
+	$: console.log('hero', $src, coverSubject, $coverResource);
 </script>
 
 <div>
-	{#if src && $src}
+	{#if $src}
+		console.log('hero', $src, coverSubject, $coverResource);
 		<div class="nothing" style={`--image: url(${$src})`}>
 			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
 		</div>

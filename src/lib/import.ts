@@ -104,7 +104,8 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 
 //
 async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
-	return null;
+	// Skip if needed
+	// return null;
 	const pic = resource?.default_cover_photo?.data?.id;
 	if (!pic) {
 		return;
