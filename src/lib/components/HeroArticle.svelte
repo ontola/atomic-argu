@@ -5,6 +5,7 @@
 	import Container from './Container.svelte';
 
 	export let coverSubject: string | undefined;
+	export let small: boolean = false;
 
 	$: coverResource = coverSubject ? getResource(coverSubject) : undefined;
 	$: src = coverSubject
@@ -15,7 +16,6 @@
 
 <div>
 	{#if $src}
-		console.log('hero', $src, coverSubject, $coverResource);
 		<div class="nothing" style={`--image: url(${$src})`}>
 			<div class="hero-image" use:scrollRatio={[-0.5, 1]} />
 		</div>
@@ -23,7 +23,7 @@
 		<div class="filler" />
 	{/if}
 	<Container>
-		<div class="article">
+		<div class="article" class:article--small={small}>
 			<slot name="article" />
 		</div>
 	</Container>
@@ -70,6 +70,9 @@
 		border-radius: var(--t-radius);
 		width: 100%;
 		padding: 1rem;
+	}
+	.article--small {
+		width: min(35rem, 100%);
 	}
 	.content {
 		margin-top: -3rem;

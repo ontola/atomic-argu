@@ -1,7 +1,7 @@
 <script lang="ts">
 	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
 	import Container from '$lib/components/Container.svelte';
-	import HeroPage from '$lib/components/HeroPage.svelte';
+	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
 	import { urls } from '@tomic/lib';
 	import { getValue } from '@tomic/svelte';
@@ -21,8 +21,8 @@
 	<meta name="description" content={$description} />
 </svelte:head>
 
-<HeroPage coverSubject={$cover}>
-	<svelte:fragment slot="title-card">
+<HeroArticle coverSubject={$cover} small>
+	<svelte:fragment slot="article">
 		<h1>{$name}</h1>
 		<p class="page-description">{$description}</p>
 	</svelte:fragment>
@@ -35,7 +35,7 @@
 			<p>Er zijn geen onderwerpen gevonden.</p>
 		{/if}
 	</Container>
-</HeroPage>
+</HeroArticle>
 
 <style>
 	h1 {
