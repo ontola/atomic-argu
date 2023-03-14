@@ -52,7 +52,7 @@ pnpm dev
 
 Set `origin` in `svelte.config` to `localhost`
 
-### Building
+### Building static pages
 
 ```bash
 pnpm build

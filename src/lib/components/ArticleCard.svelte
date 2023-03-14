@@ -6,10 +6,9 @@
 
 	export let subject: string;
 
-	const resource = getResource(subject);
-
-	const name = getValue<string>(resource, urls.properties.name);
-	const description = getValue<string>(resource, urls.properties.description);
+	$: resource = getResource(subject);
+	$: name = getValue<string>(resource, urls.properties.name);
+	$: description = getValue<string>(resource, urls.properties.description);
 
 	$: trimmedDescription = `${$description?.slice(0, 200)}${
 		($description?.length ?? 0) > 200 ? '...' : ''

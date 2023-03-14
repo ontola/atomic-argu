@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Article from '$lib/components/Article.svelte';
 	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
-	import Container from '$lib/components/Container.svelte';
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import Parent from '$lib/components/Parent.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
@@ -26,10 +25,13 @@
 </svelte:head>
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
-		<Parent subject={$parent} />
-		{#if dev}
-			<a href={$originalUrl}>go to source</a>
-		{/if}
+		<div class="top-links">
+			<Parent subject={$parent} />
+			{#if dev && $originalUrl}
+				<a href={$originalUrl}>source</a>
+			{/if}
+			<a href={$resource.getSubject()}>edit</a>
+		</div>
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
 	{#if childrenCollection}
@@ -38,3 +40,14 @@
 		<p>Er zijn geen onderwerpen gevonden.</p>
 	{/if}
 </HeroArticle>
+
+<style>
+	.top-links {
+		display: flex;
+		justify-content: flex-start;
+		gap: 1rem;
+	}
+	.top-links a:hover {
+		text-decoration: underline;
+	}
+</style>

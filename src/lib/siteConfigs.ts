@@ -61,4 +61,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	};
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.localEdam);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.localArgu);
