@@ -19,6 +19,7 @@
 	h1 {
 		font-size: var(--font-size-fluid-2);
 		margin-bottom: 1rem;
+		line-height: 1em;
 		color: var(--t-text-heading);
 	}
 	@media (--sm-n-below) {
