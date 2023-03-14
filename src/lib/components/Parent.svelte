@@ -35,6 +35,6 @@
 	}
 	a > :global(svg) {
 		fill: var(--t-text-heading);
-		margin-right: 0.5rem;
+		margin-right: 0.2rem;
 	}
 </style>
