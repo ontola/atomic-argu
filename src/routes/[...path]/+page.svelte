@@ -33,10 +33,7 @@
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
 	{#if childrenCollection}
-		<Container>
-			<h2>Reacties</h2>
-			<ArticleCollection subject={childrenCollection} />
-		</Container>
+		<ArticleCollection subject={childrenCollection} title="Reacties" />
 	{:else}
 		<p>Er zijn geen onderwerpen gevonden.</p>
 	{/if}
