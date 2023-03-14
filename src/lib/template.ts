@@ -22,6 +22,7 @@ const siteTemplate: TemplateResource[] = [
 		id: 'site',
 		class: URL_ARGU_SITE_CLASS,
 		name: 'Site Example',
+		description: 'This is an example site',
 		'https://atomicdata.dev/properties/read': ['https://atomicdata.dev/agents/publicAgent'],
 		children: [
 			{

@@ -24,8 +24,6 @@ export const load = (async ({ params, fetch }) => {
 
 	const childrenCollection = await buildCollection(subject);
 
-	console.log('childrenCollection load', childrenCollection);
-
 	return {
 		childrenCollection,
 		resource: getResource(subject)

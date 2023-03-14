@@ -1,21 +1,11 @@
 <script lang="ts">
 	import { urls } from '@tomic/lib';
 	import { getResource, getValue } from '@tomic/svelte';
-	import { writable } from 'svelte/store';
 	import ArticleCard from './ArticleCard.svelte';
 
 	export let subject: string;
-
-	const writeableSubject = writable(subject);
-	$: writeableSubject.set(subject);
-	const resource = getResource(writeableSubject);
-	const articles = getValue<string[]>(resource, urls.properties.collection.members);
-
-	$: if (subject !== $resource.getSubject()) {
-		console.warn(`DIFF! subject: ${subject} ressub: ${$resource.getSubject()}`);
-	} else {
-		console.log('same :)', subject);
-	}
+	$: resource = getResource(subject);
+	$: articles = getValue<string[]>(resource, urls.properties.collection.members);
 </script>
 
 {#if $resource.loading}
