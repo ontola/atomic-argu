@@ -1,6 +1,5 @@
 <script lang="ts">
 	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
-	import Container from '$lib/components/Container.svelte';
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
 	import { urls } from '@tomic/lib';
@@ -27,14 +26,7 @@
 		<p class="page-description">{$description}</p>
 	</svelte:fragment>
 
-	<Container>
-		<h2>Onderwerpen</h2>
-		{#if childrenCollection}
-			<ArticleCollection subject={childrenCollection} />
-		{:else}
-			<p>Er zijn geen onderwerpen gevonden.</p>
-		{/if}
-	</Container>
+	<ArticleCollection subject={childrenCollection} title="Onderwerpen" />
 </HeroArticle>
 
 <style>
