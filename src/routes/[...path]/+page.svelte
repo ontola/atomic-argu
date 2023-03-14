@@ -1,5 +1,7 @@
 <script lang="ts">
 	import Article from '$lib/components/Article.svelte';
+	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
+	import Container from '$lib/components/Container.svelte';
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
 	import { urls } from '@tomic/lib';
@@ -8,11 +10,12 @@
 
 	export let data: PageData;
 
-	$: ({ resource } = data);
+	$: ({ resource, childrenCollection } = data);
 
 	$: name = getValue<string>(resource, urls.properties.name);
 	$: description = getValue<string>(resource, urls.properties.description);
 	$: cover = getValue<string>(resource, domain.coverImage);
+	$: console.log('render page with childrencollection', childrenCollection);
 </script>
 
 <svelte:head>
@@ -23,4 +26,12 @@
 	<svelte:fragment slot="article">
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
+	{#if childrenCollection}
+		<Container>
+			<h2>Onderwerpen</h2>
+			<ArticleCollection subject={childrenCollection} />
+		</Container>
+	{:else}
+		<p>Er zijn geen onderwerpen gevonden.</p>
+	{/if}
 </HeroArticle>

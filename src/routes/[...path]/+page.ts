@@ -4,6 +4,7 @@ import { getStore } from '$lib/helpers/getStore';
 import { error } from '@sveltejs/kit';
 import { getResource, loadResourceTree } from '@tomic/svelte';
 import type { PageLoad } from './$types';
+import { buildCollection } from '$lib/helpers/buildCollection';
 
 export const load = (async ({ params, fetch }) => {
 	const store = getStore();
@@ -21,7 +22,12 @@ export const load = (async ({ params, fetch }) => {
 		throw error(500, r.error.message);
 	}
 
+	const childrenCollection = await buildCollection(subject);
+
+	console.log('childrenCollection load', childrenCollection);
+
 	return {
+		childrenCollection,
 		resource: getResource(subject)
 	};
 }) satisfies PageLoad;
