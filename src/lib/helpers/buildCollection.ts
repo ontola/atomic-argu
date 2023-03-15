@@ -4,6 +4,7 @@ import { domain } from '$lib/helpers/domainSubjects';
 
 export async function buildCollection(subject: string) {
 	await loadResourceTree(subject, {
+		[properties.parent]: true,
 		[domain.pages]: true,
 		[domain.coverImage]: true,
 		[domain.articlesCollection]: {

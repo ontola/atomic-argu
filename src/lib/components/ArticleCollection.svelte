@@ -19,7 +19,7 @@
 		<p>Loading...</p>
 	{:else}
 		<ul>
-			{#each $articles ?? [] as article}
+			{#each $articles ?? [] as article (article)}
 				<li>
 					<ArticleCard subject={article} />
 				</li>
