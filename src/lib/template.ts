@@ -1,4 +1,5 @@
 import { properties } from '@tomic/lib';
+import { domain } from './helpers/domainSubjects';
 type Template = TemplateResource[];
 
 /** Will be converted */
@@ -23,7 +24,10 @@ const siteTemplate: TemplateResource[] = [
 		class: URL_ARGU_SITE_CLASS,
 		name: 'Site Example',
 		description: 'This is an example site',
-		'https://atomicdata.dev/properties/read': ['https://atomicdata.dev/agents/publicAgent'],
+		[properties.read]: ['https://atomicdata.dev/agents/publicAgent'],
+		[domain.color]: 'hsl(138, 15%, 44%)',
+		[domain.pages]: ['article-demo'],
+		[domain.siteImage]: 'https://docs.atomicdata.dev/favicon.png',
 		children: [
 			{
 				id: 'article-demo',
