@@ -1,6 +1,7 @@
 // import adapter from '@sveltejs/adapter-auto';
 // import adapter from '@sveltejs/adapter-static';
-import adapterGhpages from "svelte-adapter-ghpages";
+// import adapterGhpages from "svelte-adapter-ghpages";
+import adapterNetlify from "@sveltejs/adapter-netlify";
 
 
 import { vitePreprocess } from '@sveltejs/kit/vite';
@@ -12,12 +13,16 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
-		adapter: adapterGhpages({
-			pages: 'build',
-			assets: 'build',
-			fallback: '404.html',
-			precompress: false,
-			strict: true
+		// adapter: adapterGhpages({
+		// 	pages: 'build',
+		// 	assets: 'build',
+		// 	fallback: '404.html',
+		// 	precompress: false,
+		// 	strict: true
+		// }),
+		adapter: adapterNetlify({
+			// Using edge is faster, but does not support node stuff
+			// edge: true,
 		}),
 		prerender: {
 			crawl: true,
