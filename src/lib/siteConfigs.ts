@@ -1,14 +1,6 @@
-type SiteConfigIn = {
-	parentRoot: string;
-	atomicSite?: string;
-	filesDir?: string;
-	domain?: string;
-	deployType?: 'gh-pages' | 'netlify';
-	jsonPath: string;
-	regex?: RegExp;
-};
+type SiteConfigIn = Partial<SiteConfig>;
 
-export interface SiteConfig extends SiteConfigIn {
+export interface SiteConfig {
 	/** URL of the parent resource, used as the base of all resources */
 	parentRoot: string;
 	/** URL of the Argu-Site resource, is shown on the home page */
@@ -22,18 +14,21 @@ export interface SiteConfig extends SiteConfigIn {
 	jsonPath: string;
 	/** Regex that matches the end of the path.*/
 	regex: RegExp;
+	/** Original website URL */
+	original?: string;
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
 	wonenAtThePark: {
 		atomicSite: 'https://atomicdata.dev/wonenatthepark/site',
+		filesDir: 'https://atomicdata.dev/Folder/r4y4j88p7a',
 		parentRoot: 'https://atomicdata.dev/importer/l8mgzvvnm2a',
 		deployType: 'gh-pages',
 		domain: 'wonenatthepark.nl',
 		jsonPath: './data-wonenatthepark/data.json'
 	},
-	localEdam: {
-		parentRoot: 'http://localhost:9883/drive/aphjefochpg',
+	edamLocal: {
+		parentRoot: 'http://localhost:9883/drive/krh6kkg09zr',
 		jsonPath: './data-edamvolendam/data.json',
 		regex: /\.co\/edam_volendam\/(.*)/
 	},
@@ -43,27 +38,46 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		jsonPath: './data-edamvolendam/data.json',
 		regex: /\.co\/edam_volendam\/(.*)/
 	},
-	localArgu: {
+	arguLocal: {
 		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
 		jsonPath: './data-argu-nl/data.json'
 	},
-	localDrechtsteden: {
+	drechtstedenLocal: {
 		parentRoot: 'http://localhost:9883/drive/2n7alfvryty',
 		regex: /\.nl\/denkmee\/(.*)/,
 		jsonPath: './data-drechtsteden/data.json'
+	},
+	drechtsteden: {
+		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
+		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
+		regex: /\.nl\/denkmee\/(.*)/,
+		jsonPath: './data-drechtsteden/data.json'
+	},
+	diaconessen: {
+		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
+		original: 'https://herontwikkelingdiaconessenhuis.nl/',
+		jsonPath: './data-diaconessen/data.json'
+	},
+	sportlaan: {
+		parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
+		original: 'https://herontwikkelingsportlaan.nl/',
+		jsonPath: './data-sportlaan/data.json'
 	}
 };
 
 // Fills default vals, builds derived values from required fields.
 function buildSiteConfig(config: SiteConfigIn): SiteConfig {
+	const parentRoot = config.parentRoot;
+	if (!parentRoot) throw new Error('Missing parentRoot in site config');
+
 	return {
-		atomicSite: config.atomicSite || `${config.parentRoot}/site`,
-		filesDir: config.filesDir || `${config.parentRoot}/images-folder`,
+		atomicSite: config.atomicSite || `${parentRoot}/site`,
+		filesDir: config.filesDir || `${parentRoot}/images-folder`,
 		deployType: config.deployType || 'netlify',
 		regex: config.regex || /\.nl\/(.*)/,
-		domain: config.domain || new URL(config.parentRoot).hostname,
+		domain: config.domain || new URL(parentRoot).hostname,
 		...config
-	};
+	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.localEdam);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.edamLocal);
