@@ -46,6 +46,11 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 	localArgu: {
 		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
 		jsonPath: './data-argu-nl/data.json'
+	},
+	localDrechtsteden: {
+		parentRoot: 'http://localhost:9883/drive/2n7alfvryty',
+		regex: /\.nl\/denkmee\/(.*)/,
+		jsonPath: './data-drechtsteden/data.json'
 	}
 };
 
@@ -61,4 +66,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	};
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.localArgu);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.localEdam);

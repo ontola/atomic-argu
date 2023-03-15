@@ -9,7 +9,7 @@ function shouldInclude(r: any, ids: Set<string>) {
 	const parent = r['https://atomicdata.dev/properties/parent'];
 	// Skip items that do not have a parent
 	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
-		console.log('skipping', r);
+		console.log('skipping', r['https://atomicdata.dev/properties/localId']);
 		return false;
 	}
 	ids.add(r['https://atomicdata.dev/properties/localId']);
@@ -35,10 +35,13 @@ export async function importFiles() {
 		...data.Forum,
 		...data.Thread,
 		...data.Uitdaging,
+		...data.Traject,
+		...data.Fase,
+		// Missing in Drecthsteden for some reason
 		...data.Idee,
 		...data.Update,
 		// NOTE: adjust the key here, because the special char is not iterable in JSON
-		// ...data.Enqute,
+		...data.Enqute,
 		...data.Nadeel,
 		...data.Voordeel,
 		...data.Reactie
@@ -54,7 +57,7 @@ export async function importFiles() {
 	const atomicResourcesFiltered = atomicResources.filter((r) => shouldInclude(r, ids));
 
 	// Copy to clipboard
-	console.log(atomicResources);
+	console.log(atomicResourcesFiltered);
 	const pretty = JSON.stringify(atomicResourcesFiltered, null, 2);
 	await navigator.clipboard.writeText(pretty);
 	window.alert('JSON copied to clipboard');
@@ -105,7 +108,7 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 //
 async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
 	// Skip if needed
-	// return null;
+	return null;
 	const pic = resource?.default_cover_photo?.data?.id;
 	if (!pic) {
 		return;
