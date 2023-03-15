@@ -4,13 +4,16 @@
 	import { importFiles } from '$lib/import';
 	import { currentSiteConfig } from '$lib/siteConfigs';
 	import { generatedTemplate } from '$lib/template';
+	import { properties } from '@tomic/lib/dist/src/urls';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from '../Container.svelte';
 	import NavLink from './NavLink.svelte';
 	import ResourceNavLink from './ResourceNavLink.svelte';
 
-	const page = getResource(currentSiteConfig.atomicSite);
-	const pages = getValue<string[]>(page, domain.pages);
+	$: page = getResource(currentSiteConfig.atomicSite);
+	$: pages = getValue<string[]>(page, domain.pages);
+	$: image = getValue<string>(page, domain.siteImage);
+	$: name = getValue<string>(page, properties.name);
 </script>
 
 <header>
@@ -19,7 +22,11 @@
 			<ul>
 				<li>
 					<NavLink href="/" type="image" title="Homepagina">
-						<img src="/watp_logo.png" alt="Wonen at the park logo" class="logo" />
+						{#if $image}
+							<img src={$image} alt={`${$name} logo`} class="logo" />
+						{:else}
+							{$name}
+						{/if}
 					</NavLink>
 				</li>
 				{#each $pages ?? [] as page}
