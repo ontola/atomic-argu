@@ -9,7 +9,7 @@ export const load = (async ({ fetch }) => {
 
 	store.injectFetch(fetch);
 
-	const subject = `${currentSiteConfig.parentRoot}/${currentSiteConfig.homePath}`;
+	const subject = currentSiteConfig.homeUrl;
 	const resource = getResource(subject);
 
 	return {
