@@ -1,4 +1,5 @@
 <script lang="ts">
+	import Article from '$lib/components/Article.svelte';
 	import ArticleCollection from '$lib/components/ArticleCollection.svelte';
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
@@ -20,10 +21,9 @@
 	<meta name="description" content={$description} />
 </svelte:head>
 
-<HeroArticle coverSubject={$cover} small>
+<HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
-		<h1>{$name}</h1>
-		<p class="page-description">{$description}</p>
+		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
 
 	<ArticleCollection subject={childrenCollection} title="Onderwerpen" />
