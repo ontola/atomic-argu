@@ -9,9 +9,12 @@ export const prerender = true;
 export const load = (async () => {
 	const store = getStore();
 
-	const site = await store.getResourceAsync(currentSiteConfig.atomicSite);
-
-	const color = site.get(domain.color);
-
-	return { color };
+	try {
+		const site = await store.getResourceAsync(currentSiteConfig.atomicSite);
+		const color = site.get(domain.color);
+		return { color };
+	} catch (e) {
+		console.error('Could not load site config for ', currentSiteConfig.atomicSite, e);
+		return { color: 'red' };
+	}
 }) satisfies LayoutLoad;
