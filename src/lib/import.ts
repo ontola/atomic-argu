@@ -32,7 +32,10 @@ export async function importFiles() {
 
 	// Creates the Site and Image folder
 	const templateData = templateToJSONAD(siteTemplate);
-	resources.push(...templateData);
+	// upload to drive
+	importJsonAdString(store, JSON.stringify(templateData), {
+		parent: siteConfig.parentRoot
+	});
 
 	const data = await import(siteConfig.jsonPath);
 
@@ -62,11 +65,17 @@ export async function importFiles() {
 		resources.push(...data[key]);
 	});
 
-	// const atomicResources = resources.map(async (r) => await mapResource(r, siteConfig, store));
-	const atomicResources = await Promise.all(
-		// Instead of trying all resources in one batch, we
-		resources.map(async (r: any) => await mapResource(r, siteConfig, store))
-	);
+	// const atomicResources = await Promise.all(
+	// 	// Instead of trying all resources in one batch, we
+	// 	resources.map(async (r: any) => await mapResource(r, siteConfig, store))
+	// );
+
+	// We want the results to be handled one by one, not in parallel
+	const atomicResources = [];
+	for (const r of resources) {
+		const mapped = await mapResource(r, siteConfig, store);
+		atomicResources.push(mapped);
+	}
 
 	const ids: Set<string> = new Set();
 	const atomicResourcesFiltered = atomicResources.filter((r) => shouldInclude(r, ids));
@@ -98,7 +107,7 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 
 // Takes an Argu export JSON resource, creates a JSON-AD Article
 async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) {
-	if (resource.is_draft) {
+	if (resource.is_draft || resource.is_trashed) {
 		return;
 	}
 
