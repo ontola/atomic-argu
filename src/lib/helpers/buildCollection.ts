@@ -17,10 +17,10 @@ export async function buildCollection(subject: string) {
 	// We create a collection that contains all children of the current Subject
 	const generatedCollectionURL = new URL(subject);
 	generatedCollectionURL.pathname = '/collections';
-	// generatedCollectionURL.searchParams.set(
-	// 	'sort_by',
-	// 	'https://atomicdata.dev/properties/published-at'
-	// );
+	generatedCollectionURL.searchParams.set(
+		'sort_by',
+		'https://atomicdata.dev/properties/published-at'
+	);
 	generatedCollectionURL.searchParams.set('property', properties.parent);
 	generatedCollectionURL.searchParams.set('value', subject);
 
