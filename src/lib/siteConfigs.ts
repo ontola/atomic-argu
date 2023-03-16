@@ -20,6 +20,10 @@ export interface SiteConfig {
 	original?: string;
 	/** Path rendered on the home page, relative to the `parentRoot`. Defaults to the `site`. In Argu, this is often named the same as the organisation */
 	homePath: string;
+	/** URL of the home page resource, derived from homePath*/
+	homeUrl: string;
+	/** Site ID used by netlify CLI*/
+	netlifyId?: string;
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
@@ -47,13 +51,16 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		jsonPath: './data-argu-nl/data.json'
 	},
 	drechtstedenLocal: {
-		parentRoot: 'http://localhost:9883/drive/2n7alfvryty',
+		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
 		regex: /\.nl\/denkmee\/(.*)/,
+		homePath: 'forum',
 		jsonPath: './data-drechtsteden/data.json'
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
+		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
+		homePath: 'forum',
 		regex: /\.nl\/denkmee\/(.*)/,
 		jsonPath: './data-drechtsteden/data.json'
 	},
@@ -65,11 +72,13 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 	sportlaan: {
 		parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
 		original: 'https://herontwikkelingsportlaan.nl/',
-		jsonPath: './data-sportlaan/data.json'
+		jsonPath: './data-sportlaan/data.json',
+		homePath: 'herontwikkelingsportlaan'
 	},
 	sportlaanLocal: {
 		parentRoot: 'http://localhost:9883/drive/eqom0z1l29t',
 		original: 'https://herontwikkelingsportlaan.nl/',
+		homePath: 'herontwikkelingsportlaan',
 		jsonPath: './data-sportlaan/data.json'
 	}
 };
@@ -78,16 +87,17 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	const parentRoot = config.parentRoot;
 	if (!parentRoot) throw new Error('Missing parentRoot in site config');
-
+	const homePath = config.homePath || defaultSiteId;
 	return {
 		atomicSite: config.atomicSite || `${parentRoot}/${defaultSiteId}`,
 		filesDir: config.filesDir || `${parentRoot}/${defaultImageFolderId}`,
 		deployType: config.deployType || 'netlify',
 		regex: config.regex || /\.nl\/(.*)/,
 		domain: config.domain || new URL(parentRoot).hostname,
-		homePath: config.homePath || defaultSiteId,
+		homePath,
+		homeUrl: config.homeUrl || `${parentRoot}/${homePath}`,
 		...config
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.sportlaanLocal);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtstedenLocal);

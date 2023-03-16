@@ -9,6 +9,17 @@
 	import type { PageData } from './$types';
 	import { dev } from '$app/environment';
 	export let data: PageData;
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		document.addEventListener('keydown', (event) => {
+			if (dev && event.ctrlKey && event.key === 'e') {
+				event.preventDefault();
+				// open in new tab
+				window.open($resource.getSubject(), '_blank');
+			}
+		});
+	});
 
 	$: ({ resource, childrenCollection } = data);
 
@@ -29,8 +40,8 @@
 			<Parent subject={$parent} />
 			{#if dev && $originalUrl}
 				<a href={$originalUrl}>source</a>
+				<a href={$resource.getSubject()}>edit</a>
 			{/if}
-			<a href={$resource.getSubject()}>edit</a>
 		</div>
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
