@@ -16,11 +16,14 @@ type TemplateResource = {
 	[key: string]: any;
 };
 
+export const defaultSiteId = 'site';
+export const defaultImageFolderId = 'images-folder';
+
 const URL_ARGU_SITE_CLASS = 'https://atomicdata.dev/Folder/wp8ame4nqf/MYJkFKGEKz';
 
-const siteTemplate: TemplateResource[] = [
+export const siteTemplate: TemplateResource[] = [
 	{
-		id: 'site',
+		id: defaultSiteId,
 		class: URL_ARGU_SITE_CLASS,
 		name: 'Site Example',
 		description: 'This is an example site',
@@ -39,14 +42,14 @@ const siteTemplate: TemplateResource[] = [
 		]
 	},
 	{
-		id: 'images-folder',
+		id: defaultImageFolderId,
 		class: 'https://atomicdata.dev/classes/Folder',
 		name: 'Images folder',
 		'https://atomicdata.dev/property/display-style': 'https://atomicdata.dev/display-style/list'
 	}
 ];
 
-function toJSONAD(template: Template) {
+export function templateToJSONAD(template: Template) {
 	const out: any[] = [];
 	template.map((resource) => {
 		out.push(convertAndFlatten(resource).flat());
@@ -88,7 +91,7 @@ function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
 }
 
 export const generatedTemplate = async () => {
-	const arr = toJSONAD(siteTemplate);
+	const arr = templateToJSONAD(siteTemplate);
 	console.log(arr);
 
 	const pretty = JSON.stringify(arr, null, 2);

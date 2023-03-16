@@ -1,12 +1,13 @@
 import { currentSiteConfig, type SiteConfig } from './siteConfigs';
-import { Store, Agent } from '@tomic/lib';
+import { Store, Agent, properties, importJsonAdString } from '@tomic/lib';
 import { PUBLIC_AGENT_PASSPHRASE } from '$env/static/public';
+import { siteTemplate, templateToJSONAD } from './template';
 
 function shouldInclude(r: any, ids: Set<string>) {
 	if (r == undefined) {
 		return false;
 	}
-	const parent = r['https://atomicdata.dev/properties/parent'];
+	const parent = r[properties.parent];
 	// Skip items that do not have a parent
 	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
 		console.log('skipping', r['https://atomicdata.dev/properties/localId']);
@@ -26,41 +27,59 @@ export async function importFiles() {
 		serverUrl: new URL(siteConfig.atomicSite).origin,
 		agent
 	});
+
+	const resources: any = [];
+
+	// Creates the Site and Image folder
+	const templateData = templateToJSONAD(siteTemplate);
+	resources.push(...templateData);
+
 	const data = await import(siteConfig.jsonPath);
 
 	// The order should be dependent on the parent-child relationship,
 	// because of how JSON-AD importing works on Atomic-Server.
 	// The parent should be imported before the child.
-	const resources = [
-		...data.Forum,
-		...data.Thread,
-		...data.Uitdaging,
-		...data.Traject,
-		...data.Fase,
-		// Missing in Drecthsteden for some reason
-		...data.Idee,
-		...data.Update,
+	const order = [
+		'Forum',
+		'Thread',
+		'Uitdaging',
+		'Traject',
+		'Fase',
+		'Idee',
+		'Update',
 		// NOTE: adjust the key here, because the special char is not iterable in JSON
-		...data.Enqute,
-		...data.Nadeel,
-		...data.Voordeel,
-		...data.Reactie
+		'Enqute',
+		'Nadeel',
+		'Voordeel',
+		'Reactie'
 	];
+
+	order.forEach((key) => {
+		if (!data[key]) {
+			console.warn(`Type ${key} is missing, make sure it is not used in the imported Organisation`);
+			return;
+		}
+		resources.push(...data[key]);
+	});
 
 	// const atomicResources = resources.map(async (r) => await mapResource(r, siteConfig, store));
 	const atomicResources = await Promise.all(
 		// Instead of trying all resources in one batch, we
-		resources.map(async (r) => await mapResource(r, siteConfig, store))
+		resources.map(async (r: any) => await mapResource(r, siteConfig, store))
 	);
 
 	const ids: Set<string> = new Set();
 	const atomicResourcesFiltered = atomicResources.filter((r) => shouldInclude(r, ids));
 
+	const jsonAD = JSON.stringify(atomicResourcesFiltered, null, 2);
+	// upload to drive
+	importJsonAdString(store, jsonAD, {
+		parent: siteConfig.parentRoot
+	});
+
 	// Copy to clipboard
-	console.log(atomicResourcesFiltered);
-	const pretty = JSON.stringify(atomicResourcesFiltered, null, 2);
-	await navigator.clipboard.writeText(pretty);
-	window.alert('JSON copied to clipboard');
+	await navigator.clipboard.writeText(jsonAD);
+	window.alert('JSON is being uploaded and has been copied to clipboard');
 }
 
 // Here we use a regex to match the entire path:
@@ -88,6 +107,8 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	const parent = convertToLocalId(resource.parent.data.id, siteConfig);
 	const published_at = new Date(resource.published_at).getTime();
+	const description =
+		(await getMarkdownLinksAndMoveImages(resource.description, store)) || resource.bio || '';
 
 	const out = {
 		'https://atomicdata.dev/properties/isA': ['https://atomicdata.dev/classes/Article'],
@@ -98,17 +119,41 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 		'https://atomicdata.dev/properties/name': resource.display_name || 'reactie',
 		// Cover image
 		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
-		'https://atomicdata.dev/properties/description': resource.description || resource.bio || ''
+		'https://atomicdata.dev/properties/description': description
 	};
 
 	// Remove null values
 	return Object.fromEntries(Object.entries(out).filter(([, v]) => v != null));
 }
 
-//
+// finds markdown image tags`
+// and moves the image using uploadAndGetPictureURL.
+// Replaces the URL with the new one
+async function getMarkdownLinksAndMoveImages(md: string, store: Store) {
+	if (!md) {
+		return;
+	}
+	const regex = /!\[.*?\]\((.*?)\)/g;
+	const matches = md.matchAll(regex);
+	const newMd = md;
+	for (const match of matches) {
+		const url = match[1];
+		console.log(`found image URL: ${url}`);
+		let newUrl = await moveImageToAtomic(url, currentSiteConfig, store);
+		// prepend with /download in path
+		if (newUrl) {
+			newUrl = newUrl.replace('/files/', '/download/files/');
+			console.log(`converted image: old ${url}, new ${newUrl}`);
+			newMd.replace(url, newUrl);
+		}
+	}
+
+	return newMd;
+}
+
 async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
 	// Skip if needed
-	return null;
+	// return null;
 	const pic = resource?.default_cover_photo?.data?.id;
 	if (!pic) {
 		return;
@@ -120,13 +165,24 @@ async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, sto
 		return;
 	}
 
-	// download as bytes
-	const response = await fetch(fullPic);
-	const blob = await response.blob();
-	const file = new File([blob], 'test.jpg', { type: 'image/jpeg' });
+	const imageResourceURL = await moveImageToAtomic(fullPic, siteConfig, store);
 
-	// upload to Atomic
-	const parent = siteConfig.filesDir;
-	const [created] = await store.uploadFiles([file], parent);
-	return created;
+	return imageResourceURL;
+}
+
+/** Returns resource URL of the image (not the download URL). If it fails, it does not return a URL */
+async function moveImageToAtomic(url: string, siteConfig: SiteConfig, store: Store) {
+	// download as bytes
+	try {
+		const response = await fetch(url);
+		const blob = await response.blob();
+		const file = new File([blob], 'test.jpg', { type: 'image/jpeg' });
+		// upload to Atomic
+		const parent = siteConfig.filesDir;
+		const [created] = await store.uploadFiles([file], parent);
+		return created;
+	} catch (e) {
+		console.log('error downloading / uploading image', e);
+		return;
+	}
 }

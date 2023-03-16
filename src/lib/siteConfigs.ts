@@ -1,3 +1,5 @@
+import { defaultSiteId, defaultImageFolderId } from './template';
+
 type SiteConfigIn = Partial<SiteConfig>;
 
 export interface SiteConfig {
@@ -16,6 +18,8 @@ export interface SiteConfig {
 	regex: RegExp;
 	/** Original website URL */
 	original?: string;
+	/** Path rendered on the home page, relative to the `parentRoot`. Defaults to the `site`. In Argu, this is often named the same as the organisation */
+	homePath: string;
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
@@ -62,6 +66,11 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
 		original: 'https://herontwikkelingsportlaan.nl/',
 		jsonPath: './data-sportlaan/data.json'
+	},
+	sportlaanLocal: {
+		parentRoot: 'http://localhost:9883/drive/eqom0z1l29t',
+		original: 'https://herontwikkelingsportlaan.nl/',
+		jsonPath: './data-sportlaan/data.json'
 	}
 };
 
@@ -71,13 +80,14 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	if (!parentRoot) throw new Error('Missing parentRoot in site config');
 
 	return {
-		atomicSite: config.atomicSite || `${parentRoot}/site`,
-		filesDir: config.filesDir || `${parentRoot}/images-folder`,
+		atomicSite: config.atomicSite || `${parentRoot}/${defaultSiteId}`,
+		filesDir: config.filesDir || `${parentRoot}/${defaultImageFolderId}`,
 		deployType: config.deployType || 'netlify',
 		regex: config.regex || /\.nl\/(.*)/,
 		domain: config.domain || new URL(parentRoot).hostname,
+		homePath: config.homePath || defaultSiteId,
 		...config
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.edamLocal);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.sportlaanLocal);
