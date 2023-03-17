@@ -9,6 +9,7 @@
   --t-bg-light: var(--gray-2);
   --t-radius: var(--radius-2);
   --t-font-family: var(--font-sans);
+  --t-font-family-heading: var(--font-sans);
   --t-containing-width-large: 1200px;
 }
 
@@ -33,4 +34,7 @@ body {
 a {
   color: currentColor;
   text-decoration: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--t-font-family-heading);
 }
