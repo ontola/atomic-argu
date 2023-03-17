@@ -10,6 +10,7 @@
 	import { dev } from '$app/environment';
 	export let data: PageData;
 	import { onMount } from 'svelte';
+	import ArticleWidthConstraint from '$lib/components/ArticleWidthConstraint.svelte';
 
 	onMount(() => {
 		document.addEventListener('keydown', (event) => {
@@ -36,13 +37,17 @@
 </svelte:head>
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
-		<div class="top-links">
-			<Parent subject={$parent} />
-			{#if dev && $originalUrl}
-				<a href={$originalUrl}>source</a>
-				<a href={$resource.getSubject()}>edit</a>
-			{/if}
-		</div>
+		<ArticleWidthConstraint>
+			<div class="top-links">
+				<Parent subject={$parent} />
+				{#if dev && $originalUrl}
+					<span class="dev-links">
+						<a href={$originalUrl}>source</a>
+						<a href={$resource.getSubject()}>edit</a>
+					</span>
+				{/if}
+			</div>
+		</ArticleWidthConstraint>
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
 	</svelte:fragment>
 	{#if childrenCollection}
@@ -55,10 +60,16 @@
 <style>
 	.top-links {
 		display: flex;
-		justify-content: flex-start;
+		justify-content: space-between;
 		gap: 1rem;
 	}
+
 	.top-links a:hover {
 		text-decoration: underline;
+	}
+
+	.dev-links {
+		display: inline-flex;
+		gap: 1rem;
 	}
 </style>

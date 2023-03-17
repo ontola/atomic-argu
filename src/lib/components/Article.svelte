@@ -1,21 +1,33 @@
 <script lang="ts">
 	import Markdown from 'svelte-exmarkdown';
+	import ArticleWidthConstraint from './ArticleWidthConstraint.svelte';
+	import Fragment from './DynamicFragment.svelte';
 	export let title: string;
 	export let markdown = '';
+	export let constrain = true;
+
+	let ConstrainComponent = constrain ? ArticleWidthConstraint : Fragment;
 </script>
 
 <article>
-	<h1>
-		{title}
-	</h1>
+	<svelte:component this={ConstrainComponent}>
+		<h1>
+			{title}
+		</h1>
+	</svelte:component>
 
 	<div class="divider" />
-	<Markdown md={markdown} />
+	<svelte:component this={ConstrainComponent}>
+		<Markdown md={markdown} />
+	</svelte:component>
 </article>
 
 <style>
 	@import 'open-props/media';
 
+	article {
+		--article-spacing: var(--size-4);
+	}
 	h1 {
 		font-size: var(--font-size-fluid-2);
 		margin-bottom: 1rem;
@@ -31,9 +43,30 @@
 		border-bottom: 1px solid var(--gray-3);
 		margin-bottom: 1.5rem;
 	}
+
+	article :global(h2),
+	article :global(h3),
+	article :global(h4),
+	article :global(h5),
+	article :global(h6) {
+		color: var(--t-text-heading);
+		margin-bottom: var(--article-spacing);
+		margin-top: 0;
+	}
+
 	article :global(p) {
-		margin-bottom: 1rem;
-		/* max-width: 90ch; */
+		font-size: 1.2em;
+		line-height: 1.7em;
+		margin-bottom: var(--article-spacing);
+	}
+
+	article :global(ul),
+	article :global(ol) {
+		margin-block-start: 0;
+	}
+
+	article :global(li) {
+		font-size: 1.2em;
 	}
 
 	article :global(a) {
@@ -48,6 +81,5 @@
 	article :global(img) {
 		border-radius: var(--t-radius);
 		margin-bottom: 1rem;
-		box-shadow: var(--shadow-2);
 	}
 </style>

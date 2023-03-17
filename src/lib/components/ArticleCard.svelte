@@ -41,13 +41,13 @@
 		background-color: var(--t-bg);
 		border-radius: var(--t-radius);
 		height: 12rem;
-		transition: transform 300ms var(--ease-squish-1), box-shadow 100ms ease-in-out;
+		transition: transform 200ms var(--ease-elastic-1), box-shadow 200ms var(--ease-elastic-1);
 		/* Prevent border radius on images */
 		overflow: hidden;
 	}
 	.card:hover,
 	.card:focus {
-		box-shadow: 0 0 0 2px var(--t-color-main);
+		box-shadow: 0 0 0 2px var(--t-color-main), var(--shadow-5);
 		outline: none;
 		transform: scale(1.05);
 	}
@@ -60,6 +60,7 @@
 	}
 
 	.image {
+		background-color: var(--t-bg-light);
 		background-size: cover;
 		background-position: center;
 		display: flex;

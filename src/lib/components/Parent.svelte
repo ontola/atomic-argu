@@ -23,18 +23,28 @@
 
 <style>
 	a {
-		opacity: 0.7;
 		display: flex;
 		align-items: center;
-		color: var(--t-text-heading);
+		color: var(--gray-6);
 		text-decoration: none;
+		padding: var(--size-2);
+		border-radius: var(--t-radius);
+		gap: var(--size-2);
+		transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;
 	}
-	a:hover {
-		text-decoration: underline;
-		opacity: 1;
+	a:hover,
+	a:focus {
+		background-color: var(--t-bg-body);
+		color: var(--t-text);
 	}
+
 	a > :global(svg) {
-		fill: var(--t-text-heading);
-		margin-right: 0.2rem;
+		fill: var(--gray-7);
+		transition: fill 0.1s ease-in-out;
+	}
+
+	a:hover > :global(svg),
+	a:focus > :global(svg) {
+		fill: var(--t-text);
 	}
 </style>
