@@ -2,6 +2,12 @@ import { defaultSiteId, defaultImageFolderId } from './template';
 
 type SiteConfigIn = Partial<SiteConfig>;
 
+type FontLink = {
+	href: string;
+	rel?: 'preconnect' | 'stylesheet';
+	crossorigin?: boolean;
+};
+
 export interface SiteConfig {
 	/** URL of the parent resource, used as the base of all resources */
 	parentRoot: string;
@@ -24,6 +30,10 @@ export interface SiteConfig {
 	homeUrl: string;
 	/** Site ID used by netlify CLI*/
 	netlifyId?: string;
+	customFont?: {
+		links: FontLink[];
+		fontFamily: string;
+	};
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
@@ -53,7 +63,18 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 	drechtstedenLocal: {
 		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
 		homePath: 'forum',
-		jsonPath: './data-drechtsteden/data.json'
+		jsonPath: './data-drechtsteden/data.json',
+		customFont: {
+			links: [
+				{ href: 'https://fonts.googleapis.com', rel: 'preconnect' },
+				{ href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: true },
+				{
+					href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap',
+					rel: 'stylesheet'
+				}
+			],
+			fontFamily: "'Roboto Condensed', sans-serif"
+		}
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
