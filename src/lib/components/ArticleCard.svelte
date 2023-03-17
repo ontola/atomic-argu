@@ -1,35 +1,35 @@
 <script lang="ts">
 	import { constructArticleUrl } from '$lib/helpers/constructArticleUrl';
 	import { urls } from '@tomic/lib';
-	import Markdown from 'svelte-exmarkdown';
 	import { getResource, getValue } from '@tomic/svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
+	import { markdownToPlainText } from '$lib/helpers/markdownToPlaintext';
 
 	export let subject: string;
 
 	$: resource = getResource(subject);
 	$: name = getValue<string>(resource, urls.properties.name);
-	$: description = getValue<string>(resource, urls.properties.description);
+	$: descriptionMD = getValue<string>(resource, urls.properties.description);
+	$: descriptionPlain = markdownToPlainText($descriptionMD || '');
+	$: descriptionTrimmed = `${descriptionPlain?.slice(0, 200)}${
+		(descriptionPlain?.length ?? 0) > 200 ? '...' : ''
+	}`;
 
 	$: cover = getValue<string>(resource, domain.coverImage);
 	$: coverResource = $cover ? getResource($cover) : undefined;
 	$: coverSrc = $cover
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
-
-	$: trimmedDescription = `${$description?.slice(0, 200)}${
-		($description?.length ?? 0) > 200 ? '...' : ''
-	}`;
 </script>
 
 <a class="card" href={constructArticleUrl(subject)}>
-	{#if $coverSrc}
+	{#if coverSrc}
 		<div class="image" style={coverSrc ? `background-image: url(${$coverSrc})` : ''} />
 	{/if}
 	<div class="inner">
 		<h3>{$name}</h3>
 		{#if !$coverSrc}
-			<Markdown md={trimmedDescription} />
+			{descriptionTrimmed || ''}
 		{/if}
 	</div>
 </a>

@@ -14,7 +14,7 @@ export interface SiteConfig {
 	deployType: 'gh-pages' | 'netlify';
 	/** Path to the JSON file containing the Argu export, relative to the root of the project */
 	jsonPath: string;
-	/** Regex that matches the end of the path.*/
+	/** Regex that matches the end of the path. If not provided, we'll assume it's targeting a `.nl` domain */
 	regex: RegExp;
 	/** Original website URL */
 	original?: string;
@@ -52,7 +52,6 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 	},
 	drechtstedenLocal: {
 		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
-		regex: /\.nl\/denkmee\/(.*)/,
 		homePath: 'forum',
 		jsonPath: './data-drechtsteden/data.json'
 	},
@@ -61,7 +60,6 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
 		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
 		homePath: 'forum',
-		regex: /\.nl\/denkmee\/(.*)/,
 		jsonPath: './data-drechtsteden/data.json'
 	},
 	diaconessen: {
