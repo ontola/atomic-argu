@@ -1,9 +1,7 @@
 <script lang="ts">
 	import { dev } from '$app/environment';
 	import { domain } from '$lib/helpers/domainSubjects';
-	import { importFiles } from '$lib/import';
 	import { currentSiteConfig } from '$lib/siteConfigs';
-	import { generatedTemplate } from '$lib/template';
 	import { properties } from '@tomic/lib/dist/src/urls';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from '../Container.svelte';
@@ -14,6 +12,16 @@
 	$: pages = getValue<string[]>(page, domain.pages);
 	$: image = getValue<string>(page, domain.siteImage);
 	$: name = getValue<string>(page, properties.name);
+
+	let onImportClick = () => {
+		console.error("'Import.ts' not imported");
+	};
+
+	if (dev) {
+		import('$lib/import').then(({ importFiles }) => {
+			onImportClick = importFiles;
+		});
+	}
 </script>
 
 <header>
@@ -35,8 +43,7 @@
 					</li>
 				{/each}
 				{#if dev}
-					<button on:click={importFiles}>import</button>
-					<button on:click={generatedTemplate}>template</button>
+					<button on:click={onImportClick}>import</button>
 				{/if}
 			</ul>
 		</nav>

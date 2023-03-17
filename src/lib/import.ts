@@ -1,6 +1,5 @@
 import { currentSiteConfig, type SiteConfig } from './siteConfigs';
 import { Store, Agent, properties, importJsonAdString } from '@tomic/lib';
-import { PUBLIC_AGENT_PASSPHRASE } from '$env/static/public';
 import { siteTemplate, templateToJSONAD } from './template';
 
 function shouldInclude(r: any, ids: Set<string>) {
@@ -19,10 +18,11 @@ function shouldInclude(r: any, ids: Set<string>) {
 
 export async function importFiles() {
 	const siteConfig = currentSiteConfig;
-	if (!PUBLIC_AGENT_PASSPHRASE) {
-		throw new Error('No AGENT_PASSPHRASE found in env');
+	const secret = prompt("What's your secret?");
+	if (!secret) {
+		throw new Error('No secret provided');
 	}
-	const agent = Agent.fromSecret(PUBLIC_AGENT_PASSPHRASE);
+	const agent = Agent.fromSecret(secret);
 	const store = new Store({
 		serverUrl: new URL(siteConfig.atomicSite).origin,
 		agent

@@ -44,7 +44,6 @@ Probably beats copy-pasting.
 ### Developing
 
 ```bash
-cp template.env .env
 pnpm i
 pnpm dev
 ```
