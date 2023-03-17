@@ -5,7 +5,7 @@
 	import Container from './Container.svelte';
 
 	export let coverSubject: string | undefined;
-	export let small: boolean = false;
+	export let small = false;
 
 	$: coverResource = coverSubject ? getResource(coverSubject) : undefined;
 	$: src = coverSubject

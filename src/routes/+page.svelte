@@ -23,18 +23,8 @@
 
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
-		<Article title={$name ?? ''} markdown={$description ?? ''} />
+		<Article title={$name ?? ''} markdown={$description ?? ''} constrain={false} />
 	</svelte:fragment>
 
 	<ArticleCollection subject={childrenCollection} title="Onderwerpen" />
 </HeroArticle>
-
-<style>
-	h1 {
-		color: var(--t-text-heading);
-	}
-	.page-description {
-		margin-bottom: 1rem;
-		max-width: 70ch;
-	}
-</style>

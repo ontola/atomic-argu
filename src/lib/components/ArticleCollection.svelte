@@ -5,7 +5,7 @@
 	import Container from './Container.svelte';
 
 	export let subject: string;
-	export let title: string = '';
+	export let title = '';
 	$: resource = getResource(subject);
 	$: articles = getValue<string[]>(resource, urls.properties.collection.members);
 </script>
