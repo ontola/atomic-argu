@@ -29,6 +29,7 @@ export interface SiteConfig {
 const siteConfigs: { [key: string]: SiteConfigIn } = {
 	wonenAtThePark: {
 		atomicSite: 'https://atomicdata.dev/wonenatthepark/site',
+		homeUrl: 'https://atomicdata.dev/importer/l8mgzvvnm2a',
 		filesDir: 'https://atomicdata.dev/Folder/r4y4j88p7a',
 		parentRoot: 'https://atomicdata.dev/importer/l8mgzvvnm2a',
 		deployType: 'gh-pages',
@@ -98,4 +99,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtstedenLocal);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.wonenAtThePark);
