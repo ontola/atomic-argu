@@ -25,7 +25,7 @@
 	}
 </script>
 
-<header>
+<header class:white-header={currentSiteConfig.whiteHeader}>
 	<Container>
 		<nav>
 			<ul>
@@ -66,6 +66,12 @@
 		width: 100%;
 		z-index: 100;
 		box-shadow: var(--shadow-3);
+	}
+
+	.white-header {
+		background-color: white;
+		color: var(--t-color-main);
+		/* color: black; */
 	}
 
 	.logo {

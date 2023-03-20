@@ -36,6 +36,7 @@ export interface SiteConfig {
 		links: FontLink[];
 		fontFamily: string;
 	};
+	whiteHeader?: boolean;
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
@@ -78,15 +79,29 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 				}
 			],
 			fontFamily: "'Roboto Condensed', sans-serif"
-		}
+		},
+		whiteHeader: true
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
 		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
 		homePath: 'forum',
-		jsonPath: './data-drechtsteden/data.json'
+		jsonPath: './data-drechtsteden/data.json',
+		customFont: {
+			links: [
+				{ href: 'https://fonts.googleapis.com', rel: 'preconnect' },
+				{ href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: true },
+				{
+					href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap',
+					rel: 'stylesheet'
+				}
+			],
+			fontFamily: "'Roboto Condensed', sans-serif"
+		},
+		whiteHeader: true
 	},
+
 	diaconessen: {
 		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
 		original: 'https://herontwikkelingdiaconessenhuis.nl/',

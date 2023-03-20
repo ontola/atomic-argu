@@ -34,7 +34,7 @@
 	}
 </script>
 
-<div class="input-wrapper">
+<div class="input-wrapper" class:white={currentSiteConfig.whiteHeader}>
 	<SearchIcon />
 	<input type="search" bind:value={$searchValue} placeholder="Zoeken..." />
 </div>
@@ -69,5 +69,23 @@
 
 	input:focus {
 		outline: none;
+	}
+
+	.white {
+		background-color: white;
+		color: var(--t-color-main);
+		border: 1px solid var(--t-color-main);
+	}
+
+	.white input {
+		color: var(--t-color-main);
+	}
+
+	.white:focus-within {
+		box-shadow: 0 0 0 0.1rem var(--t-color-main);
+	}
+
+	.white input::placeholder {
+		color: var(--t-color-main);
 	}
 </style>
