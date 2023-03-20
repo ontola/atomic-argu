@@ -56,6 +56,7 @@
 
 	article :global(p) {
 		font-size: 1.2rem;
+		line-height: 1.7em;
 		margin-bottom: var(--article-spacing);
 	}
 
