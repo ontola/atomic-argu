@@ -1,8 +1,10 @@
-# Atomic-Svelte-Argu
+# Atomic-Argu
 
+
+- Built with `@tomic/svelte` + `sveltekit`
 - Community / project websites
 - Content can be easily managed using the Atomic-Server CMS
-- Includes import scripts to conver Argu JSON exports to JSON-AD
+- Includes import scripts to convert Argu.co JSON exports to JSON-AD
 - Look & feel similar based on the Argu.co community platform
 
 ## Architecture & multi-page deploy
