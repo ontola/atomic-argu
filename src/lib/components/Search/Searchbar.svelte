@@ -32,8 +32,6 @@
 			$searchResultList = $results ?? [NO_RESULTS];
 		}
 	}
-
-	$: console.log('search results', $searchResultList);
 </script>
 
 <div class="input-wrapper">
