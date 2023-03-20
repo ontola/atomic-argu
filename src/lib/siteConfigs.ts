@@ -87,6 +87,13 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 	diaconessen: {
 		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
 		original: 'https://herontwikkelingdiaconessenhuis.nl/',
+		homePath: 'denkmee',
+		jsonPath: './data-diaconessen/data.json'
+	},
+	diaconessenLocal: {
+		parentRoot: 'http://localhost:9883/drive/hskqtzlxd8s',
+		homePath: 'denkmee',
+		original: 'https://herontwikkelingdiaconessenhuis.nl/',
 		jsonPath: './data-diaconessen/data.json'
 	},
 	sportlaan: {
@@ -96,7 +103,7 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		homePath: 'herontwikkelingsportlaan'
 	},
 	sportlaanLocal: {
-		parentRoot: 'http://localhost:9883/drive/eqom0z1l29t',
+		parentRoot: 'http://localhost:9883/drive/s5k8iyc9o1',
 		original: 'https://herontwikkelingsportlaan.nl/',
 		homePath: 'herontwikkelingsportlaan',
 		jsonPath: './data-sportlaan/data.json'
@@ -120,4 +127,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.wonenAtThePark);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.diaconessenLocal);
