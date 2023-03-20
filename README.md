@@ -29,10 +29,9 @@ Each of these websites uses data that is hosted on Atomic-Server.
   - Invite people to edit the drives
   - Instruct how to add `Article` (Article Collection?)
 
-## List of Sites
+## List of example sites
 
-- https://atomicdata.dev/wonenatthepark/site
-- https://atomicdata.dev/edamvolendam/site
+- [wonenatthepark.nl](https://wonenatthepark.nl/)
 
 ## Data
 
