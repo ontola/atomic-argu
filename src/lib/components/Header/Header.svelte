@@ -5,6 +5,7 @@
 	import { properties } from '@tomic/lib/dist/src/urls';
 	import { getResource, getValue } from '@tomic/svelte';
 	import Container from '../Container.svelte';
+	import Searchbar from '../Search/Searchbar.svelte';
 	import NavLink from './NavLink.svelte';
 	import ResourceNavLink from './ResourceNavLink.svelte';
 
@@ -43,8 +44,13 @@
 					</li>
 				{/each}
 				{#if dev}
-					<button on:click={onImportClick}>import</button>
+					<li>
+						<button on:click={onImportClick}>import</button>
+					</li>
 				{/if}
+				<span class="search-wrapper">
+					<Searchbar />
+				</span>
 			</ul>
 		</nav>
 	</Container>
@@ -74,5 +80,9 @@
 		flex-direction: row;
 		align-items: center;
 		margin: 0;
+	}
+
+	.search-wrapper {
+		margin-left: auto;
 	}
 </style>

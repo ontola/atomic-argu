@@ -6,7 +6,6 @@
 	import { markdownToPlainText } from '$lib/helpers/markdownToPlaintext';
 
 	export let subject: string;
-
 	$: resource = getResource(subject);
 	$: name = getValue<string>(resource, urls.properties.name);
 	$: descriptionMD = getValue<string>(resource, urls.properties.description);
@@ -22,7 +21,7 @@
 		: undefined;
 </script>
 
-<a class="card" href={constructArticleUrl(subject)}>
+<a class="card" href={constructArticleUrl(subject)} on:click>
 	{#if coverSrc}
 		<div class="image" style={coverSrc ? `background-image: url(${$coverSrc})` : ''} />
 	{/if}

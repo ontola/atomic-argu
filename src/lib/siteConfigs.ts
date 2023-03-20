@@ -9,6 +9,8 @@ type FontLink = {
 };
 
 export interface SiteConfig {
+	/** URL of the Atomic Server the data is hosted on */
+	serverUrl: string;
 	/** URL of the parent resource, used as the base of all resources */
 	parentRoot: string;
 	/** URL of the Argu-Site resource, is shown on the home page */
@@ -62,6 +64,7 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		jsonPath: './data-argu-nl/data.json'
 	},
 	drechtstedenLocal: {
+		serverUrl: 'https://staging.atomicdata.dev',
 		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
 		homePath: 'forum',
 		jsonPath: './data-drechtsteden/data.json',
@@ -116,6 +119,7 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	if (!parentRoot) throw new Error('Missing parentRoot in site config');
 	const homePath = config.homePath || defaultSiteId;
 	return {
+		serverUrl: config.serverUrl || new URL(parentRoot).origin,
 		atomicSite: config.atomicSite || `${parentRoot}/${defaultSiteId}`,
 		filesDir: config.filesDir || `${parentRoot}/${defaultImageFolderId}`,
 		deployType: config.deployType || 'netlify',
@@ -127,4 +131,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.diaconessenLocal);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtstedenLocal);
