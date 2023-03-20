@@ -39,6 +39,8 @@ export async function importFiles() {
 
 	const data = await import(siteConfig.jsonPath);
 
+	const attachments = data['Bijlage'].filter((r: any) => r.used_as == 'attachment');
+
 	// The order should be dependent on the parent-child relationship,
 	// because of how JSON-AD importing works on Atomic-Server.
 	// The parent should be imported before the child.
@@ -73,7 +75,7 @@ export async function importFiles() {
 	// We want the results to be handled one by one, not in parallel
 	const atomicResources = [];
 	for (const r of resources) {
-		const mapped = await mapResource(r, siteConfig, store);
+		const mapped = await mapResource(r, siteConfig, store, attachments);
 		atomicResources.push(mapped);
 	}
 
@@ -105,8 +107,40 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	return siteConfig.atomicSite;
 }
 
+function findAndUploadAttachments(
+	resource: any,
+	siteConfig: SiteConfig,
+	store: Store,
+	allAttachments: any[],
+	localId: string
+) {
+	const fileAttachments = allAttachments.filter(
+		(a) => convertToLocalId(a.parent.data.id, siteConfig) == localId
+	);
+
+	const fullParentURL = `${siteConfig.parentRoot}/${localId}`;
+
+	const uploadedResources: string[] = [];
+	// Upload the attachments
+	fileAttachments.forEach(async (a) => {
+		const file = await fetch(a.content);
+		const blob = await file.blob();
+		const fileData = new File([blob], a.filename, { type: a.content_type });
+
+		const [attachmentResource] = await store.uploadFiles([fileData], siteConfig.filesDir);
+		uploadedResources.push(attachmentResource);
+	});
+
+	return uploadedResources;
+}
+
 // Takes an Argu export JSON resource, creates a JSON-AD Article
-async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) {
+async function mapResource(
+	resource: any,
+	siteConfig: SiteConfig,
+	store: Store,
+	allAttachments: any[]
+) {
 	if (resource.is_draft || resource.is_trashed) {
 		return;
 	}
@@ -119,12 +153,21 @@ async function mapResource(resource: any, siteConfig: SiteConfig, store: Store) 
 	const description =
 		(await getMarkdownLinksAndMoveImages(resource.description, store)) || resource.bio || '';
 
+	const attachments = findAndUploadAttachments(
+		resource,
+		siteConfig,
+		store,
+		allAttachments,
+		localId
+	);
+
 	const out = {
 		'https://atomicdata.dev/properties/isA': ['https://atomicdata.dev/classes/Article'],
 		'https://atomicdata.dev/properties/localId': localId,
 		'https://atomicdata.dev/properties/original-url': resource.iri,
 		'https://atomicdata.dev/properties/published-at': published_at,
 		'https://atomicdata.dev/properties/parent': parent,
+		'https://atomicdata.dev/properties/attachments': attachments,
 		'https://atomicdata.dev/properties/name': resource.display_name || 'reactie',
 		// Cover image
 		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
@@ -191,7 +234,7 @@ async function moveImageToAtomic(url: string, siteConfig: SiteConfig, store: Sto
 		const [created] = await store.uploadFiles([file], parent);
 		return created;
 	} catch (e) {
-		console.log('error downloading / uploading image', e);
+		console.error('error downloading / uploading image', e);
 		return;
 	}
 }

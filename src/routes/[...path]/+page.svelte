@@ -11,6 +11,7 @@
 	export let data: PageData;
 	import { onMount } from 'svelte';
 	import ArticleWidthConstraint from '$lib/components/ArticleWidthConstraint.svelte';
+	import Attachment from '$lib/components/Attachment.svelte';
 
 	onMount(() => {
 		document.addEventListener('keydown', (event) => {
@@ -29,6 +30,7 @@
 	$: parent = getValue<string>(resource, urls.properties.parent);
 	$: cover = getValue<string>(resource, domain.coverImage);
 	$: originalUrl = getValue<string>(resource, 'https://atomicdata.dev/properties/original-url');
+	$: attachments = getValue<string[]>(resource, urls.properties.file.attachments);
 </script>
 
 <svelte:head>
@@ -49,6 +51,15 @@
 			</div>
 		</ArticleWidthConstraint>
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
+		{#if $attachments}
+			<ArticleWidthConstraint>
+				<div class="attachments">
+					{#each $attachments ?? [] as attachment (attachment)}
+						<Attachment subject={attachment} />
+					{/each}
+				</div>
+			</ArticleWidthConstraint>
+		{/if}
 	</svelte:fragment>
 	{#if childrenCollection}
 		<ArticleCollection subject={childrenCollection} title="Reacties" />
@@ -58,6 +69,12 @@
 </HeroArticle>
 
 <style>
+	.attachments {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 1rem;
+	}
+
 	.top-links {
 		display: flex;
 		justify-content: space-between;

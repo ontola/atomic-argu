@@ -55,8 +55,7 @@
 	}
 
 	article :global(p) {
-		font-size: 1.2em;
-		line-height: 1.7em;
+		font-size: 1.2rem;
 		margin-bottom: var(--article-spacing);
 	}
 
@@ -66,7 +65,7 @@
 	}
 
 	article :global(li) {
-		font-size: 1.2em;
+		font-size: 1.2rem;
 	}
 
 	article :global(a) {

@@ -19,8 +19,7 @@ Each of these websites uses data that is hosted on Atomic-Server.
   - Download an export using Argu's export feature
   - Unzip and save to `.src/lib/data-{name}`
   - Open the ASA (Atomic Svelte Argu) app locally, you'll see an import button
-  - Create a `./src/lib/siteConfigs.ts` for the new site
-  - Set the `currentSiteConfig` to the new site. Use the `drive` url as the root.
+  - Create a new Drive on Atomic Server, paste it to a new config in `siteConigs.ts`, use the `drive` url as root
   - Run this repo `pnpm dev` and visit `localhost`
   - Press the import button. Magic happens.
   - You might need to restart the local front-end `pnpm dev`
@@ -73,6 +72,4 @@ pnpm deploy
 - Authenticate `netlify login`
 - Run locally, test `netlify dev`
 - Create site `netlify sites:create`
-- Link to dev env `netlify link` (and `unlink` if you want to switch)
-- Build `netlify build`
-- Deploy `netlify deploy`
+- Deploy `netlify deploy --build -s <site-name>`
