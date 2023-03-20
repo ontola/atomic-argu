@@ -15,7 +15,7 @@
 
 	onMount(() => {
 		document.addEventListener('keydown', (event) => {
-			if (dev && event.ctrlKey && event.key === 'e') {
+			if (event.ctrlKey && event.key === 'e') {
 				event.preventDefault();
 				// open in new tab
 				window.open($resource.getSubject(), '_blank');

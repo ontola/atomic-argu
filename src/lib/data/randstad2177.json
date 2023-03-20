@@ -1,0 +1,3657 @@
+{
+  "Term": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.946Z",
+      "iri": "https://randstad2177.nl/terms/19",
+      "published_at": "2022-03-23T09:46:55.946Z",
+      "display_name": "Email",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/19/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/19/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.971Z",
+      "position": 17,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#EmailInput",
+      "icon": "http://fontawesome.io/icon/envelope-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/19/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/19/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:57.113Z",
+      "iri": "https://randstad2177.nl/terms/26",
+      "published_at": "2022-03-23T09:46:57.113Z",
+      "display_name": "Voor",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/26/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/26/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:57.209Z",
+      "position": 1,
+      "description": "Klik om voor te stemmen",
+      "exact_match": "https://argu.co/ns/core#yes",
+      "icon": "http://fontawesome.io/icon/thumbs-up",
+      "color": "#547f4b",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/26/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/26/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:57.252Z",
+      "iri": "https://randstad2177.nl/terms/27",
+      "published_at": "2022-03-23T09:46:57.252Z",
+      "display_name": "Anders",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/27/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/27/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:57.337Z",
+      "position": 2,
+      "description": "Klik om neutraal te stemmen",
+      "exact_match": "https://argu.co/ns/core#other",
+      "icon": "http://fontawesome.io/icon/pause",
+      "color": "#707070",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/27/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/27/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.538Z",
+      "iri": "https://randstad2177.nl/terms/16",
+      "published_at": "2022-03-23T09:46:55.538Z",
+      "display_name": "Icoontje",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/16/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/16/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.718Z",
+      "position": 14,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#IconInput",
+      "icon": "http://fontawesome.io/icon/picture-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/16/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/16/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.423Z",
+      "iri": "https://randstad2177.nl/terms/15",
+      "published_at": "2022-03-23T09:46:55.423Z",
+      "display_name": "Geldbedrag",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/15/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/15/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.602Z",
+      "position": 13,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#MoneyInput",
+      "icon": "http://fontawesome.io/icon/money",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/15/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/15/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.969Z",
+      "iri": "https://randstad2177.nl/terms/11",
+      "published_at": "2022-03-23T09:46:54.969Z",
+      "display_name": "Toggle knoppen",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/11/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/11/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.163Z",
+      "position": 9,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#ToggleButtonGroup",
+      "icon": "http://fontawesome.io/icon/square-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/11/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/11/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.600Z",
+      "iri": "https://randstad2177.nl/terms/8",
+      "published_at": "2022-03-23T09:46:54.600Z",
+      "display_name": "Checkbox groep",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/8/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/8/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.899Z",
+      "position": 6,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#CheckboxGroup",
+      "icon": "http://fontawesome.io/icon/list",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/8/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/8/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:57.378Z",
+      "iri": "https://randstad2177.nl/terms/28",
+      "published_at": "2022-03-23T09:46:57.378Z",
+      "display_name": "Tegen",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/28/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/28/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:57.472Z",
+      "position": 3,
+      "description": "Klik om tegen te stemmen",
+      "exact_match": "https://argu.co/ns/core#no",
+      "icon": "http://fontawesome.io/icon/thumbs-down",
+      "color": "#863d3d",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/28/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/28/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.196Z",
+      "iri": "https://randstad2177.nl/terms/13",
+      "published_at": "2022-03-23T09:46:55.196Z",
+      "display_name": "Datum",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/13/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/13/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.369Z",
+      "position": 11,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#DateInput",
+      "icon": "http://fontawesome.io/icon/calendar",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/13/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/13/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:57.982Z",
+      "iri": "https://randstad2177.nl/terms/30",
+      "published_at": "2022-03-23T09:46:57.982Z",
+      "display_name": "Upvote",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/30/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/30/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:58.177Z",
+      "position": 1,
+      "description": null,
+      "exact_match": "https://argu.co/ns/core#yes",
+      "icon": "http://fontawesome.io/icon/arrow-up",
+      "color": "#547f4b",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/upvoteOptions",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/30/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/30/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.775Z",
+      "iri": "https://randstad2177.nl/terms/18",
+      "published_at": "2022-03-23T09:46:55.775Z",
+      "display_name": "Slider",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/18/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/18/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.875Z",
+      "position": 16,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#SliderInput",
+      "icon": "http://fontawesome.io/icon/sliders",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/18/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/18/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.353Z",
+      "iri": "https://randstad2177.nl/terms/6",
+      "published_at": "2022-03-23T09:46:54.353Z",
+      "display_name": "Nummer",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/6/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/6/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.699Z",
+      "position": 4,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#NumberInput",
+      "icon": "http://fontawesome.io/icon/calculator",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/6/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/6/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.649Z",
+      "iri": "https://randstad2177.nl/terms/17",
+      "published_at": "2022-03-23T09:46:55.649Z",
+      "display_name": "Locatie",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/17/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/17/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.788Z",
+      "position": 15,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#LocationInput",
+      "icon": "http://fontawesome.io/icon/map-marker",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/17/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/17/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:56.194Z",
+      "iri": "https://randstad2177.nl/terms/20",
+      "published_at": "2022-03-23T09:46:56.194Z",
+      "display_name": "Wachtwoord",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/20/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/20/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:07.054Z",
+      "position": 18,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#PasswordInput",
+      "icon": "http://fontawesome.io/icon/unlock-alt",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/20/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/20/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:56.789Z",
+      "iri": "https://randstad2177.nl/terms/23",
+      "published_at": "2022-03-23T09:46:56.789Z",
+      "display_name": "Postcode range",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/23/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/23/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:07.286Z",
+      "position": 21,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#PostalRangeInput",
+      "icon": "http://fontawesome.io/icon/home",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/23/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/23/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.737Z",
+      "iri": "https://randstad2177.nl/terms/9",
+      "published_at": "2022-03-23T09:46:54.737Z",
+      "display_name": "Radio groep",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/9/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/9/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.971Z",
+      "position": 7,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#RadioGroup",
+      "icon": "http://fontawesome.io/icon/check-circle-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/9/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/9/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.847Z",
+      "iri": "https://randstad2177.nl/terms/10",
+      "published_at": "2022-03-23T09:46:54.847Z",
+      "display_name": "Dropdown",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/10/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/10/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.067Z",
+      "position": 8,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#SelectInput",
+      "icon": "http://fontawesome.io/icon/bars",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/10/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/10/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.081Z",
+      "iri": "https://randstad2177.nl/terms/12",
+      "published_at": "2022-03-23T09:46:55.081Z",
+      "display_name": "Kleur",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/12/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/12/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.265Z",
+      "position": 10,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#ColorInput",
+      "icon": "http://fontawesome.io/icon/pencil",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/12/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/12/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:55.309Z",
+      "iri": "https://randstad2177.nl/terms/14",
+      "published_at": "2022-03-23T09:46:55.309Z",
+      "display_name": "Datum en tijd",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/14/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/14/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:06.489Z",
+      "position": 12,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#DateTimeInput",
+      "icon": "http://fontawesome.io/icon/clock-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/14/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/14/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:56.905Z",
+      "iri": "https://randstad2177.nl/terms/24",
+      "published_at": "2022-03-23T09:46:56.905Z",
+      "display_name": "Swipe item",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/24/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/24/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:07.323Z",
+      "position": 22,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#SwipeInput",
+      "icon": "http://fontawesome.io/icon/hand-o-up",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/24/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/24/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:56.485Z",
+      "iri": "https://randstad2177.nl/terms/21",
+      "published_at": "2022-03-23T09:46:56.485Z",
+      "display_name": "Meerdere emails",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/21/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/21/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:07.148Z",
+      "position": 19,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#MultipleEmailInput",
+      "icon": "http://fontawesome.io/icon/users",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/21/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/21/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.478Z",
+      "iri": "https://randstad2177.nl/terms/7",
+      "published_at": "2022-03-23T09:46:54.478Z",
+      "display_name": "Losse checkbox",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/7/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/7/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.812Z",
+      "position": 5,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#CheckboxInput",
+      "icon": "http://fontawesome.io/icon/check-square-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/7/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/7/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.106Z",
+      "iri": "https://randstad2177.nl/terms/4",
+      "published_at": "2022-03-23T09:46:54.106Z",
+      "display_name": "Lange tekst",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/4/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/4/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.519Z",
+      "position": 2,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#TextAreaInput",
+      "icon": "http://fontawesome.io/icon/file-text-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/4/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/4/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.233Z",
+      "iri": "https://randstad2177.nl/terms/5",
+      "published_at": "2022-03-23T09:46:54.233Z",
+      "display_name": "Tekst met opmaak",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/5/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/5/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.602Z",
+      "position": 3,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#MarkdownInput",
+      "icon": "http://fontawesome.io/icon/italic",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/5/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/5/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:56.679Z",
+      "iri": "https://randstad2177.nl/terms/22",
+      "published_at": "2022-03-23T09:46:56.679Z",
+      "display_name": "Bestand",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/22/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/22/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:07.228Z",
+      "position": 20,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#FileInput",
+      "icon": "http://fontawesome.io/icon/file-o",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/22/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/22/taggings",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Term",
+      "created_at": "2022-03-23T09:46:54.011Z",
+      "iri": "https://randstad2177.nl/terms/3",
+      "published_at": "2022-03-23T09:46:54.011Z",
+      "display_name": "Korte tekst",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/terms/3/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/terms/3/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "trashed_at": null,
+      "updated_at": "2022-05-18T09:48:05.424Z",
+      "position": 1,
+      "description": null,
+      "exact_match": "https://ns.ontola.io/form#TextInput",
+      "icon": "http://fontawesome.io/icon/font",
+      "color": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields",
+          "type": "vocabulary"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/3/attachments",
+          "type": "collection"
+        }
+      },
+      "tagging_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/terms/3/taggings",
+          "type": "collection"
+        }
+      }
+    }
+  ],
+  "Formulier": [
+    {
+      "rdf_type": "https://argu.co/ns/core#CustomForm",
+      "created_at": "2022-06-23T13:38:31.778Z",
+      "iri": "https://randstad2177.nl/custom_forms/43",
+      "published_at": "2022-06-23T13:38:31.778Z",
+      "display_name": "Formulier",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/custom_forms/43/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/custom_forms/43/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-06-23T13:38:31.778Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_forms/43/grants",
+          "type": "collection"
+        }
+      },
+      "custom_form_field_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_forms/43/custom_form_fields",
+          "type": "collection"
+        }
+      }
+    }
+  ],
+  "Vocabulaire": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Vocabulary",
+      "created_at": "2022-03-23T09:46:57.643Z",
+      "iri": "https://randstad2177.nl/vocab/upvoteOptions",
+      "published_at": "2022-03-23T09:46:57.643Z",
+      "display_name": "Upvote opties",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/vocab/upvoteOptions/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/vocab/upvoteOptions/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": "upvoteOptions",
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:57.701Z",
+      "system": true,
+      "description": null,
+      "tagged_label": null,
+      "term_type": null,
+      "default_term_display": "https://randstad2177.nl/enums/vocabularies/default_term_display#default_display",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/upvoteOptions/attachments",
+          "type": "collection"
+        }
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/upvoteOptions/grants",
+          "type": "collection"
+        }
+      },
+      "term_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/upvoteOptions/terms",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Vocabulary",
+      "created_at": "2022-03-23T09:46:57.021Z",
+      "iri": "https://randstad2177.nl/vocab/voteOptions",
+      "published_at": "2022-03-23T09:46:57.021Z",
+      "display_name": "Stemopties",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/vocab/voteOptions/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/vocab/voteOptions/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": "voteOptions",
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:57.068Z",
+      "system": true,
+      "description": null,
+      "tagged_label": null,
+      "term_type": null,
+      "default_term_display": "https://randstad2177.nl/enums/vocabularies/default_term_display#default_display",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions/attachments",
+          "type": "collection"
+        }
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions/grants",
+          "type": "collection"
+        }
+      },
+      "term_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/voteOptions/terms",
+          "type": "collection"
+        }
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Vocabulary",
+      "created_at": "2022-03-23T09:46:53.917Z",
+      "iri": "https://randstad2177.nl/vocab/formFields",
+      "published_at": "2022-03-23T09:46:53.917Z",
+      "display_name": "Veld types",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/vocab/formFields/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/vocab/formFields/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": "formFields",
+      "trashed_at": null,
+      "updated_at": "2022-03-23T09:46:53.968Z",
+      "system": true,
+      "description": null,
+      "tagged_label": null,
+      "term_type": null,
+      "default_term_display": "https://randstad2177.nl/enums/vocabularies/default_term_display#default_display",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields/attachments",
+          "type": "collection"
+        }
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields/grants",
+          "type": "collection"
+        }
+      },
+      "term_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/vocab/formFields/terms",
+          "type": "collection"
+        }
+      }
+    }
+  ],
+  "Blog": [
+    {
+      "rdf_type": [
+        "https://argu.co/ns/core#Blog",
+        "https://argu.co/ns/core#ContainerNode"
+      ],
+      "created_at": "2022-03-23T11:21:19.842Z",
+      "iri": "https://randstad2177.nl/planinformatie",
+      "published_at": "2022-03-23T11:21:19.842Z",
+      "display_name": "Planinformatie",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/planinformatie/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/planinformatie/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-12-01T09:00:07.261Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": "planinformatie",
+      "confirmation_string": null,
+      "lat": null,
+      "lon": null,
+      "updated_at": "2022-03-23T11:21:19.975Z",
+      "widgets_iri": "https://randstad2177.nl/planinformatie/widgets?page=1#members",
+      "bio": "Planinformatie met betrekking tot de nieuwbouw aan Randstad 2711",
+      "bio_long": null,
+      "cover_photo_attribution": null,
+      "discoverable": true,
+      "show_header": true,
+      "follows_count": 2,
+      "hide_header": false,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/11",
+          "type": "user"
+        }
+      },
+      "default_cover_photo": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36400",
+          "type": "media_object"
+        }
+      },
+      "placement": {
+        "data": null
+      },
+      "location_query": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie#location",
+          "type": "property_query"
+        }
+      },
+      "children_placement_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/placements",
+          "type": "collection"
+        }
+      },
+      "default_profile_photo": {
+        "data": null
+      },
+      "profile_photo_with_fallback": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36397",
+          "type": "media_object"
+        }
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/grants",
+          "type": "collection"
+        }
+      },
+      "creative_work_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/creative_works",
+          "type": "collection"
+        }
+      },
+      "custom_action_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/custom_actions",
+          "type": "collection"
+        }
+      },
+      "custom_actions": {
+        "data": []
+      },
+      "survey_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/surveys",
+          "type": "collection"
+        }
+      },
+      "project_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/projects",
+          "type": "collection"
+        }
+      },
+      "budget_shop_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/budgets",
+          "type": "collection"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "follow_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "blog_post_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie/posts?page_size=1",
+          "type": "collection"
+        }
+      }
+    }
+  ],
+  "Plaatje": [
+    {
+      "rdf_type": "http://schema.org/ImageObject",
+      "created_at": "2022-03-23T11:21:19.909Z",
+      "iri": "https://randstad2177.nl/media_objects/36397",
+      "published_at": "2022-03-23T11:21:19.909Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36397/content/content?version=1648034479",
+      "content_type": "image/png",
+      "description": null,
+      "embed_url": null,
+      "filename": null,
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36397/content/thumbnail?version=1648034479",
+      "position_y": 50,
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36397",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36397/content/icon?version=1648034479",
+      "avatar": "https://randstad2177.nl/media_objects/36397/content/avatar?version=1648034479",
+      "box": "https://randstad2177.nl/media_objects/36397/content/box?version=1648034479",
+      "cover": "https://randstad2177.nl/media_objects/36397/content/cover?version=1648034479",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/ImageObject",
+      "created_at": "2022-03-23T09:53:29.010Z",
+      "iri": "https://randstad2177.nl/media_objects/36396",
+      "published_at": "2022-03-23T09:53:29.010Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36396/content/content?version=1648029209",
+      "content_type": "image/png",
+      "description": null,
+      "embed_url": null,
+      "filename": null,
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36396/content/thumbnail?version=1648029209",
+      "position_y": 50,
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36396",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36396/content/icon?version=1648029209",
+      "avatar": "https://randstad2177.nl/media_objects/36396/content/avatar?version=1648029209",
+      "box": "https://randstad2177.nl/media_objects/36396/content/box?version=1648029209",
+      "cover": "https://randstad2177.nl/media_objects/36396/content/cover?version=1648029209",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/ImageObject",
+      "created_at": "2022-03-23T09:46:53.805Z",
+      "iri": "https://randstad2177.nl/media_objects/36395",
+      "published_at": "2022-03-23T09:46:53.805Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36395/content/content?version=1655737789",
+      "content_type": "image/jpeg",
+      "description": null,
+      "embed_url": null,
+      "filename": "Zuiver_logo.jpeg",
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36395/content/thumbnail?version=1655737789",
+      "position_y": "50",
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36395",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36395/content/icon?version=1655737789",
+      "avatar": "https://randstad2177.nl/media_objects/36395/content/avatar?version=1655737789",
+      "box": "https://randstad2177.nl/media_objects/36395/content/box?version=1655737789",
+      "cover": "https://randstad2177.nl/media_objects/36395/content/cover?version=1655737789",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      }
+    }
+  ],
+  "Bijlage": [
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-03-23T11:21:19.909Z",
+      "iri": "https://randstad2177.nl/media_objects/36397",
+      "published_at": "2022-03-23T11:21:19.909Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36397/content/content?version=1648034479",
+      "content_type": "image/png",
+      "description": null,
+      "embed_url": null,
+      "filename": null,
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36397/content/thumbnail?version=1648034479",
+      "position_y": 50,
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36397",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36397/content/icon?version=1648034479",
+      "avatar": "https://randstad2177.nl/media_objects/36397/content/avatar?version=1648034479",
+      "box": "https://randstad2177.nl/media_objects/36397/content/box?version=1648034479",
+      "cover": "https://randstad2177.nl/media_objects/36397/content/cover?version=1648034479",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-03-23T11:40:14.976Z",
+      "iri": "https://randstad2177.nl/media_objects/36400",
+      "published_at": "2022-03-23T11:40:14.976Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36400/content/content?version=1655737790",
+      "content_type": "image/jpeg",
+      "description": null,
+      "embed_url": null,
+      "filename": "884_welstand_62_.jpg",
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36400/content/thumbnail?version=1655737790",
+      "position_y": "93",
+      "used_as": "cover_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36400",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36400/content/icon?version=1655737790",
+      "avatar": "https://randstad2177.nl/media_objects/36400/content/avatar?version=1655737790",
+      "box": "https://randstad2177.nl/media_objects/36400/content/box?version=1655737790",
+      "cover": "https://randstad2177.nl/media_objects/36400/content/cover?version=1655737790",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-03-23T09:53:29.010Z",
+      "iri": "https://randstad2177.nl/media_objects/36396",
+      "published_at": "2022-03-23T09:53:29.010Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36396/content/content?version=1648029209",
+      "content_type": "image/png",
+      "description": null,
+      "embed_url": null,
+      "filename": null,
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36396/content/thumbnail?version=1648029209",
+      "position_y": 50,
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36396",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36396/content/icon?version=1648029209",
+      "avatar": "https://randstad2177.nl/media_objects/36396/content/avatar?version=1648029209",
+      "box": "https://randstad2177.nl/media_objects/36396/content/box?version=1648029209",
+      "cover": "https://randstad2177.nl/media_objects/36396/content/cover?version=1648029209",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-12-19T15:21:26.289Z",
+      "iri": "https://randstad2177.nl/media_objects/37263",
+      "published_at": "2022-12-19T15:21:26.289Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/37263/content/content?version=1674208739",
+      "content_type": "image/jpeg",
+      "description": null,
+      "embed_url": null,
+      "filename": "Zuiver Vastgoed - Exterieur - Cam 1[87].jpg",
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/37263/content/thumbnail?version=1674208739",
+      "position_y": "50",
+      "used_as": "cover_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F37263",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/37263/content/icon?version=1674208739",
+      "avatar": "https://randstad2177.nl/media_objects/37263/content/avatar?version=1674208739",
+      "box": "https://randstad2177.nl/media_objects/37263/content/box?version=1674208739",
+      "cover": "https://randstad2177.nl/media_objects/37263/content/cover?version=1674208739",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-03-23T09:46:53.805Z",
+      "iri": "https://randstad2177.nl/media_objects/36395",
+      "published_at": "2022-03-23T09:46:53.805Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36395/content/content?version=1655737789",
+      "content_type": "image/jpeg",
+      "description": null,
+      "embed_url": null,
+      "filename": "Zuiver_logo.jpeg",
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36395/content/thumbnail?version=1655737789",
+      "position_y": "50",
+      "used_as": "profile_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36395",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36395/content/icon?version=1655737789",
+      "avatar": "https://randstad2177.nl/media_objects/36395/content/avatar?version=1655737789",
+      "box": "https://randstad2177.nl/media_objects/36395/content/box?version=1655737789",
+      "cover": "https://randstad2177.nl/media_objects/36395/content/cover?version=1655737789",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/MediaObject",
+      "created_at": "2022-03-23T11:31:52.499Z",
+      "iri": "https://randstad2177.nl/media_objects/36399",
+      "published_at": "2022-03-23T11:31:52.499Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "type": "http://schema.org/ImageObject",
+      "content": "https://randstad2177.nl/media_objects/36399/content/content?version=1655737789",
+      "content_type": "image/png",
+      "description": null,
+      "embed_url": null,
+      "filename": "Schermafbeelding_2022-03-23_om_12.31.11.png",
+      "remote_content_url": null,
+      "thumbnail": "https://randstad2177.nl/media_objects/36399/content/thumbnail?version=1655737789",
+      "position_y": 50,
+      "used_as": "cover_photo",
+      "copy_url": "https://ns.ontola.io/libro/actions/copyToClipboard?value=https%3A%2F%2Frandstad2177.nl%2Fmedia_objects%2F36399",
+      "content_source": "https://randstad2177.nl/enums/media_objects/content_source#local",
+      "icon": "https://randstad2177.nl/media_objects/36399/content/icon?version=1655737789",
+      "avatar": "https://randstad2177.nl/media_objects/36399/content/avatar?version=1655737789",
+      "box": "https://randstad2177.nl/media_objects/36399/content/box?version=1655737789",
+      "cover": "https://randstad2177.nl/media_objects/36399/content/cover?version=1655737789",
+      "favorite_actions": {
+        "data": []
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36",
+          "type": "question"
+        }
+      }
+    }
+  ],
+  "Reactie": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Submission",
+      "created_at": "2022-12-19T12:29:59.006Z",
+      "iri": "https://randstad2177.nl/submissions/46",
+      "published_at": "2022-12-19T12:29:59.006Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/submissions/46/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/submissions/46/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-12-19T12:30:30.763Z",
+      "require_coupon": false,
+      "session_id": "d83dbd7255a8760e18174ad36a6cd05a",
+      "status": "https://randstad2177.nl/enums/submissions/status#submission_completed",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-3",
+          "type": "user"
+        }
+      },
+      "submission_data": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Submission",
+      "created_at": "2023-01-19T13:03:02.678Z",
+      "iri": "https://randstad2177.nl/submissions/49",
+      "published_at": "2023-01-19T13:03:02.678Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/submissions/49/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/submissions/49/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2023-01-19T13:03:02.740Z",
+      "require_coupon": false,
+      "session_id": "1b967c7bf00fbb17701b566247e57d05",
+      "status": "https://randstad2177.nl/enums/submissions/status#submission_active",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-3",
+          "type": "user"
+        }
+      },
+      "submission_data": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Submission",
+      "created_at": "2023-01-16T19:34:58.196Z",
+      "iri": "https://randstad2177.nl/submissions/47",
+      "published_at": "2023-01-16T19:34:58.196Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/submissions/47/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/submissions/47/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2023-01-16T19:36:46.708Z",
+      "require_coupon": false,
+      "session_id": "e5c893abb902a439c07db3ac1ca075c6",
+      "status": "https://randstad2177.nl/enums/submissions/status#submission_completed",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-3",
+          "type": "user"
+        }
+      },
+      "submission_data": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Submission",
+      "created_at": "2022-06-23T13:38:42.699Z",
+      "iri": "https://randstad2177.nl/submissions/44",
+      "published_at": "2022-06-23T13:38:42.699Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/submissions/44/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/submissions/44/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-06-23T13:38:42.731Z",
+      "require_coupon": false,
+      "session_id": "97db21364b0a9a621c0e69ee76cc7f90",
+      "status": "https://randstad2177.nl/enums/submissions/status#submission_active",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/11",
+          "type": "user"
+        }
+      },
+      "submission_data": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#Submission",
+      "created_at": "2023-01-19T10:01:41.578Z",
+      "iri": "https://randstad2177.nl/submissions/48",
+      "published_at": "2023-01-19T10:01:41.578Z",
+      "display_name": null,
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/submissions/48/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/submissions/48/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2023-01-19T10:02:01.101Z",
+      "require_coupon": false,
+      "session_id": "6a2ee70bef2712b4f55611f5f63538ae",
+      "status": "https://randstad2177.nl/enums/submissions/status#submission_completed",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42",
+          "type": "survey"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-3",
+          "type": "user"
+        }
+      },
+      "submission_data": {
+        "data": null
+      }
+    }
+  ],
+  "Update": [
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-03-30T12:22:00.311Z",
+      "iri": "https://randstad2177.nl/posts/40",
+      "published_at": "2022-06-01T11:39:54.000Z",
+      "display_name": "Planomschrijving",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/40/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/40/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-01T11:46:50.755Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "In de huidige situatie is het kantoorpand en de bedrijfsruimte van de Hartkliniek Nederland gevestigd aan de Randstad 21-77. Daarnaast wordt een deel gebruikt ten behoeve van parkeerplaatsen en is een\ndeel reeds onverhard met beplanting. In de toekomstige situatie is het doel om de bestaande bebouwing te\nverwijderen en te vervangen voor een nieuwe woontoren van circa 200 appartementen. Het woningaanbod zal bestaan uit 2 en 3 kamerwoningen in de middenhuur. \nDe kantoor- en bedrijfsruimte voor de Hartkliniek is beoogd terug te keren in de commerciële plint op de begane grond. Ook wordt een parkeergarage gerealiseerd om in de parkeerbehoefte van de woontoren te voorzien. De woontoren is ontworpen met een basement van 5 lagen hoog, met een toren daar bovenop en een totale gebouwhoogte van circa 74 meter. Om in de woontoren te kunnen voorzien wordt niet alleen de bestaande kavel gebruikt, maar wordt ook circa 500 m2 van de aangrenzende onverharde gronden aan de oostkant meegenomen.",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-06-01T11:46:50.560Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/30677",
+          "type": "user"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/40/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/40/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29373",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-03-23T11:40:59.592Z",
+      "iri": "https://randstad2177.nl/posts/38",
+      "published_at": "2022-03-23T11:41:00.000Z",
+      "display_name": "Wat voor appartementen worden gebouwd?",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/38/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/38/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-02T07:56:08.277Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Twee en voornamelijk drie kamer appartementen variërend in afmeting van 50 m2 tot 100 m2 in de middeldure huur. De appartementen hebben ieder een eigen buitenruimte en worden voorzien van een kwalitatief hoogwaardige afwerking, een complete badkamer en keuken. Voor de appartementen wordt tevens voorzien in voldoende stallingsruimte voor fietsen (ook bakfietsen), deelauto's en desgewenst een eigen auto parkeerplek.",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-06-02T07:56:08.244Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/38/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/38/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29333",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-12-01T08:59:58.154Z",
+      "iri": "https://randstad2177.nl/posts/45",
+      "published_at": "2022-12-01T08:59:59.000Z",
+      "display_name": "Nieuwe naam Landdrostdreef",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/45/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/45/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-12-01T09:00:07.249Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Inmiddels is bekend dat de Landdrostdreef, Drossaardlaan gaat heten.",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-12-01T09:00:06.977Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/30677",
+          "type": "user"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/45/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/45/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29979",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-03-23T11:41:36.916Z",
+      "iri": "https://randstad2177.nl/posts/39",
+      "published_at": "2022-03-23T11:41:37.000Z",
+      "display_name": "Wat is de doelgroep van dit bouwproject?",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/39/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/39/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-02T07:57:21.481Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Het project richt zich zowel op starters als op doorstromers op de woningmarkt.",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-06-02T07:57:21.430Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/39/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/39/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29334",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-03-23T09:57:11.806Z",
+      "iri": "https://randstad2177.nl/posts/35",
+      "published_at": "2022-03-23T09:57:12.000Z",
+      "display_name": "Achtergrondinformatie",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/35/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/35/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-02T07:29:32.285Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Zuiver Vastgoed Groep is eigenaar van het kantoorpand en de bedrijfsruimte van de Hartkliniek Nederland, gesitueerd ter\nplaatse van de Randstad 21 nummer 77. Zuiver Vastgoed Groep is een onafhankelijke ontwikkelende vastgoedbelegger op de Nederlandse woningmarkt. In de toekomstige situatie is het doel om de bestaande bebouwing te verwijderen en te vervangen voor een nieuwe woontoren van circa 200 appartementen. De woontoren zal bestaan uit 2 en 3 kamerappartementen met individuele buitenruimten, een parkeergarage voor auto's en voor fietsen, een commerciële plint en een daktuin. De kantoor- en bedrijfsruimte voor de Hartkliniek is beoogd terug te keren in de commerciële plint op de begane grond. De woontoren is ontworpen met een totale gebouwhoogte van circa 74 meter.\n\nVia deze website blijft u op de hoogte van de laatste ontwikkelingen van dit project.\n\nVoor vragen kunt u ons mailen op [info@zuivervastgoed.nl](mailto:info@zuivervastgoed.nl)",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-06-02T07:29:32.257Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/35/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/35/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29331",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    },
+    {
+      "rdf_type": "https://argu.co/ns/core#BlogPost",
+      "created_at": "2022-06-01T11:38:54.564Z",
+      "iri": "https://randstad2177.nl/posts/41",
+      "published_at": "2022-06-01T11:38:55.000Z",
+      "display_name": "De Landdrostdreef",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/posts/41/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/posts/41/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-01T11:49:37.992Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "De gemeentelijke ambitie om Almere Centrum goed bereikbaar te houden en een kwaliteitsimpuls te geven omvat onder andere de ontwikkeling van het Stationskwartier en een herprofilering van de Landdrostdreef. De herontwikkeling van het Stationskwartier omvat het toevoegen van hoogbouw met voornamelijk woningen. Hiermee wordt het bestaande kantoren- en werkgebied grotendeels omgezet naar een woonomgeving. Voor een prettige woonomgeving wordt de Landdrostdreef een stadsstraat en afgewaardeerd van 2x2 naar 2x1 rijstroken met vrijliggende fiets-en wandelstroken aan de gevels van de gebouwen. Dit creëert een aantrekkelijke en levendige plint op straatniveau en zal uiteindelijk zorgen voor een prettig woon- en verblijfklimaat. De verkeersafwikkeling is conform de huidige opzet en eenvoudig van aard; vanaf de Randstaddreef zal verkeer van en voor de woningen afslaan naar de Landdrostdreef, om vervolgens de bestaande en te handhaven zijstraat in te slaan naar haar eigen gebouwde parkeervoorzieningen. Doordat de entree van de parkeergarage verder in de zijstraat ligt is er voldoende bufferruimte om verkeersopstoppingen te vermijden. Onderdeel van de ambities voor Centrum en Stationskwartier is de inrichting van de Landdrostdreef als een stadsstraat, afgewaardeerd van 4 naar 2 rijstroken en vrijliggende langszaam-verkeerroutes en begeleidt door een levendige plint op straatniveau. ",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "updated_at": "2022-06-01T11:49:37.967Z",
+      "trashed_at": null,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/planinformatie",
+          "type": "blog"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/30677",
+          "type": "user"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/41/attachments",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts/41/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29568",
+          "type": "publication"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      }
+    }
+  ],
+  "Forum": [
+    {
+      "rdf_type": [
+        "https://argu.co/ns/core#Forum",
+        "https://argu.co/ns/core#ContainerNode"
+      ],
+      "created_at": "2022-03-23T09:53:28.938Z",
+      "iri": "https://randstad2177.nl/home",
+      "published_at": "2022-03-23T09:53:28.938Z",
+      "display_name": "Homepage",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/home/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/home/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-12-02T12:59:14.810Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": "home",
+      "confirmation_string": null,
+      "lat": null,
+      "lon": null,
+      "updated_at": "2023-01-20T09:58:59.048Z",
+      "widgets_iri": "https://randstad2177.nl/home/widgets?page=1#members",
+      "bio": "Op deze website vindt u informatie en kunt u meedenken over onze nieuwbouwplannen aan de Landdrostdreef, huidig adres Randstad 21-77, te Almere.\n\nVoor vragen kunt u mailen naar [info@zuivervastgoed.nl](mailto:info@zuivervastgoed.nl) en vraag naar Remy van de Gaar.",
+      "bio_long": null,
+      "cover_photo_attribution": null,
+      "discoverable": true,
+      "show_header": true,
+      "follows_count": 2,
+      "hide_header": false,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/11",
+          "type": "user"
+        }
+      },
+      "default_cover_photo": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/37263",
+          "type": "media_object"
+        }
+      },
+      "placement": {
+        "data": null
+      },
+      "location_query": {
+        "data": {
+          "id": "https://randstad2177.nl/home#location",
+          "type": "property_query"
+        }
+      },
+      "children_placement_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/placements",
+          "type": "collection"
+        }
+      },
+      "default_profile_photo": {
+        "data": null
+      },
+      "profile_photo_with_fallback": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36396",
+          "type": "media_object"
+        }
+      },
+      "grant_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/grants",
+          "type": "collection"
+        }
+      },
+      "creative_work_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/creative_works",
+          "type": "collection"
+        }
+      },
+      "custom_action_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/custom_actions",
+          "type": "collection"
+        }
+      },
+      "custom_actions": {
+        "data": [
+          {
+            "id": "https://randstad2177.nl/custom_actions/32",
+            "type": "custom_action"
+          },
+          {
+            "id": "https://randstad2177.nl/custom_actions/33",
+            "type": "custom_action"
+          },
+          {
+            "id": "https://randstad2177.nl/custom_actions/34",
+            "type": "custom_action"
+          }
+        ]
+      },
+      "survey_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/surveys",
+          "type": "collection"
+        }
+      },
+      "project_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/projects",
+          "type": "collection"
+        }
+      },
+      "budget_shop_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/budgets",
+          "type": "collection"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "follow_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "blog_post_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/posts?page_size=1",
+          "type": "collection"
+        }
+      },
+      "discussion_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/discussions",
+          "type": "collection"
+        }
+      },
+      "motion_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/m",
+          "type": "collection"
+        }
+      },
+      "question_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/q",
+          "type": "collection"
+        }
+      },
+      "poll_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/polls",
+          "type": "collection"
+        }
+      },
+      "swipe_tool_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/swipe_tools",
+          "type": "collection"
+        }
+      },
+      "topic_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/home/t",
+          "type": "collection"
+        }
+      },
+      "default_options_vocab": {
+        "data": null
+      }
+    }
+  ],
+  "Organisatie": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Page",
+      "created_at": "2022-03-23T09:46:53.728Z",
+      "iri": "https://randstad2177.nl/",
+      "published_at": "2022-03-23T09:46:53.728Z",
+      "display_name": "Randstad 2177",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl//grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl//granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-06-02T07:29:32.293Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": "randstad2177",
+      "confirmation_string": null,
+      "lat": null,
+      "lon": null,
+      "updated_at": "2022-03-23T10:28:28.347Z",
+      "primary_color": "#000000",
+      "secondary_color": "#ff8800",
+      "header_background": "https://randstad2177.nl/enums/pages/header_background#background_primary",
+      "header_text": "https://randstad2177.nl/enums/pages/header_text#text_auto",
+      "locale": "https://randstad2177.nl/enums/pages/locale#nl-NL",
+      "template": "default",
+      "template_options": "{}",
+      "home_menu_label": "Randstad 2177",
+      "home_menu_image": "https://randstad2177.nl/media_objects/36395",
+      "requires_intro": false,
+      "matomo_site_id": null,
+      "matomo_host": null,
+      "matomo_cdn": null,
+      "piwik_pro_site_id": null,
+      "piwik_pro_host": null,
+      "google_tag_manager": null,
+      "google_uac": null,
+      "allowed_external_sources": [],
+      "hide_language_switcher": null,
+      "styled_headers": null,
+      "live_updates": false,
+      "name": null,
+      "full_iri": "https://randstad2177.nl",
+      "follows_count": 1,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": null
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/11",
+          "type": "user"
+        }
+      },
+      "session_menu": {
+        "data": null
+      },
+      "user_menu": {
+        "data": null
+      },
+      "navigations_menu": {
+        "data": null
+      },
+      "settings_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/attachments",
+          "type": "collection"
+        }
+      },
+      "blog_post_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/posts?page_size=1",
+          "type": "collection"
+        }
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "placement": {
+        "data": null
+      },
+      "location_query": {
+        "data": {
+          "id": "https://randstad2177.nl/#location",
+          "type": "property_query"
+        }
+      },
+      "creative_work_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/creative_works",
+          "type": "collection"
+        }
+      },
+      "default_profile_photo": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36395",
+          "type": "media_object"
+        }
+      },
+      "profile_photo_with_fallback": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36395",
+          "type": "media_object"
+        }
+      },
+      "banner_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/banners",
+          "type": "collection"
+        }
+      },
+      "banner_management_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/banner_managements",
+          "type": "collection"
+        }
+      },
+      "primary_container_node": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "profile": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "profile"
+        }
+      },
+      "container_node_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/container_nodes",
+          "type": "collection"
+        }
+      }
+    }
+  ],
+  "Action": [
+    {
+      "rdf_type": "http://schema.org/Action",
+      "created_at": "2022-03-23T09:53:29.042Z",
+      "iri": "https://randstad2177.nl/custom_actions/32",
+      "published_at": "2022-03-23T09:53:29.042Z",
+      "display_name": [
+        "Haben Sie eine gute Idee?",
+        "Heb jij een goed idee?",
+        "Do you have a good idea?"
+      ],
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/custom_actions/32/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/custom_actions/32/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-03-23T09:53:29.042Z",
+      "raw_label": "motions.call_to_action.title",
+      "raw_description": "motions.call_to_action.body",
+      "raw_submit_label": "motions.type_new",
+      "href": "https://randstad2177.nl/home/m/new",
+      "description": [
+        "Haben Sie eine gute Idee und wollen Sie andere überzeugen?",
+        "Heb jij een goed idee en wil je anderen daarvan overtuigen?",
+        "Do you have a good idea and do you want to convince others?"
+      ],
+      "action_status": "http://schema.org/PotentialActionStatus",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-2",
+          "type": "user"
+        }
+      },
+      "target": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_actions/32#EntryPoint",
+          "type": "entry_point"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/Action",
+      "created_at": "2022-03-23T09:53:29.117Z",
+      "iri": "https://randstad2177.nl/custom_actions/33",
+      "published_at": "2022-03-23T09:53:29.117Z",
+      "display_name": [
+        "Suchen Sie nach guten Ideen?",
+        "Oplossing nodig?",
+        "Looking for good ideas?"
+      ],
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/custom_actions/33/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/custom_actions/33/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-03-23T09:53:29.117Z",
+      "raw_label": "questions.call_to_action.title",
+      "raw_description": "questions.call_to_action.body",
+      "raw_submit_label": "questions.type_new",
+      "href": "https://randstad2177.nl/home/q/new",
+      "description": [
+        "Sind Sie auf der Suche nach guten Ideen zu einer brennenden Frage?",
+        "Ben je op zoek naar ideeën, zoals oplossingen voor een probleem?",
+        "Are you looking for good ideas to a burning question?"
+      ],
+      "action_status": "http://schema.org/PotentialActionStatus",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-2",
+          "type": "user"
+        }
+      },
+      "target": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_actions/33#EntryPoint",
+          "type": "entry_point"
+        }
+      }
+    },
+    {
+      "rdf_type": "http://schema.org/Action",
+      "created_at": "2022-03-23T09:53:29.186Z",
+      "iri": "https://randstad2177.nl/custom_actions/34",
+      "published_at": "2022-03-23T09:53:29.186Z",
+      "display_name": [
+        "Ein Thema besprechen?",
+        "Onderwerp bespreken?",
+        "Discuss a topic?"
+      ],
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/custom_actions/34/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/custom_actions/34/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": null,
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "updated_at": "2022-03-23T09:53:29.186Z",
+      "raw_label": "topics.call_to_action.title",
+      "raw_description": "topics.call_to_action.body",
+      "raw_submit_label": "topics.type_new",
+      "href": "https://randstad2177.nl/home/t/new",
+      "description": [
+        "Möchten Sie ein Gespräch über ein bestimmtes Thema beginnen?",
+        "Wil je een gesprek beginnen over een bepaald onderwerp?",
+        "Do you want to start a conversation about a specific topic?"
+      ],
+      "action_status": "http://schema.org/PotentialActionStatus",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/u/-2",
+          "type": "user"
+        }
+      },
+      "target": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_actions/34#EntryPoint",
+          "type": "entry_point"
+        }
+      }
+    }
+  ],
+  "Uitdaging": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Question",
+      "created_at": "2022-03-23T10:26:05.136Z",
+      "iri": "https://randstad2177.nl/q/36",
+      "published_at": "2022-03-23T10:26:06.000Z",
+      "display_name": "Hoe moet het gebouw gaan heten?",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/q/36/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/q/36/granted",
+      "is_trashed": true,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-03-23T11:31:52.512Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Projectontwikkelaar Zuiver wil samen met de omgeving bepalen wat de naam van het nieuwe gebouw wordt. Heeft u een goed idee, plaats het dan hieronder. De top 3 ideeën waar het meest op gestemd is worden beoordeeld door een jury. Onder de deelnemers verloten we een cadeaubon ter waarde van €100,-",
+      "follows_count": 1,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "lat": null,
+      "lon": null,
+      "updated_at": "2022-12-02T12:59:48.525Z",
+      "trashed_at": "2022-12-02T12:59:48.521Z",
+      "map_question": false,
+      "require_location": false,
+      "default_motion_sorting": "https://randstad2177.nl/enums/questions/default_motion_sorting#popular",
+      "default_motion_display": "https://randstad2177.nl/enums/questions/default_motion_display#default_display",
+      "motions_count": 0,
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36/attachments",
+          "type": "collection"
+        }
+      },
+      "blog_post_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36/posts?page_size=1",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": {
+          "id": "https://randstad2177.nl/media_objects/36399",
+          "type": "media_object"
+        }
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29332",
+          "type": "publication"
+        }
+      },
+      "placement": {
+        "data": null
+      },
+      "location_query": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36#location",
+          "type": "property_query"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "follow_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "motion_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36/m",
+          "type": "collection"
+        }
+      },
+      "children_placement_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/q/36/placements",
+          "type": "collection"
+        }
+      },
+      "trash_activity": {
+        "data": {
+          "id": "https://randstad2177.nl/activities/159969",
+          "type": "activity"
+        }
+      },
+      "default_options_vocab": {
+        "data": null
+      }
+    }
+  ],
+  "Enquête": [
+    {
+      "rdf_type": "https://argu.co/ns/core#Survey",
+      "created_at": "2022-06-23T13:38:31.736Z",
+      "iri": "https://randstad2177.nl/surveys/42",
+      "published_at": "2022-12-02T08:32:20.000Z",
+      "display_name": "Denk mee over voorzieningen in en rondom het gebouw!",
+      "organization": "https://randstad2177.nl/",
+      "granted_sets_iri": "https://randstad2177.nl/surveys/42/grant_sets",
+      "transfer_to": null,
+      "transfer_type": null,
+      "granted_groups": "https://randstad2177.nl/surveys/42/granted",
+      "is_trashed": false,
+      "is_draft": false,
+      "expires_at": null,
+      "last_activity_at": "2022-12-02T12:59:14.790Z",
+      "pinned_at": null,
+      "pinned": false,
+      "url": null,
+      "description": "Door het invullen van deze vragenlijst helpt u ons om een beeld te geven van uw ideeën op het gebied van wonen en voorzieningen. De vragenlijst duurt slechts 2 minuten om in te vullen.",
+      "follows_count": 2,
+      "comments_count": 0,
+      "mark_as_important": false,
+      "mark_as_important?": false,
+      "lat": null,
+      "lon": null,
+      "updated_at": "2022-12-02T12:59:14.583Z",
+      "trashed_at": null,
+      "external_iri": "https://arguco.typeform.com/to/YH2DGn9f",
+      "coupon_required": false,
+      "form_type": "https://randstad2177.nl/enums/surveys/form_type#remote",
+      "favorite_actions": {
+        "data": []
+      },
+      "parent": {
+        "data": {
+          "id": "https://randstad2177.nl/home",
+          "type": "forum"
+        }
+      },
+      "creator": {
+        "data": {
+          "id": "https://randstad2177.nl/",
+          "type": "page"
+        }
+      },
+      "actions_menu": {
+        "data": null
+      },
+      "follow_menu": {
+        "data": null
+      },
+      "share_menu": {
+        "data": null
+      },
+      "tabs_menu": {
+        "data": null
+      },
+      "attachment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42/attachments",
+          "type": "collection"
+        }
+      },
+      "blog_post_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42/posts?page_size=1",
+          "type": "collection"
+        }
+      },
+      "comment_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42/c",
+          "type": "collection"
+        }
+      },
+      "top_comment": {
+        "data": null
+      },
+      "default_cover_photo": {
+        "data": null
+      },
+      "argu_publication": {
+        "data": {
+          "id": "https://randstad2177.nl/publications/29653",
+          "type": "publication"
+        }
+      },
+      "placement": {
+        "data": null
+      },
+      "location_query": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42#location",
+          "type": "property_query"
+        }
+      },
+      "coupon_batch_collection": {
+        "data": {
+          "id": "https://randstad2177.nl/surveys/42/coupon_batches",
+          "type": "collection"
+        }
+      },
+      "action_body": {
+        "data": {
+          "id": "https://randstad2177.nl/custom_forms/43",
+          "type": "custom_form"
+        }
+      }
+    }
+  ]
+}
