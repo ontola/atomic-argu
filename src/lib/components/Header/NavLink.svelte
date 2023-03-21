@@ -15,7 +15,7 @@
 		text-decoration: none;
 		display: flex;
 		align-items: center;
-		height: var(--header-height);
+		height: var(--t-header-height);
 		padding-inline: 0.5rem;
 
 		transition: background-color 100ms ease-in-out, color 100ms ease-in-out,
@@ -34,7 +34,8 @@
 		background-color: var(--t-color-main);
 	}
 
-	.white-header:hover {
+	.white-header:hover,
+	.white-header:focus {
 		background-color: rgba(0 0 0 / 0.06);
 		color: var(--t-color-main);
 	}

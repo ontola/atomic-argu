@@ -21,7 +21,7 @@
 		: undefined;
 </script>
 
-<a class="card" href={constructArticleUrl(subject)} on:click>
+<a class="card" href={constructArticleUrl(subject)}>
 	{#if coverSrc}
 		<div class="image" style={coverSrc ? `background-image: url(${$coverSrc})` : ''} />
 	{/if}

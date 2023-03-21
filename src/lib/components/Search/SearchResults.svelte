@@ -1,12 +1,10 @@
 <script lang="ts">
-	import { onDestroy, onMount } from 'svelte';
 	import { fly } from 'svelte/transition';
 	import ArticleCard from '../ArticleCard.svelte';
 	import Container from '../Container.svelte';
 	import { NO_RESULTS } from './Searchbar.svelte';
 	import { resetSearch, searchResultList } from './search';
-
-	let unsubscribe: () => void = () => undefined;
+	import { afterNavigate } from '$app/navigation';
 
 	const onKeyPress = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
@@ -14,40 +12,27 @@
 		}
 	};
 
-	onMount(() => {
-		const unsubStore = searchResultList.subscribe((results) => {
-			if (results.length > 0) {
-				document.body.style.overflow = 'hidden';
-			} else {
-				document.body.style.overflow = 'auto';
-			}
-		});
-
-		document.addEventListener('keydown', onKeyPress);
-
-		unsubscribe = () => {
-			unsubStore();
-			document.removeEventListener('keydown', onKeyPress);
-		};
-	});
-
-	onDestroy(() => {
-		unsubscribe();
-	});
+	afterNavigate(() => resetSearch());
 </script>
 
+<svelte:body on:keydown={onKeyPress} />
+
 {#if $searchResultList.length > 0}
-	<section aria-label="Search Results" class="wrapper" transition:fly={{ y: 1000, duration: 200 }}>
+	<section
+		aria-labelledby="result-heading"
+		class="wrapper"
+		transition:fly={{ y: 1000, duration: 200 }}
+	>
 		<div class="scroll-container">
 			<Container>
-				<h2>Resultaten</h2>
+				<h2 id="result-heading">Resultaten</h2>
 				<ol class="list">
 					{#each $searchResultList as result}
 						{#if result === NO_RESULTS}
 							<span>Geen Resultaten</span>
 						{:else}
 							<li>
-								<ArticleCard subject={result} on:click={() => resetSearch()} />
+								<ArticleCard subject={result} />
 							</li>
 						{/if}
 					{/each}
@@ -58,8 +43,10 @@
 {/if}
 
 <style>
+	@import 'open-props/media';
+
 	h2 {
-		position: sticky;
+		margin-bottom: var(--size-3);
 	}
 	.wrapper {
 		position: fixed;
@@ -69,7 +56,7 @@
 		bottom: 0;
 		top: 10rem;
 		height: calc(100vh - 10rem);
-		padding: var(--size-6);
+		padding-block: var(--size-6);
 		box-shadow: var(--shadow-6);
 		border-top-right-radius: var(--radius-4);
 		border-top-left-radius: var(--radius-4);
@@ -91,5 +78,16 @@
 	li {
 		margin: 0;
 		padding: 0;
+	}
+
+	@media (--sm-n-below) {
+		.list {
+			grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
+		}
+
+		.wrapper {
+			left: 0;
+			right: 0;
+		}
 	}
 </style>

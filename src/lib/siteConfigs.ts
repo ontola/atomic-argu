@@ -41,7 +41,7 @@ export interface SiteConfig {
 	bodyTextColor?: string;
 }
 
-const siteConfigs: { [key: string]: SiteConfigIn } = {
+const siteConfigs = {
 	wonenAtThePark: {
 		atomicSite: 'https://atomicdata.dev/wonenatthepark/site',
 		homeUrl: 'https://atomicdata.dev/importer/l8mgzvvnm2a',
@@ -137,7 +137,7 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 		homePath: 'randstad2177',
 		jsonPath: './data/randstad2177.json'
 	}
-};
+} satisfies { [key: string]: SiteConfigIn };
 
 // Fills default vals, builds derived values from required fields.
 function buildSiteConfig(config: SiteConfigIn): SiteConfig {

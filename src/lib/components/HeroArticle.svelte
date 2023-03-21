@@ -40,8 +40,8 @@
 		opacity: var(--ratio, 1);
 		filter: blur(var(--blur));
 		background: var(--image);
-		background-size: cover;
 		background-position: center;
+		background-repeat: no-repeat;
 		transition: opacity 30ms;
 		will-change: opacity filter;
 		/* Centers the image at the top */
@@ -53,7 +53,6 @@
 	@media (--md-n-below) {
 		.hero-image {
 			height: 17rem;
-			background-position-y: -10rem;
 		}
 	}
 

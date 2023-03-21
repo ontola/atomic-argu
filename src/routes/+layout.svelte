@@ -5,8 +5,8 @@
 	import SearchResults from '$lib/components/Search/SearchResults.svelte';
 	import { cssProps } from '$lib/helpers/cssprops';
 	import { currentSiteConfig } from '$lib/siteConfigs';
-	import { fade } from 'svelte/transition';
 	import type { LayoutData } from './$types';
+	import Backdrop from '$lib/components/Backdrop.svelte';
 	export let data: LayoutData;
 
 	$: style = cssProps({
@@ -35,8 +35,7 @@
 		<slot />
 	</main>
 	{#if $searchResultList.length > 0}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<div class="dark" transition:fade={{ duration: 200 }} on:click={() => resetSearch()} />
+		<Backdrop on:click={() => resetSearch()} />
 	{/if}
 	<SearchResults />
 </div>
@@ -47,11 +46,5 @@
 
 	.wrapper {
 		color: var(--t-text);
-	}
-
-	.dark {
-		background-color: rgba(0, 0, 0, 0.421);
-		position: fixed;
-		inset: 0;
 	}
 </style>
