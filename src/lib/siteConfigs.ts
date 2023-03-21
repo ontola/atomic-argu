@@ -37,6 +37,8 @@ export interface SiteConfig {
 		fontFamily: string;
 	};
 	whiteHeader?: boolean;
+	headingTextColor?: string;
+	bodyTextColor?: string;
 }
 
 const siteConfigs: { [key: string]: SiteConfigIn } = {
@@ -80,7 +82,9 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 			],
 			fontFamily: "'Roboto Condensed', sans-serif"
 		},
-		whiteHeader: true
+		whiteHeader: true,
+		headingTextColor: '#0D325A',
+		bodyTextColor: '#0D325A'
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
@@ -99,7 +103,9 @@ const siteConfigs: { [key: string]: SiteConfigIn } = {
 			],
 			fontFamily: "'Roboto Condensed', sans-serif"
 		},
-		whiteHeader: true
+		whiteHeader: true,
+		headingTextColor: '#0D325A',
+		bodyTextColor: '#0D325A'
 	},
 	diaconessen: {
 		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',

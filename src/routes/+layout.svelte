@@ -12,11 +12,9 @@
 	$: style = cssProps({
 		't-color-main': (data.color as string) || 'rgb(30,30,30)',
 		't-color-main-light': setLightness(0.55, data.color),
-		...(currentSiteConfig.customFont
-			? {
-					't-font-family-heading': currentSiteConfig.customFont.fontFamily
-			  }
-			: {})
+		't-font-family-heading': currentSiteConfig.customFont?.fontFamily,
+		't-text': currentSiteConfig.bodyTextColor,
+		't-text-heading': currentSiteConfig.headingTextColor
 	});
 </script>
 
@@ -48,7 +46,7 @@
 	@import url('$lib/theme.css');
 
 	.wrapper {
-		display: contents;
+		color: var(--t-text);
 	}
 
 	.dark {
