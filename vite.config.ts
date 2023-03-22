@@ -7,6 +7,7 @@ const config: UserConfig = {
 		include: ['src/**/*.{test,spec}.{js,ts}']
 	},
 	server: {
+		host: true,
 		port: 5174
 	}
 };
