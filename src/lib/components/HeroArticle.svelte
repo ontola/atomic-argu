@@ -42,18 +42,12 @@
 		background: var(--image);
 		background-position: center;
 		background-repeat: no-repeat;
+		background-size: cover;
 		transition: opacity 30ms;
 		will-change: opacity filter;
-		/* Centers the image at the top */
-		/* background-attachment: fixed; */
-		/* background-repeat: no-repeat; */
-		height: 30rem;
-	}
-
-	@media (--md-n-below) {
-		.hero-image {
-			height: 17rem;
-		}
+		max-width: var(--size-xl);
+    margin: auto;
+		height: clamp(10rem, 50vw, 30rem);
 	}
 
 	.nothing {
@@ -65,7 +59,7 @@
 	.article {
 		position: relative;
 		background-color: var(--t-bg);
-		top: -5rem;
+		top: calc(-1 * clamp(1rem, 10vw , 5rem));
 		box-shadow: var(--shadow-4);
 		border-radius: var(--t-radius);
 		width: 100%;
