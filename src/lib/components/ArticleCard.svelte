@@ -7,14 +7,14 @@
 
 	export let subject: string;
 	let resource = getResource(subject);
-	$: name = getValue<string>(resource, urls.properties.name);
-	$: descriptionMD = getValue<string>(resource, urls.properties.description);
-	$: descriptionPlain = markdownToPlainText($descriptionMD || '');
-	$: descriptionTrimmed = `${descriptionPlain?.slice(0, 200)}${
+	let name = getValue<string>(resource, urls.properties.name);
+	let descriptionMD = getValue<string>(resource, urls.properties.description);
+	let descriptionPlain = markdownToPlainText($descriptionMD || '');
+	let descriptionTrimmed = `${descriptionPlain?.slice(0, 200)}${
 		(descriptionPlain?.length ?? 0) > 200 ? '...' : ''
 	}`;
 
-	$: cover = getValue<string>(resource, domain.coverImage);
+	let cover = getValue<string>(resource, domain.coverImage);
 	$: coverResource = $cover ? getResource($cover) : undefined;
 	$: coverSrc = $cover
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)

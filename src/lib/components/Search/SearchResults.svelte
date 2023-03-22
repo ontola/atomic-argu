@@ -27,7 +27,7 @@
 			<Container>
 				<h2 id="result-heading">Resultaten</h2>
 				<ol class="list">
-					{#each $searchResultList as result}
+					{#each $searchResultList as result (result)}
 						{#if result === NO_RESULTS}
 							<span>Geen Resultaten</span>
 						{:else}
