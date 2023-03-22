@@ -2,9 +2,10 @@
 	import { fly } from 'svelte/transition';
 	import ArticleCard from '../ArticleCard.svelte';
 	import Container from '../Container.svelte';
-	import { NO_RESULTS } from './Searchbar.svelte';
+	import { NO_RESULTS, LOADING_SEARCH_RESULTS } from './Searchbar.svelte';
 	import { resetSearch, searchResultList } from './search';
 	import { afterNavigate } from '$app/navigation';
+	import CardLoading from '../CardLoading.svelte';
 
 	const onKeyPress = (e: KeyboardEvent) => {
 		if (e.key === 'Escape') {
@@ -27,15 +28,21 @@
 			<Container>
 				<h2 id="result-heading">Resultaten</h2>
 				<ol class="list">
-					{#each $searchResultList as result (result)}
-						{#if result === NO_RESULTS}
-							<span>Geen Resultaten</span>
-						{:else}
+					{#if $searchResultList[0] === LOADING_SEARCH_RESULTS}
+						{#each Array(9) as _, i}
+							<CardLoading --animation-delay={`${i * 150}ms`} />
+						{/each}
+					{:else}
+						{#each $searchResultList as result (result)}
 							<li>
-								<ArticleCard subject={result} />
+								{#if result === NO_RESULTS}
+									<span>Geen Resultaten</span>
+								{:else}
+									<ArticleCard subject={result} />
+								{/if}
 							</li>
-						{/if}
-					{/each}
+						{/each}
+					{/if}
 				</ol>
 			</Container>
 		</div>

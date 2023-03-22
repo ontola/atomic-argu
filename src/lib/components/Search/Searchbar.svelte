@@ -1,5 +1,6 @@
 <script lang="ts" context="module">
 	export const NO_RESULTS = 'NO_RESULTS';
+	export const LOADING_SEARCH_RESULTS = 'LOADING_SEARCH_RESULTS';
 </script>
 
 <script lang="ts">
@@ -13,7 +14,7 @@
 	import { resetSearch, searchResultList, searchValue } from './search';
 	import SearchIcon from './SearchIcon.svelte';
 
-	let debouncedValue = debounced(searchValue, 200);
+	let debouncedValue = debounced(searchValue, 1);
 
 	$: searchSubject = buildSearchSubject($store, $debouncedValue, {
 		scope: currentSiteConfig.parentRoot,
@@ -29,7 +30,10 @@
 		resetSearch();
 	} else {
 		if (!$resource.loading) {
-			$searchResultList = $results ?? [NO_RESULTS];
+			const res = $results ?? [];
+			$searchResultList = res.length > 0 ? res : [NO_RESULTS];
+		} else if ($searchResultList.length === 0) {
+			$searchResultList = [LOADING_SEARCH_RESULTS];
 		}
 	}
 </script>

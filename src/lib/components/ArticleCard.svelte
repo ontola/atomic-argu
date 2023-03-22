@@ -39,7 +39,7 @@
 		flex-direction: column;
 		background-color: var(--t-bg);
 		border-radius: var(--t-radius);
-		height: 12rem;
+		height: var(--size-13);
 		transition: transform 200ms var(--ease-elastic-1), box-shadow 200ms var(--ease-elastic-1);
 		/* Prevent border radius on images */
 		overflow: hidden;
