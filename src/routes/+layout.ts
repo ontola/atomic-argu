@@ -11,7 +11,7 @@ export const load = (async () => {
 
 	try {
 		const site = await store.getResourceAsync(currentSiteConfig.atomicSite);
-		const color = site.get(domain.color) as string;
+		const color = site.get(domain.color) || 'red';
 		return { color };
 	} catch (e) {
 		console.error('Could not load site config for ', currentSiteConfig.atomicSite, e);
