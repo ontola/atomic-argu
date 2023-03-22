@@ -2,14 +2,41 @@ import { currentSiteConfig, type SiteConfig } from './siteConfigs';
 import { Store, Agent, properties, importJsonAdString } from '@tomic/lib';
 import { siteTemplate, templateToJSONAD } from './template';
 
-function shouldInclude(r: any, ids: Set<string>) {
+interface LinkType {
+	data: {
+		id: string;
+	};
+}
+
+interface ArguJSONResource {
+	iri: string;
+	is_draft: boolean;
+	is_trashed: boolean;
+	published_at: string;
+	description: string;
+	display_name: string;
+	bio: string;
+	used_as?: 'attachment' | 'cover';
+	content: string;
+	content_type: string;
+	filename: string;
+	default_cover_photo: LinkType;
+	parent: LinkType;
+}
+
+// Just json key val
+type AtomicJSONResource = {
+	[key: string]: any;
+};
+
+function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 	if (r == undefined) {
 		return false;
 	}
 	const parent = r[properties.parent];
 	// Skip items that do not have a parent
 	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
-		console.log('skipping', r['https://atomicdata.dev/properties/localId']);
+		console.log('skipping, no parent known yet', r['https://atomicdata.dev/properties/localId']);
 		return false;
 	}
 	ids.add(r['https://atomicdata.dev/properties/localId']);
@@ -28,7 +55,7 @@ export async function importFiles() {
 		agent
 	});
 
-	const resources: any = [];
+	const resources: ArguJSONResource[] = [];
 
 	// Creates the Site and Image folder
 	const templateData = templateToJSONAD(siteTemplate);
@@ -39,7 +66,7 @@ export async function importFiles() {
 
 	const data = await import(siteConfig.jsonPath);
 
-	const attachments = data['Bijlage'].filter((r: any) => r.used_as == 'attachment');
+	const attachments = data['Bijlage'].filter((r: ArguJSONResource) => r.used_as == 'attachment');
 
 	// The order should be dependent on the parent-child relationship,
 	// because of how JSON-AD importing works on Atomic-Server.
@@ -108,17 +135,15 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 }
 
 function findAndUploadAttachments(
-	resource: any,
+	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
 	store: Store,
-	allAttachments: any[],
+	allAttachments: ArguJSONResource[],
 	localId: string
 ) {
 	const fileAttachments = allAttachments.filter(
 		(a) => convertToLocalId(a.parent.data.id, siteConfig) == localId
 	);
-
-	const fullParentURL = `${siteConfig.parentRoot}/${localId}`;
 
 	const uploadedResources: string[] = [];
 	// Upload the attachments
@@ -136,11 +161,11 @@ function findAndUploadAttachments(
 
 // Takes an Argu export JSON resource, creates a JSON-AD Article
 async function mapResource(
-	resource: any,
+	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
 	store: Store,
-	allAttachments: any[]
-) {
+	allAttachments: ArguJSONResource[]
+): Promise<AtomicJSONResource | undefined> {
 	if (resource.is_draft || resource.is_trashed) {
 		return;
 	}
@@ -203,7 +228,11 @@ async function getMarkdownLinksAndMoveImages(md: string, store: Store) {
 	return newMd;
 }
 
-async function uploadAndGetPictureURL(resource: any, siteConfig: SiteConfig, store: Store) {
+async function uploadAndGetPictureURL(
+	resource: ArguJSONResource,
+	siteConfig: SiteConfig,
+	store: Store
+) {
 	// Skip if needed
 	// return null;
 	const pic = resource?.default_cover_photo?.data?.id;
