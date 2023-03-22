@@ -40,7 +40,7 @@
 	"type": "module",
 	"dependencies": {
 		"@tomic/lib": "^0.35.0",
-		"@tomic/svelte": "^0.35.0",
+		"@tomic/svelte": "^0.35.2",
 		"polished": "^4.2.2",
 		"svelte-exmarkdown": "^1.1.8"
 	}
