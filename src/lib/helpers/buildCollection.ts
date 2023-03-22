@@ -6,12 +6,7 @@ export async function buildCollection(subject: string) {
 	await loadResourceTree(subject, {
 		[properties.parent]: true,
 		[domain.pages]: true,
-		[domain.coverImage]: true,
-		[domain.articlesCollection]: {
-			[properties.collection.members]: {
-				[domain.coverImage]: true
-			}
-		}
+		[domain.coverImage]: true
 	});
 
 	// We create a collection that contains all children of the current Subject
@@ -27,7 +22,9 @@ export async function buildCollection(subject: string) {
 	const childrenCollection = generatedCollectionURL.toString();
 
 	await loadResourceTree(childrenCollection, {
-		[properties.collection.members]: true
+		[properties.collection.members]: {
+			[domain.coverImage]: true
+		}
 	});
 	return childrenCollection;
 }
