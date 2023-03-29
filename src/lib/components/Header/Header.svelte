@@ -66,7 +66,12 @@
 				</li>
 				{#each $pages ?? [] as page, index (page)}
 					{#if index === ($pages ?? []).length - 1}
-						<li use:visible={{ root: navElement, onVisibleChange: onItemWrapChange }}>
+						<li
+							use:visible={{
+								root: navElement,
+								onVisibleChange: onItemWrapChange,
+							}}
+						>
 							<ResourceNavLink subject={page} />
 						</li>
 					{:else}
@@ -98,7 +103,10 @@
 	{#if showHamburger && sideNavOpen}
 		<div class="side-nav" id="site-sidenav">
 			<Backdrop on:click={() => (sideNavOpen = false)} />
-			<nav aria-label="Side navigation" transition:fly={{ x: 1000, duration: 200 }}>
+			<nav
+				aria-label="Side navigation"
+				transition:fly={{ x: 1000, duration: 200 }}
+			>
 				<ul>
 					{#each $pages ?? [] as page}
 						<li>

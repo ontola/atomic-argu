@@ -10,9 +10,12 @@ const buildTresholdList = (numSteps: number) => {
 	return thresholds;
 };
 
-export const scrollRatio = (node: HTMLElement, range?: [min: number, max: number]) => {
+export const scrollRatio = (
+	node: HTMLElement,
+	range?: [min: number, max: number],
+) => {
 	const observer = new IntersectionObserver(
-		(entries) => {
+		entries => {
 			for (const entry of entries) {
 				let ratio = entry.intersectionRatio;
 
@@ -24,8 +27,8 @@ export const scrollRatio = (node: HTMLElement, range?: [min: number, max: number
 			}
 		},
 		{
-			threshold: buildTresholdList(100)
-		}
+			threshold: buildTresholdList(100),
+		},
 	);
 
 	observer.observe(node);
@@ -33,6 +36,6 @@ export const scrollRatio = (node: HTMLElement, range?: [min: number, max: number
 	return {
 		destroy() {
 			observer.unobserve(node);
-		}
+		},
 	};
 };

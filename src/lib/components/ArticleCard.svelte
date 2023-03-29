@@ -23,7 +23,10 @@
 
 <a class="card" href={constructArticleUrl(subject)}>
 	{#if coverSrc && $coverSrc}
-		<div class="image" style={$coverSrc ? `background-image: url(${$coverSrc})` : ''} />
+		<div
+			class="image"
+			style={$coverSrc ? `background-image: url(${$coverSrc})` : ''}
+		/>
 	{/if}
 	<div class="inner">
 		<h3>{$name}</h3>
@@ -40,7 +43,8 @@
 		background-color: var(--t-bg);
 		border-radius: var(--t-radius);
 		height: var(--size-13);
-		transition: transform 200ms var(--ease-elastic-1), box-shadow 200ms var(--ease-elastic-1);
+		transition: transform 200ms var(--ease-elastic-1),
+			box-shadow 200ms var(--ease-elastic-1);
 		/* Prevent border radius on images */
 		overflow: hidden;
 	}

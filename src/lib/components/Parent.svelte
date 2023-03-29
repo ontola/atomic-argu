@@ -9,7 +9,8 @@
 
 	$: resource = getResource(subject);
 	$: title = getValue<string>(resource, urls.properties.name);
-	$: shortenedTitle = $title && $title.length > 33 ? $title.slice(0, 30) + '...' : $title;
+	$: shortenedTitle =
+		$title && $title.length > 33 ? $title.slice(0, 30) + '...' : $title;
 </script>
 
 <a href={constructArticleUrl(subject)}>

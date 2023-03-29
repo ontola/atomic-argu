@@ -1,6 +1,5 @@
 # Atomic-Argu
 
-
 - Built with `@tomic/svelte` + `sveltekit`
 - Community / project websites
 - Content can be easily managed using the Atomic-Server CMS
@@ -65,7 +64,6 @@ pnpm build
 # See https://github.com/ontola/wonenatthepark/issues/4
 pnpm deploy
 ```
-
 
 ### Deploy using Netlify
 

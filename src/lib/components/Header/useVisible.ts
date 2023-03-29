@@ -4,24 +4,27 @@ type VisibleResult = {
 
 export const visible = (
 	node: HTMLElement,
-	{ root, onVisibleChange }: { root: HTMLElement; onVisibleChange: (isVisible: boolean) => void }
+	{
+		root,
+		onVisibleChange,
+	}: { root: HTMLElement; onVisibleChange: (isVisible: boolean) => void },
 ): VisibleResult => {
 	console.log('setup visible');
 	const observer = new IntersectionObserver(
-		(entries) => {
+		entries => {
 			console.log('entries', entries);
-			const isIntersecting = entries.some((entry) => entry.isIntersecting);
+			const isIntersecting = entries.some(entry => entry.isIntersecting);
 			onVisibleChange(isIntersecting);
 		},
 		{
 			root,
-			threshold: 0.4
-		}
+			threshold: 0.4,
+		},
 	);
 
 	observer.observe(node);
 
 	return {
-		destroy: () => observer.disconnect()
+		destroy: () => observer.disconnect(),
 	};
 };

@@ -6,7 +6,7 @@ export async function buildCollection(subject: string) {
 	await loadResourceTree(subject, {
 		[properties.parent]: true,
 		[domain.pages]: true,
-		[domain.coverImage]: true
+		[domain.coverImage]: true,
 	});
 
 	// We create a collection that contains all children of the current Subject
@@ -14,7 +14,7 @@ export async function buildCollection(subject: string) {
 	generatedCollectionURL.pathname = '/collections';
 	generatedCollectionURL.searchParams.set(
 		'sort_by',
-		'https://atomicdata.dev/properties/published-at'
+		'https://atomicdata.dev/properties/published-at',
 	);
 	generatedCollectionURL.searchParams.set('property', properties.parent);
 	generatedCollectionURL.searchParams.set('value', subject);
@@ -23,8 +23,8 @@ export async function buildCollection(subject: string) {
 
 	await loadResourceTree(childrenCollection, {
 		[properties.collection.members]: {
-			[domain.coverImage]: true
-		}
+			[domain.coverImage]: true,
+		},
 	});
 	return childrenCollection;
 }

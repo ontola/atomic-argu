@@ -36,7 +36,10 @@ function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 	const parent = r[properties.parent];
 	// Skip items that do not have a parent
 	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
-		console.log('skipping, no parent known yet', r['https://atomicdata.dev/properties/localId']);
+		console.log(
+			'skipping, no parent known yet',
+			r['https://atomicdata.dev/properties/localId'],
+		);
 		return false;
 	}
 	ids.add(r['https://atomicdata.dev/properties/localId']);
@@ -52,7 +55,7 @@ export async function importFiles() {
 	const agent = Agent.fromSecret(secret);
 	const store = new Store({
 		serverUrl: new URL(siteConfig.atomicSite).origin,
-		agent
+		agent,
 	});
 
 	const resources: ArguJSONResource[] = [];
@@ -61,12 +64,14 @@ export async function importFiles() {
 	const templateData = templateToJSONAD(siteTemplate);
 	// upload to drive
 	importJsonAdString(store, JSON.stringify(templateData), {
-		parent: siteConfig.parentRoot
+		parent: siteConfig.parentRoot,
 	});
 
 	const data = await import(siteConfig.jsonPath);
 
-	const attachments = data['Bijlage'].filter((r: ArguJSONResource) => r.used_as == 'attachment');
+	const attachments = data['Bijlage'].filter(
+		(r: ArguJSONResource) => r.used_as == 'attachment',
+	);
 
 	// The order should be dependent on the parent-child relationship,
 	// because of how JSON-AD importing works on Atomic-Server.
@@ -83,12 +88,14 @@ export async function importFiles() {
 		'Enqute',
 		'Nadeel',
 		'Voordeel',
-		'Reactie'
+		'Reactie',
 	];
 
-	order.forEach((key) => {
+	order.forEach(key => {
 		if (!data[key]) {
-			console.warn(`Type ${key} is missing, make sure it is not used in the imported Organisation`);
+			console.warn(
+				`Type ${key} is missing, make sure it is not used in the imported Organisation`,
+			);
 			return;
 		}
 		resources.push(...data[key]);
@@ -107,12 +114,14 @@ export async function importFiles() {
 	}
 
 	const ids: Set<string> = new Set();
-	const atomicResourcesFiltered = atomicResources.filter((r) => shouldInclude(r, ids));
+	const atomicResourcesFiltered = atomicResources.filter(r =>
+		shouldInclude(r, ids),
+	);
 
 	const jsonAD = JSON.stringify(atomicResourcesFiltered, null, 2);
 	// upload to drive
 	importJsonAdString(store, jsonAD, {
-		parent: siteConfig.parentRoot
+		parent: siteConfig.parentRoot,
 	});
 
 	// Copy to clipboard
@@ -139,20 +148,23 @@ function findAndUploadAttachments(
 	siteConfig: SiteConfig,
 	store: Store,
 	allAttachments: ArguJSONResource[],
-	localId: string
+	localId: string,
 ) {
 	const fileAttachments = allAttachments.filter(
-		(a) => convertToLocalId(a.parent.data.id, siteConfig) == localId
+		a => convertToLocalId(a.parent.data.id, siteConfig) == localId,
 	);
 
 	const uploadedResources: string[] = [];
 	// Upload the attachments
-	fileAttachments.forEach(async (a) => {
+	fileAttachments.forEach(async a => {
 		const file = await fetch(a.content);
 		const blob = await file.blob();
 		const fileData = new File([blob], a.filename, { type: a.content_type });
 
-		const [attachmentResource] = await store.uploadFiles([fileData], siteConfig.filesDir);
+		const [attachmentResource] = await store.uploadFiles(
+			[fileData],
+			siteConfig.filesDir,
+		);
 		uploadedResources.push(attachmentResource);
 	});
 
@@ -164,39 +176,48 @@ async function mapResource(
 	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
 	store: Store,
-	allAttachments: ArguJSONResource[]
+	allAttachments: ArguJSONResource[],
 ): Promise<AtomicJSONResource | undefined> {
 	if (resource.is_draft || resource.is_trashed) {
 		return;
 	}
 
-	const uploadedImage = await uploadAndGetPictureURL(resource, siteConfig, store);
+	const uploadedImage = await uploadAndGetPictureURL(
+		resource,
+		siteConfig,
+		store,
+	);
 
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	const parent = convertToLocalId(resource.parent.data.id, siteConfig);
 	const published_at = new Date(resource.published_at).getTime();
 	const description =
-		(await getMarkdownLinksAndMoveImages(resource.description, store)) || resource.bio || '';
+		(await getMarkdownLinksAndMoveImages(resource.description, store)) ||
+		resource.bio ||
+		'';
 
 	const attachments = findAndUploadAttachments(
 		resource,
 		siteConfig,
 		store,
 		allAttachments,
-		localId
+		localId,
 	);
 
 	const out = {
-		'https://atomicdata.dev/properties/isA': ['https://atomicdata.dev/classes/Article'],
+		'https://atomicdata.dev/properties/isA': [
+			'https://atomicdata.dev/classes/Article',
+		],
 		'https://atomicdata.dev/properties/localId': localId,
 		'https://atomicdata.dev/properties/original-url': resource.iri,
 		'https://atomicdata.dev/properties/published-at': published_at,
 		'https://atomicdata.dev/properties/parent': parent,
 		'https://atomicdata.dev/properties/attachments': attachments,
-		'https://atomicdata.dev/properties/name': resource.display_name || 'reactie',
+		'https://atomicdata.dev/properties/name':
+			resource.display_name || 'reactie',
 		// Cover image
 		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
-		'https://atomicdata.dev/properties/description': description
+		'https://atomicdata.dev/properties/description': description,
 	};
 
 	// Remove null values
@@ -231,7 +252,7 @@ async function getMarkdownLinksAndMoveImages(md: string, store: Store) {
 async function uploadAndGetPictureURL(
 	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
-	store: Store
+	store: Store,
 ) {
 	// Skip if needed
 	// return null;
@@ -252,7 +273,11 @@ async function uploadAndGetPictureURL(
 }
 
 /** Returns resource URL of the image (not the download URL). If it fails, it does not return a URL */
-async function moveImageToAtomic(url: string, siteConfig: SiteConfig, store: Store) {
+async function moveImageToAtomic(
+	url: string,
+	siteConfig: SiteConfig,
+	store: Store,
+) {
 	// download as bytes
 	try {
 		const response = await fetch(url);

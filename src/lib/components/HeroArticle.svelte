@@ -46,7 +46,7 @@
 		transition: opacity 30ms;
 		will-change: opacity filter;
 		max-width: var(--size-xl);
-    margin: auto;
+		margin: auto;
 		height: clamp(10rem, 50vw, 30rem);
 	}
 
@@ -59,7 +59,7 @@
 	.article {
 		position: relative;
 		background-color: var(--t-bg);
-		top: calc(-1 * clamp(1rem, 10vw , 5rem));
+		top: calc(-1 * clamp(1rem, 10vw, 5rem));
 		box-shadow: var(--shadow-4);
 		border-radius: var(--t-radius);
 		width: 100%;

@@ -14,7 +14,11 @@ export const load = (async () => {
 		const color = site.get(domain.color) || 'red';
 		return { color };
 	} catch (e) {
-		console.error('Could not load site config for ', currentSiteConfig.atomicSite, e);
+		console.error(
+			'Could not load site config for ',
+			currentSiteConfig.atomicSite,
+			e,
+		);
 		return { color: 'red' };
 	}
 }) satisfies LayoutLoad;

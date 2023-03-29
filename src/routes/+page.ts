@@ -14,6 +14,6 @@ export const load = (async ({ fetch }) => {
 
 	return {
 		resource,
-		childrenCollection: await buildCollection(subject)
+		childrenCollection: await buildCollection(subject),
 	};
 }) satisfies PageLoad;

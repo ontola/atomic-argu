@@ -23,7 +23,11 @@
 
 <HeroArticle coverSubject={$cover}>
 	<svelte:fragment slot="article">
-		<Article title={$name ?? ''} markdown={$description ?? ''} constrain={false} />
+		<Article
+			title={$name ?? ''}
+			markdown={$description ?? ''}
+			constrain={false}
+		/>
 	</svelte:fragment>
 
 	<ArticleCollection subject={childrenCollection} title="Onderwerpen" />

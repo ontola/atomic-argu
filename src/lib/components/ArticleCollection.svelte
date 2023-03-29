@@ -7,7 +7,10 @@
 	export let subject: string;
 	export let title = '';
 	$: resource = getResource(subject);
-	$: articles = getValue<string[]>(resource, urls.properties.collection.members);
+	$: articles = getValue<string[]>(
+		resource,
+		urls.properties.collection.members,
+	);
 </script>
 
 <Container>

@@ -19,7 +19,8 @@ type TemplateResource = {
 export const defaultSiteId = 'site';
 export const defaultImageFolderId = 'images-folder';
 
-const URL_ARGU_SITE_CLASS = 'https://atomicdata.dev/Folder/wp8ame4nqf/MYJkFKGEKz';
+const URL_ARGU_SITE_CLASS =
+	'https://atomicdata.dev/Folder/wp8ame4nqf/MYJkFKGEKz';
 
 export const siteTemplate: TemplateResource[] = [
 	{
@@ -37,21 +38,22 @@ export const siteTemplate: TemplateResource[] = [
 				name: 'some article',
 				description: 'This is a demo article',
 				'https://atomicdata.dev/properties/published-at': 1678798959855000,
-				class: 'https://atomicdata.dev/classes/Article'
-			}
-		]
+				class: 'https://atomicdata.dev/classes/Article',
+			},
+		],
 	},
 	{
 		id: defaultImageFolderId,
 		class: 'https://atomicdata.dev/classes/Folder',
 		name: 'Images folder',
-		'https://atomicdata.dev/property/display-style': 'https://atomicdata.dev/display-style/list'
-	}
+		'https://atomicdata.dev/property/display-style':
+			'https://atomicdata.dev/display-style/list',
+	},
 ];
 
 export function templateToJSONAD(template: Template) {
 	const out: any[] = [];
-	template.map((resource) => {
+	template.map(resource => {
 		out.push(convertAndFlatten(resource).flat());
 	});
 	// flatten
@@ -64,7 +66,7 @@ function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
 	const out: any[] = [];
 
 	// Since we don't have dynamic children showing yet, we should add sub-resources instead
-	const subResources = children?.map((child) => child.id);
+	const subResources = children?.map(child => child.id);
 
 	out.push({
 		'https://atomicdata.dev/properties/localId': id,
@@ -73,7 +75,7 @@ function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
 		[properties.description]: description,
 		[properties.parent]: parent,
 		[properties.subResources]: subResources,
-		...rest
+		...rest,
 		// Children is omitted, processed below
 	});
 	console.log('out', out);
@@ -82,7 +84,7 @@ function convertAndFlatten(resource: TemplateResource, parent?: string): any[] {
 	// remove the `children` key and
 	// replace with `parent` set to the `id` of the parent
 	if (children) {
-		children.map((child) => {
+		children.map(child => {
 			out.push(convertAndFlatten(child, id));
 		});
 	}

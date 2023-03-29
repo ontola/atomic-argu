@@ -49,45 +49,23 @@ const siteConfigs = {
 		parentRoot: 'https://atomicdata.dev/importer/l8mgzvvnm2a',
 		deployType: 'gh-pages',
 		domain: 'wonenatthepark.nl',
-		jsonPath: './data/wonenatthepark.json'
-	},
-	edamLocal: {
-		parentRoot: 'http://localhost:9883/drive/krh6kkg09zr',
-		jsonPath: './data/edamvolendam.json',
-		regex: /\.co\/edam_volendam\/(.*)/
+		jsonPath: './data/wonenatthepark.json',
 	},
 	edam: {
 		atomicSite: 'https://atomicdata.dev/edamvolendam/site',
-		parentRoot: 'https://atomicdata.dev/importer/7n4ecrni2n',
+		parentRoot: 'http://localhost:9883/drive/krh6kkg09zr',
+		// parentRoot: 'https://atomicdata.dev/importer/7n4ecrni2n',
 		jsonPath: './data/edamvolendam.json',
-		regex: /\.co\/edam_volendam\/(.*)/
+		regex: /\.co\/edam_volendam\/(.*)/,
 	},
-	arguLocal: {
+	argu: {
 		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
-		jsonPath: './data/argu-nl.json'
-	},
-	drechtstedenLocal: {
-		serverUrl: 'https://staging.atomicdata.dev',
-		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
-		homePath: 'forum',
-		jsonPath: './data/drechtsteden.json',
-		customFont: {
-			links: [
-				{ href: 'https://fonts.googleapis.com', rel: 'preconnect' },
-				{ href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: true },
-				{
-					href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap',
-					rel: 'stylesheet'
-				}
-			],
-			fontFamily: "'Roboto Condensed', sans-serif"
-		},
-		whiteHeader: true,
-		headingTextColor: '#0D325A',
-		bodyTextColor: '#0D325A'
+		jsonPath: './data/argu-nl.json',
 	},
 	drechtsteden: {
-		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
+		// parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
+		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
+		// parentRoot: 'http://localhost:9883/drive/imwttl402mn',
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
 		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
 		homePath: 'forum',
@@ -95,48 +73,42 @@ const siteConfigs = {
 		customFont: {
 			links: [
 				{ href: 'https://fonts.googleapis.com', rel: 'preconnect' },
-				{ href: 'https://fonts.gstatic.com', rel: 'preconnect', crossorigin: true },
+				{
+					href: 'https://fonts.gstatic.com',
+					rel: 'preconnect',
+					crossorigin: true,
+				},
 				{
 					href: 'https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap',
-					rel: 'stylesheet'
-				}
+					rel: 'stylesheet',
+				},
 			],
-			fontFamily: "'Roboto Condensed', sans-serif"
+			fontFamily: "'Roboto Condensed', sans-serif",
 		},
 		whiteHeader: true,
 		headingTextColor: '#0D325A',
-		bodyTextColor: '#0D325A'
+		bodyTextColor: '#0D325A',
 	},
 	diaconessen: {
-		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
-		original: 'https://herontwikkelingdiaconessenhuis.nl/',
-		homePath: 'denkmee',
-		jsonPath: './data/diaconessen.json'
-	},
-	diaconessenLocal: {
+		// parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
 		parentRoot: 'http://localhost:9883/drive/hskqtzlxd8s',
-		homePath: 'denkmee',
 		original: 'https://herontwikkelingdiaconessenhuis.nl/',
-		jsonPath: './data/diaconessen.json'
+		homePath: 'denkmee',
+		jsonPath: './data/diaconessen.json',
 	},
 	sportlaan: {
-		parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
-		original: 'https://herontwikkelingsportlaan.nl/',
-		jsonPath: './data/sportlaan.json',
-		homePath: 'herontwikkelingsportlaan'
-	},
-	sportlaanLocal: {
+		// parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
 		parentRoot: 'http://localhost:9883/drive/s5k8iyc9o1',
 		original: 'https://herontwikkelingsportlaan.nl/',
+		jsonPath: './data/sportlaan.json',
 		homePath: 'herontwikkelingsportlaan',
-		jsonPath: './data/sportlaan.json'
 	},
 	randstad2177: {
 		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
 		original: 'https://randstad2177.nl/',
 		homePath: 'randstad2177',
-		jsonPath: './data/randstad2177.json'
-	}
+		jsonPath: './data/randstad2177.json',
+	},
 } satisfies { [key: string]: SiteConfigIn };
 
 // Fills default vals, builds derived values from required fields.
@@ -153,8 +125,8 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 		domain: config.domain || new URL(parentRoot).hostname,
 		homePath,
 		homeUrl: config.homeUrl || `${parentRoot}/${homePath}`,
-		...config
+		...config,
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtstedenLocal);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtsteden);

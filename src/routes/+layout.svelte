@@ -14,7 +14,7 @@
 		't-color-main-light': setLightness(0.55, data.color),
 		't-font-family-heading': currentSiteConfig.customFont?.fontFamily,
 		't-text': currentSiteConfig.bodyTextColor,
-		't-text-heading': currentSiteConfig.headingTextColor
+		't-text-heading': currentSiteConfig.headingTextColor,
 	});
 </script>
 

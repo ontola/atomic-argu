@@ -14,7 +14,7 @@
 	import Attachment from '$lib/components/Attachment.svelte';
 
 	onMount(() => {
-		document.addEventListener('keydown', (event) => {
+		document.addEventListener('keydown', event => {
 			if (event.ctrlKey && event.key === 'e') {
 				event.preventDefault();
 				// open in new tab
@@ -29,8 +29,14 @@
 	$: description = getValue<string>(resource, urls.properties.description);
 	$: parent = getValue<string>(resource, urls.properties.parent);
 	$: cover = getValue<string>(resource, domain.coverImage);
-	$: originalUrl = getValue<string>(resource, 'https://atomicdata.dev/properties/original-url');
-	$: attachments = getValue<string[]>(resource, urls.properties.file.attachments);
+	$: originalUrl = getValue<string>(
+		resource,
+		'https://atomicdata.dev/properties/original-url',
+	);
+	$: attachments = getValue<string[]>(
+		resource,
+		urls.properties.file.attachments,
+	);
 </script>
 
 <svelte:head>

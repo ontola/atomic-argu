@@ -19,8 +19,8 @@
 	$: searchSubject = buildSearchSubject($store, $debouncedValue, {
 		scope: currentSiteConfig.parentRoot,
 		filters: {
-			[urls.properties.isA]: 'https://atomicdata.dev/classes/Article'
-		}
+			[urls.properties.isA]: 'https://atomicdata.dev/classes/Article',
+		},
 	});
 
 	$: resource = getResource(searchSubject, { noWebSocket: true });

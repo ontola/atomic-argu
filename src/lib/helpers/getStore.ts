@@ -5,7 +5,7 @@ import { currentSiteConfig } from '$lib/siteConfigs';
 
 const init = () => {
 	const atomicStore = new Store({
-		serverUrl: currentSiteConfig.serverUrl
+		serverUrl: currentSiteConfig.serverUrl,
 	});
 	initStore(atomicStore);
 };

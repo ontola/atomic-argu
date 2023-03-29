@@ -6,7 +6,12 @@
 	export let title: string | undefined = undefined;
 </script>
 
-<a {href} class:image={type === 'image'} {title} class:white-header={currentSiteConfig.whiteHeader}>
+<a
+	{href}
+	class:image={type === 'image'}
+	{title}
+	class:white-header={currentSiteConfig.whiteHeader}
+>
 	<slot />
 </a>
 
