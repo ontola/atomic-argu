@@ -81,5 +81,6 @@
 	article :global(img) {
 		border-radius: var(--t-radius);
 		margin-bottom: 1rem;
+		max-width: 100%;
 	}
 </style>
