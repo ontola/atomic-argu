@@ -30,17 +30,17 @@ export const siteTemplate: TemplateResource[] = [
 		description: 'This is an example site',
 		[properties.read]: ['https://atomicdata.dev/agents/publicAgent'],
 		[domain.color]: 'hsl(138, 15%, 44%)',
-		[domain.pages]: ['article-demo'],
+		// [domain.pages]: ['article-demo'],
 		[domain.siteImage]: 'https://docs.atomicdata.dev/favicon.png',
-		children: [
-			{
-				id: 'article-demo',
-				name: 'some article',
-				description: 'This is a demo article',
-				'https://atomicdata.dev/properties/published-at': 1678798959855000,
-				class: 'https://atomicdata.dev/classes/Article',
-			},
-		],
+		// children: [
+		// 	{
+		// 		id: 'article-demo',
+		// 		name: 'some article',
+		// 		description: 'This is a demo article',
+		// 		'https://atomicdata.dev/properties/published-at': 1678798959855000,
+		// 		class: 'https://atomicdata.dev/classes/Article',
+		// 	},
+		// ],
 	},
 	{
 		id: defaultImageFolderId,

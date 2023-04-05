@@ -8,6 +8,8 @@ interface LinkType {
 	};
 }
 
+const localIdUrl = 'https://atomicdata.dev/properties/localId';
+
 interface ArguJSONResource {
 	iri: string;
 	is_draft: boolean;
@@ -38,14 +40,15 @@ function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 	if (
 		!ids.has(parent) &&
 		parent !== currentSiteConfig.atomicSite &&
-		parent !== currentSiteConfig.orgPath
+		parent !== currentSiteConfig.orgPath &&
+		parent !== currentSiteConfig.homePath
 	) {
 		console.log(
-			`skipping ${r['https://atomicdata.dev/properties/localId']}, parent ${parent} hasn't been processed yet. Could be trashed.`,
+			`skipping ${r[localIdUrl]}, parent ${parent} hasn't been processed yet. Could be trashed.`,
 		);
 		return false;
 	}
-	ids.add(r['https://atomicdata.dev/properties/localId']);
+	ids.add(r[localIdUrl]);
 	return true;
 }
 
@@ -117,11 +120,23 @@ export async function importFiles() {
 	}
 
 	const ids: Set<string> = new Set();
+
 	const atomicResourcesFiltered = atomicResources.filter(r =>
 		shouldInclude(r, ids),
 	);
 
-	const jsonAD = JSON.stringify(atomicResourcesFiltered, null, 2);
+	// Make sure the home resource is the first one
+	const sorted = atomicResourcesFiltered.sort((a, b) => {
+		if (a[localIdUrl] == siteConfig.homePath) {
+			return -1;
+		}
+		if (b[localIdUrl] == siteConfig.homePath) {
+			return 1;
+		}
+		return 0;
+	});
+
+	const jsonAD = JSON.stringify(sorted, null, 2);
 	// upload to drive
 	importJsonAdString(store, jsonAD, {
 		parent: siteConfig.parentRoot,
@@ -138,15 +153,16 @@ export async function importFiles() {
 // But `https://wonenatthepark.nl`
 // becomes `atomicSite` - the root resource and default parent.
 function convertToLocalId(iri: string, siteConfig: SiteConfig) {
+	const defaultParent = siteConfig.homePath;
 	const matches = iri.match(siteConfig.regex);
 	if (matches && matches[1].length > 0) {
 		if (matches[1] == siteConfig.orgPath) {
-			return siteConfig.atomicSite;
+			return defaultParent;
 		}
 		return matches[1];
 	}
 	// This should only happen if the iri is the root, in which case we use the `site` resource as the parent
-	return siteConfig.atomicSite;
+	return defaultParent;
 }
 
 function findAndUploadAttachments(
@@ -195,12 +211,19 @@ async function mapResource(
 	);
 
 	const localId = convertToLocalId(resource.iri, siteConfig);
-	const parent = convertToLocalId(resource.parent.data.id, siteConfig);
+	let parent = convertToLocalId(resource.parent.data.id, siteConfig);
 	const published_at = new Date(resource.published_at).getTime();
 	const description =
 		(await getMarkdownLinksAndMoveImages(resource.description, store)) ||
 		resource.bio ||
 		'';
+
+	if (resource.iri == 'https://denkmee.drechtstedenenergie.nl/denkmee/forum') {
+		// debugger;
+	}
+	if (localId == parent) {
+		parent = siteConfig.atomicSite;
+	}
 
 	const attachments = findAndUploadAttachments(
 		resource,
