@@ -30,6 +30,8 @@ export interface SiteConfig {
 	homePath: string;
 	/** URL of the home page resource, derived from homePath*/
 	homeUrl: string;
+	/** An optional path that is prepended to all URLs. */
+	orgPath?: string;
 	/** Site ID used by netlify CLI*/
 	netlifyId?: string;
 	customFont?: {
@@ -64,12 +66,14 @@ const siteConfigs = {
 	},
 	drechtsteden: {
 		// parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
-		parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
-		// parentRoot: 'http://localhost:9883/drive/imwttl402mn',
+		// parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
+		parentRoot: 'http://localhost:9883/drive/2bfvscu3zdh',
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
 		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
-		homePath: 'forum',
+		homePath: 'denkmee/forum',
+		orgPath: 'denkmee',
 		jsonPath: './data/drechtsteden.json',
+		// regex: /\.nl\/denkmee\/(.*)/,
 		customFont: {
 			links: [
 				{ href: 'https://fonts.googleapis.com', rel: 'preconnect' },

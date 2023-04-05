@@ -22,7 +22,7 @@ Each of these websites uses data that is hosted on Atomic-Server.
   - Open the ASA (Atomic Svelte Argu) app locally, you'll see an import button
   - Create a new Drive on Atomic Server, paste it to a new config in `siteConigs.ts`, use the `drive` url as root
   - Run this repo `pnpm dev` and visit `localhost`
-  - Press the import button. Magic happens.
+  - Press the import button. Magic happens. Checkt the console for errors. If you encounter CORS stuff, install a browser extension that allows you to bypass CORS.
   - You might need to restart the local front-end `pnpm dev`
 - Managing content
   - Invite people to edit the drives

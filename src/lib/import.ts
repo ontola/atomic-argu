@@ -35,10 +35,13 @@ function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 	}
 	const parent = r[properties.parent];
 	// Skip items that do not have a parent
-	if (!ids.has(parent) && parent !== currentSiteConfig.atomicSite) {
+	if (
+		!ids.has(parent) &&
+		parent !== currentSiteConfig.atomicSite &&
+		parent !== currentSiteConfig.orgPath
+	) {
 		console.log(
-			'skipping, no parent known yet',
-			r['https://atomicdata.dev/properties/localId'],
+			`skipping ${r['https://atomicdata.dev/properties/localId']}, parent ${parent} hasn't been processed yet. Could be trashed.`,
 		);
 		return false;
 	}
@@ -67,7 +70,7 @@ export async function importFiles() {
 		parent: siteConfig.parentRoot,
 	});
 
-	const data = await import(siteConfig.jsonPath);
+	const data = await import(siteConfig.jsonPath /* @vite-ignore */);
 
 	const attachments = data['Bijlage'].filter(
 		(r: ArguJSONResource) => r.used_as == 'attachment',
@@ -78,10 +81,10 @@ export async function importFiles() {
 	// The parent should be imported before the child.
 	const order = [
 		'Forum',
-		'Thread',
-		'Uitdaging',
 		'Traject',
 		'Fase',
+		'Thread',
+		'Uitdaging',
 		'Idee',
 		'Update',
 		// NOTE: adjust the key here, because the special char is not iterable in JSON
@@ -137,6 +140,9 @@ export async function importFiles() {
 function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	const matches = iri.match(siteConfig.regex);
 	if (matches && matches[1].length > 0) {
+		if (matches[1] == siteConfig.orgPath) {
+			return siteConfig.atomicSite;
+		}
 		return matches[1];
 	}
 	// This should only happen if the iri is the root, in which case we use the `site` resource as the parent
