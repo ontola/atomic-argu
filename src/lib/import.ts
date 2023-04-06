@@ -35,6 +35,9 @@ function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 	if (r == undefined) {
 		return false;
 	}
+	if (ids.has(r[localIdUrl])) {
+		throw new Error(`Duplicate id ${r[localIdUrl]}`, r);
+	}
 	const parent = r[properties.parent];
 	// Skip items that do not have a parent
 	if (
@@ -87,10 +90,11 @@ export async function importFiles() {
 		'Traject',
 		'Fase',
 		'Thread',
+		'Blog',
 		'Uitdaging',
 		'Idee',
 		'Update',
-		// NOTE: adjust the key here, because the special char is not iterable in JSON
+		// NOTE: adjust the key for `Enquete` in the data, because the special char is not iterable in JSON
 		'Enqute',
 		'Nadeel',
 		'Voordeel',
@@ -127,10 +131,10 @@ export async function importFiles() {
 
 	// Make sure the home resource is the first one
 	const sorted = atomicResourcesFiltered.sort((a, b) => {
-		if (a[localIdUrl] == siteConfig.homePath) {
+		if (a && a[localIdUrl] == siteConfig.homePath) {
 			return -1;
 		}
-		if (b[localIdUrl] == siteConfig.homePath) {
+		if (b && b[localIdUrl] == siteConfig.homePath) {
 			return 1;
 		}
 		return 0;
@@ -138,13 +142,14 @@ export async function importFiles() {
 
 	const jsonAD = JSON.stringify(sorted, null, 2);
 	// upload to drive
-	importJsonAdString(store, jsonAD, {
+	await importJsonAdString(store, jsonAD, {
 		parent: siteConfig.parentRoot,
 	});
 
-	// Copy to clipboard
-	await navigator.clipboard.writeText(jsonAD);
-	window.alert('JSON is being uploaded and has been copied to clipboard');
+	// // Copy to clipboard
+	// await navigator.clipboard.writeText(jsonAD);
+	// window.alert('JSON is being uploaded and has been copied to clipboard');
+	window.alert('Done!');
 }
 
 // Here we use a regex to match the entire path:
@@ -156,6 +161,7 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	const defaultParent = siteConfig.homePath;
 	const matches = iri.match(siteConfig.regex);
 	if (matches && matches[1].length > 0) {
+		console.log('matches', matches[1]);
 		if (matches[1] == siteConfig.orgPath) {
 			return defaultParent;
 		}
@@ -165,13 +171,14 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	return defaultParent;
 }
 
+/** Returns uploaded file URLs */
 function findAndUploadAttachments(
 	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
 	store: Store,
 	allAttachments: ArguJSONResource[],
 	localId: string,
-) {
+): string[] {
 	const fileAttachments = allAttachments.filter(
 		a => convertToLocalId(a.parent.data.id, siteConfig) == localId,
 	);
@@ -204,12 +211,7 @@ async function mapResource(
 		return;
 	}
 
-	const uploadedImage = await uploadAndGetPictureURL(
-		resource,
-		siteConfig,
-		store,
-	);
-
+	const coverImage = await uploadCover(resource, siteConfig, store);
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	let parent = convertToLocalId(resource.parent.data.id, siteConfig);
 	const published_at = new Date(resource.published_at).getTime();
@@ -217,14 +219,6 @@ async function mapResource(
 		(await getMarkdownLinksAndMoveImages(resource.description, store)) ||
 		resource.bio ||
 		'';
-
-	if (resource.iri == 'https://denkmee.drechtstedenenergie.nl/denkmee/forum') {
-		// debugger;
-	}
-	if (localId == parent) {
-		parent = siteConfig.atomicSite;
-	}
-
 	const attachments = findAndUploadAttachments(
 		resource,
 		siteConfig,
@@ -232,6 +226,10 @@ async function mapResource(
 		allAttachments,
 		localId,
 	);
+
+	if (localId == parent) {
+		parent = siteConfig.atomicSite;
+	}
 
 	const out = {
 		'https://atomicdata.dev/properties/isA': [
@@ -245,7 +243,7 @@ async function mapResource(
 		'https://atomicdata.dev/properties/name':
 			resource.display_name || 'reactie',
 		// Cover image
-		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': uploadedImage,
+		'https://atomicdata.dev/Folder/wp8ame4nqf/urHO7G8FKm': coverImage,
 		'https://atomicdata.dev/properties/description': description,
 	};
 
@@ -256,7 +254,11 @@ async function mapResource(
 // finds markdown image tags`
 // and moves the image using uploadAndGetPictureURL.
 // Replaces the URL with the new one
-async function getMarkdownLinksAndMoveImages(md: string, store: Store) {
+// Returns modified MD string
+async function getMarkdownLinksAndMoveImages(
+	md: string,
+	store: Store,
+): Promise<string | undefined> {
 	if (!md) {
 		return;
 	}
@@ -278,11 +280,12 @@ async function getMarkdownLinksAndMoveImages(md: string, store: Store) {
 	return newMd;
 }
 
-async function uploadAndGetPictureURL(
+/** Returns URL of uploaded cover image */
+async function uploadCover(
 	resource: ArguJSONResource,
 	siteConfig: SiteConfig,
 	store: Store,
-) {
+): Promise<string | undefined> {
 	// Skip if needed
 	// return null;
 	const pic = resource?.default_cover_photo?.data?.id;
@@ -306,11 +309,20 @@ async function moveImageToAtomic(
 	url: string,
 	siteConfig: SiteConfig,
 	store: Store,
-) {
+): Promise<string | undefined> {
 	// download as bytes
 	try {
+		console.log(`moving image ${url}...`);
 		const response = await fetch(url);
+		if (!response.ok) {
+			console.warn(`image ${url} not found, skipping upload`);
+			return;
+		}
 		const blob = await response.blob();
+		if (blob.size == 0) {
+			console.warn(`image ${url} is empty, skipping upload`);
+			return;
+		}
 		const file = new File([blob], 'test.jpg', { type: 'image/jpeg' });
 		// upload to Atomic
 		const parent = siteConfig.filesDir;

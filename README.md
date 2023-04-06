@@ -70,5 +70,5 @@ pnpm deploy
 - Install netlify cli `pnpm install netlify-cli -g`
 - Authenticate `netlify login`
 - Run locally, test `netlify dev`
-- Create site `netlify sites:create`
+- Create site `netlify unlink && netlify sites:create`
 - Deploy `netlify deploy --build -s <site-name>`

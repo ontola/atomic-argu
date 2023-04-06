@@ -54,15 +54,24 @@ const siteConfigs = {
 		jsonPath: './data/wonenatthepark.json',
 	},
 	edam: {
-		atomicSite: 'https://atomicdata.dev/edamvolendam/site',
-		parentRoot: 'http://localhost:9883/drive/krh6kkg09zr',
-		// parentRoot: 'https://atomicdata.dev/importer/7n4ecrni2n',
+		// parentRoot: 'http://localhost:9883/drive/8a1yuuzcl3',
+		parentRoot: 'https://atomicdata.dev/drive/xpectln6zf',
 		jsonPath: './data/edamvolendam.json',
+		homePath: 'Edam_Volendam',
 		regex: /\.co\/edam_volendam\/(.*)/,
+		whiteHeader: true,
+		headingTextColor: 'rgb(78 62 88)',
 	},
-	argu: {
+	argunl: {
 		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
+		homePath: 'forum',
 		jsonPath: './data/argu-nl.json',
+	},
+	arguco: {
+		parentRoot: 'http://localhost:9883/drive/vepy10gbnm',
+		regex: /\.co\/(.*)/,
+		homePath: 'argu',
+		jsonPath: './data/argu-co.json',
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
@@ -94,24 +103,24 @@ const siteConfigs = {
 		bodyTextColor: '#0D325A',
 	},
 	diaconessen: {
-		// parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
-		parentRoot: 'http://localhost:9883/drive/hskqtzlxd8s',
+		parentRoot: 'https://atomicdata.dev/drive/hms3fnoue08',
 		original: 'https://herontwikkelingdiaconessenhuis.nl/',
 		homePath: 'denkmee',
 		jsonPath: './data/diaconessen.json',
+		netlifyId: 'diacon',
 	},
 	sportlaan: {
-		// parentRoot: 'https://atomicdata.dev/drive/dxbdhd48i9r',
-		parentRoot: 'http://localhost:9883/drive/s5k8iyc9o1',
+		parentRoot: 'https://atomicdata.dev/drive/g9fuuv7qcej',
 		original: 'https://herontwikkelingsportlaan.nl/',
 		jsonPath: './data/sportlaan.json',
 		homePath: 'herontwikkelingsportlaan',
 	},
 	randstad2177: {
-		parentRoot: 'https://atomicdata.dev/drive/7eqsy7w84eo',
+		parentRoot: 'https://atomicdata.dev/drive/xguajxank6b',
 		original: 'https://randstad2177.nl/',
-		homePath: 'randstad2177',
+		homePath: 'home',
 		jsonPath: './data/randstad2177.json',
+		netlifyId: 'randstad2177',
 	},
 } satisfies { [key: string]: SiteConfigIn };
 
@@ -133,4 +142,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtsteden);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
