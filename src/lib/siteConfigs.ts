@@ -78,7 +78,7 @@ const siteConfigs = {
 		// parentRoot: 'https://staging.atomicdata.dev/drive/41w8ah24nx',
 		// parentRoot: 'http://localhost:9883/drive/ybf4mmk4jlq',
 		original: 'https://denkmee.drechtstedenenergie.nl/denkmee',
-		netlifyId: '7268e22c-04ee-4cea-a608-2bf1162596af',
+		netlifyId: 'drechtsteden',
 		homePath: 'denkmee/forum',
 		orgPath: 'denkmee',
 		jsonPath: './data/drechtsteden.json',
@@ -142,4 +142,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtsteden);

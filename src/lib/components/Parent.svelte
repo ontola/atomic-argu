@@ -27,8 +27,8 @@
 		display: flex;
 		align-items: center;
 		color: var(--gray-6);
-		text-decoration: none;
 		padding: var(--size-2);
+		text-decoration: none;
 		border-radius: var(--t-radius);
 		gap: var(--size-2);
 		transition: background-color 0.1s ease-in-out, color 0.1s ease-in-out;

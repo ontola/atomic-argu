@@ -37,6 +37,11 @@
 		resource,
 		urls.properties.file.attachments,
 	);
+	$: publishedAt = getValue<string>(
+		resource,
+		'https://atomicdata.dev/properties/published-at',
+	);
+	$: dateString = $publishedAt && new Date($publishedAt).toLocaleDateString();
 </script>
 
 <svelte:head>
@@ -48,12 +53,15 @@
 		<ArticleWidthConstraint>
 			<div class="top-links">
 				<Parent subject={$parent} />
-				{#if dev && $originalUrl}
-					<span class="dev-links">
+				<span class="dev-links">
+					{#if dateString}
+						<span>geplaatst op {dateString}</span>
+					{/if}
+					{#if dev && $originalUrl}
 						<a href={$originalUrl}>source</a>
 						<a href={$resource.getSubject()}>edit</a>
-					</span>
-				{/if}
+					{/if}
+				</span>
 			</div>
 		</ArticleWidthConstraint>
 		<Article title={$name ?? ''} markdown={$description ?? ''} />
@@ -68,7 +76,7 @@
 		{/if}
 	</svelte:fragment>
 	{#if childrenCollection}
-		<ArticleCollection subject={childrenCollection} title="Reacties" />
+		<ArticleCollection subject={childrenCollection} />
 	{:else}
 		<p>Er zijn geen onderwerpen gevonden.</p>
 	{/if}
@@ -84,7 +92,13 @@
 	.top-links {
 		display: flex;
 		justify-content: space-between;
-		gap: 1rem;
+		flex-wrap: wrap;
+		margin-left: calc(var(--size-2) * -1);
+	}
+
+	.dev-links > * {
+		color: var(--gray-6);
+		padding: var(--size-2);
 	}
 
 	.top-links a:hover {
@@ -93,6 +107,5 @@
 
 	.dev-links {
 		display: inline-flex;
-		gap: 1rem;
 	}
 </style>

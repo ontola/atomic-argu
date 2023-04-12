@@ -5,7 +5,6 @@
 	import Container from './Container.svelte';
 
 	export let subject: string;
-	export let title = '';
 	$: resource = getResource(subject);
 	$: articles = getValue<string[]>(
 		resource,
@@ -14,10 +13,6 @@
 </script>
 
 <Container>
-	{#if $articles && $articles.length > 0}
-		<h2>{title}</h2>
-	{/if}
-
 	{#if $resource.loading}
 		<p>Loading...</p>
 	{:else}

@@ -6,6 +6,14 @@
 - Includes import scripts to convert Argu.co JSON exports to JSON-AD
 - Look & feel similar based on the Argu.co community platform
 
+## Example sites:
+
+- [argu.nl](https://argu.nl)
+- [argu.co](https://argu.co)
+- [denkmee.drechtstedenenergie.nl](https://denkmee.drechtstedenenergie.nl)
+- [edamvolendam](https://edamvolendam.netlify.app/)
+- See [siteconfigs.ts](./src/lib/siteconfigs.ts) for more
+
 ## Architecture & multi-page deploy
 
 This repository is used for creating a bunch of different websites.
@@ -27,10 +35,6 @@ Each of these websites uses data that is hosted on Atomic-Server.
 - Managing content
   - Invite people to edit the drives
   - Instruct how to add `Article` (Article Collection?)
-
-## List of example sites
-
-- [wonenatthepark.nl](https://wonenatthepark.nl/)
 
 ## Data
 
