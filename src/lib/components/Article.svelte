@@ -50,7 +50,7 @@
 	article :global(h5),
 	article :global(h6) {
 		color: var(--t-text-heading);
-		margin-bottom: var(--article-spacing);
+		margin-bottom: var(--size-2);
 		margin-top: 0;
 	}
 
