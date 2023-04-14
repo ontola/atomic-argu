@@ -4,4 +4,6 @@ export const domain = {
 	pages: 'https://atomicdata.dev/Folder/wp8ame4nqf/CE9kQa8EKz',
 	color: 'https://atomicdata.dev/property/site-color',
 	siteImage: 'https://atomicdata.dev/properties/site-image',
+	conArgument: 'https://atomicdata.dev/classes/con',
+	proArgument: 'https://atomicdata.dev/classes/pro',
 };

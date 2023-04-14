@@ -19,14 +19,22 @@
 	$: coverSrc = $cover
 		? getValue<string>(coverResource!, urls.properties.file.downloadUrl)
 		: undefined;
+
+	let isCon = $resource.hasClasses(domain.conArgument);
+	let isPro = $resource.hasClasses(domain.proArgument);
 </script>
 
-<a class="card" href={constructArticleUrl(subject)}>
+<a
+	class="card"
+	href={constructArticleUrl(subject)}
+	class:pro={isPro}
+	class:con={isCon}
+>
 	{#if coverSrc && $coverSrc}
 		<img src={$coverSrc} alt="" class="image" loading="lazy" />
 	{/if}
 	<div class="inner">
-		<h3>{$name}</h3>
+		<h3 class:pro={isPro} class:con={isCon}>{$name}</h3>
 		{#if !$coverSrc}
 			{descriptionTrimmed || ''}
 		{/if}
@@ -35,6 +43,7 @@
 
 <style>
 	.card {
+		--card-active-color: var(--t-color-main);
 		display: flex;
 		flex-direction: column;
 		background-color: var(--t-bg);
@@ -47,9 +56,19 @@
 	}
 	.card:hover,
 	.card:focus {
-		box-shadow: 0 0 0 2px var(--t-color-main), var(--shadow-5);
+		box-shadow: 0 0 0 2px var(--card-active-color), var(--shadow-5);
 		outline: none;
 		transform: scale(1.05);
+	}
+
+	.card.pro {
+		--card-active-color: var(--green-11);
+		background-image: linear-gradient(45deg, var(--green-0), var(--t-bg));
+	}
+
+	.card.con {
+		--card-active-color: var(--red-11);
+		background-image: linear-gradient(45deg, var(--red-0), var(--t-bg));
 	}
 
 	.inner {
@@ -71,6 +90,12 @@
 		color: var(--t-text-heading);
 	}
 
+	h3.pro {
+		color: var(--green-11);
+	}
+	h3.con {
+		color: var(--red-12);
+	}
 	.card :global(p) {
 		font-size: 0.9rem;
 	}
