@@ -24,6 +24,7 @@ interface ArguJSONResource {
 	filename: string;
 	default_cover_photo: LinkType;
 	parent: LinkType;
+	rdf_type: string;
 }
 
 // Just json key val
@@ -56,6 +57,11 @@ function shouldInclude(r: AtomicJSONResource | undefined, ids: Set<string>) {
 }
 
 export async function importFiles() {
+	if (!window.location.href.includes('localhost')) {
+		console.error(
+			'This script can only be run on localhost! Otherwise you might have cors issues.',
+		);
+	}
 	const siteConfig = currentSiteConfig;
 	const secret = prompt("What's your secret?");
 	if (!secret) {
@@ -161,7 +167,6 @@ function convertToLocalId(iri: string, siteConfig: SiteConfig) {
 	const defaultParent = siteConfig.homePath;
 	const matches = iri.match(siteConfig.regex);
 	if (matches && matches[1].length > 0) {
-		console.log('matches', matches[1]);
 		if (matches[1] == siteConfig.orgPath) {
 			return defaultParent;
 		}
@@ -211,6 +216,14 @@ async function mapResource(
 		return;
 	}
 
+	const classes = ['https://atomicdata.dev/classes/Article'];
+
+	if (resource.rdf_type == 'https://argu.co/ns/core#ProArgument') {
+		classes.push('https://atomicdata.dev/classes/pro');
+	} else if (resource.rdf_type == 'https://argu.co/ns/core#ConArgument') {
+		classes.push('https://atomicdata.dev/classes/con');
+	}
+
 	const coverImage = await uploadCover(resource, siteConfig, store);
 	const localId = convertToLocalId(resource.iri, siteConfig);
 	let parent = convertToLocalId(resource.parent.data.id, siteConfig);
@@ -232,9 +245,7 @@ async function mapResource(
 	}
 
 	const out = {
-		'https://atomicdata.dev/properties/isA': [
-			'https://atomicdata.dev/classes/Article',
-		],
+		'https://atomicdata.dev/properties/isA': classes,
 		'https://atomicdata.dev/properties/localId': localId,
 		'https://atomicdata.dev/properties/original-url': resource.iri,
 		'https://atomicdata.dev/properties/published-at': published_at,

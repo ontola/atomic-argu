@@ -6,6 +6,8 @@
 	import { urls } from '@tomic/lib';
 	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
+	import { currentSiteConfig } from '$lib/siteConfigs';
+	import ArguHome from '$lib/components/ArguHome.svelte';
 
 	export let data: PageData;
 
@@ -14,6 +16,7 @@
 	const name = getValue<string>(resource, urls.properties.name);
 	const description = getValue<string>(resource, urls.properties.description);
 	const cover = getValue<string>(resource, domain.coverImage);
+	const argu = currentSiteConfig.homePath === 'argu';
 </script>
 
 <svelte:head>
@@ -21,14 +24,18 @@
 	<meta name="description" content={$description} />
 </svelte:head>
 
-<HeroArticle coverSubject={$cover}>
-	<svelte:fragment slot="article">
-		<Article
-			title={$name ?? ''}
-			markdown={$description ?? ''}
-			constrain={false}
-		/>
-	</svelte:fragment>
+{#if argu}
+	<ArguHome />
+{:else}
+	<HeroArticle coverSubject={$cover}>
+		<svelte:fragment slot="article">
+			<Article
+				title={$name ?? ''}
+				markdown={$description ?? ''}
+				constrain={false}
+			/>
+		</svelte:fragment>
 
-	<ArticleCollection subject={childrenCollection} title="Onderwerpen" />
-</HeroArticle>
+		<ArticleCollection subject={childrenCollection} />
+	</HeroArticle>
+{/if}

@@ -20,7 +20,7 @@ export const load = (async ({ params, fetch }) => {
 	if (params.path.startsWith('edam_volendam')) {
 		throw redirect(
 			302,
-			`https://edamvolendam.netlify.app/${params.path.replace(
+			`https://edamvolendam.argu.co/${params.path.replace(
 				'edam_volendam/',
 				'',
 			)}`,

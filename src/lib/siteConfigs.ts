@@ -63,14 +63,17 @@ const siteConfigs = {
 		headingTextColor: 'rgb(78 62 88)',
 	},
 	argunl: {
-		parentRoot: 'http://localhost:9883/drive/tswdtuh3d9',
+		// parentRoot: 'http://localhost:9883/drive/u6n66u5s5mg',
+		parentRoot: 'https://atomicdata.dev/drive/9wtmc8uk1il',
 		homePath: 'forum',
+		netlifyId: 'argunl',
 		jsonPath: './data/argu-nl.json',
 	},
 	arguco: {
 		parentRoot: 'http://localhost:9883/drive/vepy10gbnm',
 		regex: /\.co\/(.*)/,
 		homePath: 'argu',
+		netlifyId: 'arguco',
 		jsonPath: './data/argu-co.json',
 	},
 	drechtsteden: {
@@ -142,4 +145,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtsteden);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.argunl);

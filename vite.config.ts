@@ -1,8 +1,14 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import type { UserConfig } from 'vite';
+// import legacy from '@vitejs/plugin-legacy';
 
 const config: UserConfig = {
-	plugins: [sveltekit()],
+	plugins: [
+		// legacy({
+		// 	// targets: ['defaults', 'not IE 11'],
+		// }),
+		sveltekit(),
+	],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}'],
 	},

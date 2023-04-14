@@ -16,8 +16,10 @@ export async function buildCollection(subject: string) {
 		'sort_by',
 		'https://atomicdata.dev/properties/published-at',
 	);
+	generatedCollectionURL.searchParams.set('sort_desc', 'true');
 	generatedCollectionURL.searchParams.set('property', properties.parent);
 	generatedCollectionURL.searchParams.set('value', subject);
+	generatedCollectionURL.searchParams.set('page_size', '200');
 
 	const childrenCollection = generatedCollectionURL.toString();
 

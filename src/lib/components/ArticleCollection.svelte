@@ -6,7 +6,7 @@
 
 	export let subject: string;
 	$: resource = getResource(subject);
-	$: articles = getValue<string[]>(
+	$: articleSubjects = getValue<string[]>(
 		resource,
 		urls.properties.collection.members,
 	);
@@ -17,7 +17,7 @@
 		<p>Loading...</p>
 	{:else}
 		<ul>
-			{#each $articles ?? [] as article (article)}
+			{#each $articleSubjects ?? [] as article (article)}
 				<li>
 					<ArticleCard subject={article} />
 				</li>

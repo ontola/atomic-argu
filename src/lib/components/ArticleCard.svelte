@@ -23,10 +23,7 @@
 
 <a class="card" href={constructArticleUrl(subject)}>
 	{#if coverSrc && $coverSrc}
-		<div
-			class="image"
-			style={$coverSrc ? `background-image: url(${$coverSrc})` : ''}
-		/>
+		<img src={$coverSrc} alt="" class="image" loading="lazy" />
 	{/if}
 	<div class="inner">
 		<h3>{$name}</h3>
@@ -63,9 +60,8 @@
 	}
 
 	.image {
-		background-color: var(--t-bg-light);
-		background-size: cover;
-		background-position: center;
+		height: 6rem;
+		object-fit: cover;
 		display: flex;
 		flex: 1;
 	}
