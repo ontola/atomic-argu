@@ -4,5 +4,7 @@ export const constructArticleUrl = (subject: string): string => {
 
 	const path = subject.replace(currentSiteConfig.parentRoot, '');
 
+	if (path === '') return '/';
+
 	return path;
 };
