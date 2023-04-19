@@ -13,14 +13,16 @@
 	import ArticleWidthConstraint from '$lib/components/ArticleWidthConstraint.svelte';
 	import Attachment from '$lib/components/Attachment.svelte';
 
+	function handleKeydown(event: KeyboardEvent) {
+		if (event.ctrlKey && event.key === 'e') {
+			event.preventDefault();
+			// open in new tab
+			window.open($resource.getSubject(), '_blank');
+		}
+	}
+
 	onMount(() => {
-		document.addEventListener('keydown', event => {
-			if (event.ctrlKey && event.key === 'e') {
-				event.preventDefault();
-				// open in new tab
-				window.open($resource.getSubject(), '_blank');
-			}
-		});
+		document.addEventListener('keydown', event => {});
 	});
 
 	$: ({ resource, childrenCollection } = data);
@@ -43,6 +45,8 @@
 	);
 	$: dateString = $publishedAt && new Date($publishedAt).toLocaleDateString();
 </script>
+
+<svelte:window on:keydown={handleKeydown} />
 
 <svelte:head>
 	<title>{$name}</title>

@@ -75,6 +75,9 @@ const siteConfigs = {
 		homePath: 'argu',
 		netlifyId: 'arguco',
 		jsonPath: './data/argu-co.json',
+		whiteHeader: true,
+		headingTextColor: '#000000',
+		bodyTextColor: '#0D325A',
 	},
 	drechtsteden: {
 		parentRoot: 'https://atomicdata.dev/drive/tlqc9jtz5oj',
@@ -145,4 +148,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.argunl);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
