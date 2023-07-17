@@ -7,7 +7,7 @@
 	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
 	import { currentSiteConfig } from '$lib/siteConfigs';
-	import ArguHome from '$lib/components/ArguHome.svelte';
+	import ArguHome from '$lib/components/ArguHome/ArguHome.svelte';
 
 	export let data: PageData;
 

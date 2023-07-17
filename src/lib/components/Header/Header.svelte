@@ -13,7 +13,7 @@
 	import Searchbar from '../Search/Searchbar.svelte';
 	import NavLink from './NavLink.svelte';
 	import ResourceNavLink from './ResourceNavLink.svelte';
-	import { visible } from './useVisible';
+	import { useVisible } from '../../hooks/useVisible';
 
 	let showHamburger = false;
 	let sideNavOpen = false;
@@ -67,7 +67,7 @@
 				{#each $pages ?? [] as page, index (page)}
 					{#if index === ($pages ?? []).length - 1}
 						<li
-							use:visible={{
+							use:useVisible={{
 								root: navElement,
 								onVisibleChange: onItemWrapChange,
 							}}

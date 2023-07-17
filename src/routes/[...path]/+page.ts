@@ -16,6 +16,9 @@ export const load = (async ({ params, fetch }) => {
 	) {
 		throw redirect(302, '/');
 	}
+	if (currentSiteConfig.netlifyId == 'arguco' && params.path === 'info') {
+		throw redirect(302, '/');
+	}
 
 	if (params.path.startsWith('edam_volendam')) {
 		throw redirect(

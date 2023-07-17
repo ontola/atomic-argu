@@ -70,7 +70,9 @@ const siteConfigs = {
 		jsonPath: './data/argu-nl.json',
 	},
 	arguco: {
-		parentRoot: 'http://localhost:9883/drive/vepy10gbnm',
+		// parentRoot: 'http://localhost:9883/drive/vepy10gbnm',
+		// parentRoot: 'http://localhost:9883/drive/xd1eix4l7c',
+		parentRoot: 'https://atomicdata.dev/drive/xacbwbumnkd',
 		regex: /\.co\/(.*)/,
 		homePath: 'argu',
 		netlifyId: 'arguco',
@@ -128,6 +130,14 @@ const siteConfigs = {
 		jsonPath: './data/randstad2177.json',
 		netlifyId: 'randstad2177',
 	},
+	bredezorgopleidingen: {
+		parentRoot: 'https://atomicdata.dev/drive/9u3s8h3dp89',
+		atomicSite: 'https://atomicdata.dev/drive/9u3s8h3dp89/site',
+		homeUrl: 'https://atomicdata.dev/drive/9u3s8h3dp89/home',
+		whiteHeader: true,
+		// headingTextColor: '#0D325A',
+		// bodyTextColor: '#0D325A',
+	},
 } satisfies { [key: string]: SiteConfigIn };
 
 // Fills default vals, builds derived values from required fields.
@@ -148,4 +158,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.drechtsteden);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
