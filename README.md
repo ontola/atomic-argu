@@ -1,6 +1,6 @@
 # Atomic-Argu
 
-- Built with `@tomic/svelte` + `sveltekit`
+- Based on [atomic-sveltekit-demo](https://github.com/atomicdata-dev/atomic-sveltekit-demo)
 - Community / project websites
 - Content can be easily managed using the Atomic-Server CMS
 - Includes import scripts to convert Argu.co JSON exports to JSON-AD
