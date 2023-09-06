@@ -2,7 +2,8 @@ import { properties } from '@tomic/lib';
 import { loadResourceTree } from '@tomic/svelte';
 import { domain } from '$lib/helpers/domainSubjects';
 
-export async function buildCollection(subject: string) {
+/** Accepts base URL of server, pre-loads that resource and all children */
+export async function getChildrenCollection(subject: string) {
 	await loadResourceTree(subject, {
 		[properties.parent]: true,
 		[domain.pages]: true,

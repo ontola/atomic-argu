@@ -2,7 +2,7 @@ import { currentSiteConfig } from '$lib/siteConfigs';
 import { getStore } from '$lib/helpers/getStore';
 import { getResource } from '@tomic/svelte';
 import type { PageLoad } from './$types';
-import { buildCollection } from '$lib/helpers/buildCollection';
+import { getChildrenCollection } from '$lib/helpers/buildCollection';
 
 export const load = (async ({ fetch }) => {
 	const store = getStore();
@@ -14,6 +14,6 @@ export const load = (async ({ fetch }) => {
 
 	return {
 		resource,
-		childrenCollection: await buildCollection(subject),
+		childrenCollection: await getChildrenCollection(subject),
 	};
 }) satisfies PageLoad;

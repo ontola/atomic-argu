@@ -3,7 +3,7 @@ import { getStore } from '$lib/helpers/getStore';
 import { error, redirect } from '@sveltejs/kit';
 import { getResource } from '@tomic/svelte';
 import type { PageLoad } from './$types';
-import { buildCollection } from '$lib/helpers/buildCollection';
+import { getChildrenCollection } from '$lib/helpers/buildCollection';
 
 export const load = (async ({ params, fetch }) => {
 	const store = getStore();
@@ -37,7 +37,7 @@ export const load = (async ({ params, fetch }) => {
 		throw error(500, r.error.message);
 	}
 
-	const childrenCollection = await buildCollection(subject);
+	const childrenCollection = await getChildrenCollection(subject);
 
 	return {
 		childrenCollection,

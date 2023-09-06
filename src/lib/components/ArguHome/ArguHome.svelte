@@ -48,9 +48,8 @@
 		<Card name="randstad" url="https://randstad2177.nl/" />
 		<Card name="drechtsteden" url="https://denkmee.drechtstedenenergie.nl/" />
 	</div>
-	<div class="c2a">
-		Interesse?
-		<br />
+	<h2>Interesse?</h2>
+	<div class="c2a-wrapper">
 		<a class="button" href="https://ontola.io/nl/contact">Neem contact op!</a>
 	</div>
 </Container>
@@ -92,19 +91,24 @@
 		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 		grid-gap: 2rem;
 	}
+	.c2a-wrapper {
+		display: grid;
+		margin-top: 1rem;
+		justify-content: start;
+		margin-bottom: 3rem;
+	}
 	.c2a {
-		text-align: center;
 		padding: 5rem 0;
 		font-size: var(--font-size-fluid-1);
 		margin-bottom: 5rem;
 	}
-	.c2a .button {
+	.button {
 		background-color: hsl(4, 62%, 50%);
 		color: white;
 		padding: 1rem 2rem;
 		border-radius: 0.5rem;
 	}
-	.c2a .button:hover {
+	.button:hover {
 		background-color: hsl(4, 62%, 40%);
 	}
 	/* zig-zag, single column, responsive */
