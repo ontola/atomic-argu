@@ -31,6 +31,7 @@ export const load = (async ({ params, fetch }) => {
 	}
 
 	const subject = `${currentSiteConfig.parentRoot}/${params.path}`;
+	await store.fetchResourceFromServer(subject);
 	const r = await store.getResourceAsync(subject);
 
 	if (r.error) {
