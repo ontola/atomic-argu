@@ -3,7 +3,8 @@
 // import adapterGhpages from "svelte-adapter-ghpages";
 import adapterNetlify from '@sveltejs/adapter-netlify';
 
-import { vitePreprocess } from '@sveltejs/kit/vite';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte'
+
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -22,6 +23,7 @@ const config = {
 		adapter: adapterNetlify({
 			// Using edge is faster, but does not support node stuff
 			// edge: true,
+			split: false
 		}),
 		prerender: {
 			crawl: true,

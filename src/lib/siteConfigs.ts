@@ -158,4 +158,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.edam);

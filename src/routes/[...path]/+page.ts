@@ -14,20 +14,20 @@ export const load = (async ({ params, fetch }) => {
 		currentSiteConfig.netlifyId == 'drechtsteden' &&
 		params.path === 'denkmee'
 	) {
-		throw redirect(302, '/');
+		redirect(302, '/');
 	}
 	if (currentSiteConfig.netlifyId == 'arguco' && params.path === 'info') {
-		throw redirect(302, '/');
+		redirect(302, '/');
 	}
 
 	if (params.path.startsWith('edam_volendam')) {
-		throw redirect(
-			302,
-			`https://edamvolendam.argu.co/${params.path.replace(
+		redirect(
+        			302,
+        			`https://edamvolendam.argu.co/${params.path.replace(
 				'edam_volendam/',
 				'',
 			)}`,
-		);
+        		);
 	}
 
 	const subject = `${currentSiteConfig.parentRoot}/${params.path}`;
@@ -35,7 +35,7 @@ export const load = (async ({ params, fetch }) => {
 	const r = await store.getResourceAsync(subject);
 
 	if (r.error) {
-		throw error(500, r.error.message);
+		error(500, r.error.message);
 	}
 
 	const childrenCollection = await getChildrenCollection(subject);
