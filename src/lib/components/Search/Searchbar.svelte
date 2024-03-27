@@ -8,7 +8,7 @@
 
 	import { currentSiteConfig } from '$lib/siteConfigs';
 
-	import { buildSearchSubject, urls } from '@tomic/lib';
+	import { buildSearchSubject, core, server } from '@tomic/lib';
 	import { getResource, getValue, store } from '@tomic/svelte';
 
 	import { resetSearch, searchResultList, searchValue } from './search';
@@ -16,15 +16,19 @@
 
 	let debouncedValue = debounced(searchValue, 1);
 
-	$: searchSubject = buildSearchSubject($store, $debouncedValue, {
-		scope: currentSiteConfig.parentRoot,
-		filters: {
-			[urls.properties.isA]: 'https://atomicdata.dev/classes/Article',
+	$: searchSubject = buildSearchSubject(
+		$store.getServerUrl(),
+		$debouncedValue,
+		{
+			parents: currentSiteConfig.parentRoot,
+			filters: {
+				[core.properties.isA]: 'https://atomicdata.dev/classes/Article',
+			},
 		},
-	});
+	);
 
 	$: resource = getResource(searchSubject, { noWebSocket: true });
-	$: results = getValue<string[]>(resource, urls.properties.endpoint.results);
+	$: results = getValue(resource, server.properties.results);
 
 	$: if ($debouncedValue === '') {
 		resetSearch();

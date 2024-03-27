@@ -4,7 +4,7 @@
 	import HeroArticle from '$lib/components/HeroArticle.svelte';
 	import Parent from '$lib/components/Parent.svelte';
 	import { domain } from '$lib/helpers/domainSubjects';
-	import { urls } from '@tomic/lib';
+	import { core, server, urls } from '@tomic/lib';
 	import { getValue } from '@tomic/svelte';
 	import type { PageData } from './$types';
 	import { dev } from '$app/environment';
@@ -12,6 +12,7 @@
 	import { onMount } from 'svelte';
 	import ArticleWidthConstraint from '$lib/components/ArticleWidthConstraint.svelte';
 	import Attachment from '$lib/components/Attachment.svelte';
+	import type { Writable } from 'svelte/store';
 
 	function handleKeydown(event: KeyboardEvent) {
 		if (event.ctrlKey && event.key === 'e') {
@@ -27,22 +28,20 @@
 
 	$: ({ resource, childrenCollection } = data);
 
-	$: name = getValue<string>(resource, urls.properties.name);
-	$: description = getValue<string>(resource, urls.properties.description);
-	$: parent = getValue<string>(resource, urls.properties.parent);
-	$: cover = getValue<string>(resource, domain.coverImage);
+	$: name = getValue(resource, core.properties.name);
+	$: description = getValue(resource, core.properties.description);
+	$: parent = getValue(resource, core.properties.parent);
+	$: cover = getValue(resource, domain.coverImage) as Writable<string>;
 	$: originalUrl = getValue<string>(
 		resource,
 		'https://atomicdata.dev/properties/original-url',
-	);
-	$: attachments = getValue<string[]>(
-		resource,
-		urls.properties.file.attachments,
-	);
-	$: publishedAt = getValue<string>(
+	) as Writable<string>;
+	$: attachments = getValue(resource, server.properties.attachments);
+	$: publishedAt = getValue(
 		resource,
 		'https://atomicdata.dev/properties/published-at',
-	);
+	) as Writable<string>;
+
 	$: dateString = $publishedAt && new Date($publishedAt).toLocaleDateString();
 </script>
 
