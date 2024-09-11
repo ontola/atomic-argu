@@ -30,7 +30,8 @@ export const load = (async ({ params, fetch }) => {
 		);
 	}
 
-	const subject = `${currentSiteConfig.parentRoot}/${params.path}`;
+	const modifiedPath = params.path.replace('new-article', 'New-Article');
+	const subject = `${currentSiteConfig.parentRoot}/${modifiedPath}`;
 	await store.fetchResourceFromServer(subject);
 	const r = await store.getResourceAsync(subject);
 

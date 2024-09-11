@@ -20,6 +20,7 @@ const config = {
 		// 	strict: true
 		// }),
 		adapter: adapterNetlify({
+			edge: false,
 			// Using edge is faster, but does not support node stuff
 			// edge: true,
 		}),
