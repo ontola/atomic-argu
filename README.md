@@ -61,14 +61,6 @@ Set `origin` in `svelte.config` to `localhost`
 pnpm build
 ```
 
-### Deploy using Github Pages
-
-```bash
-# This works only for ONE domain at the moment: wonenatthepark.nl.
-# See https://github.com/ontola/wonenatthepark/issues/4
-pnpm deploy
-```
-
 ### Deploy using Netlify
 
 - Install netlify cli `pnpm install netlify-cli -g`
