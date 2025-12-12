@@ -167,4 +167,12 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.bouwplanlandzicht);
+const id = process.env.CURRENT_SITE;
+
+if (!id) {
+	throw new Error('CURRENT_SITE environment variable is not set');
+}
+
+export const currentSiteConfig = buildSiteConfig(
+	siteConfigs[id as keyof typeof siteConfigs],
+);
