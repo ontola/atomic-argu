@@ -13,7 +13,7 @@
     "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir --write . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",
-    "build:config": "tsc src/lib/siteConfigs.ts --outDir prebuild --module commonjs --target es2015",
+    "build:config": "tsc src/lib/siteConfigs.ts --outDir prebuild --moduleResolution bundler --target esNext",
     "prebuild": "npm run build:config"
   },
   "devDependencies": {

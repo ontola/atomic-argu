@@ -1,5 +1,5 @@
 import { properties } from '@tomic/lib';
-import { domain } from './helpers/domainSubjects';
+import { domain } from './helpers/domainSubjects.js';
 type Template = TemplateResource[];
 
 /** Will be converted */

@@ -1,4 +1,4 @@
-import { defaultSiteId, defaultImageFolderId } from './template';
+import { defaultSiteId, defaultImageFolderId } from './template.js';
 
 type SiteConfigIn = Partial<SiteConfig>;
 
@@ -138,6 +138,14 @@ const siteConfigs = {
 		// headingTextColor: '#0D325A',
 		// bodyTextColor: '#0D325A',
 	},
+	bouwplanlandzicht: {
+		parentRoot: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f',
+		atomicSite: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f/site',
+		homeUrl: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f/home',
+		whiteHeader: true,
+		// headingTextColor: '#0D325A',
+		// bodyTextColor: '#0D325A',
+	},
 } satisfies { [key: string]: SiteConfigIn };
 
 // Fills default vals, builds derived values from required fields.
@@ -158,4 +166,4 @@ function buildSiteConfig(config: SiteConfigIn): SiteConfig {
 	} as SiteConfig;
 }
 
-export const currentSiteConfig = buildSiteConfig(siteConfigs.arguco);
+export const currentSiteConfig = buildSiteConfig(siteConfigs.bouwplanlandzicht);

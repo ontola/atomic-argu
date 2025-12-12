@@ -1,6 +1,6 @@
-import { currentSiteConfig, type SiteConfig } from './siteConfigs';
+import { currentSiteConfig, type SiteConfig } from './siteConfigs.js';
 import { Store, Agent, properties, importJsonAdString } from '@tomic/lib';
-import { siteTemplate, templateToJSONAD } from './template';
+import { siteTemplate, templateToJSONAD } from './template.js';
 
 interface LinkType {
 	data: {
