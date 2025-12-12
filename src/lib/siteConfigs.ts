@@ -139,9 +139,10 @@ const siteConfigs = {
 		// bodyTextColor: '#0D325A',
 	},
 	bouwplanlandzicht: {
-		parentRoot: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f',
-		atomicSite: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f/site',
-		homeUrl: 'https://atomicdata.dev/01kc9dcedqkp94vbeh1mxcx96f/home',
+		parentRoot: 'https://atomicdata.dev/01kc9jdtt4hrgz7gegfb86jfwj',
+		atomicSite: 'https://atomicdata.dev/01kc9jdtt4hrgz7gegfb86jfwj',
+		homeUrl: 'https://atomicdata.dev/01kc9jdtt4hrgz7gegfb86jfwj/info',
+		netlifyId: 'bouwplanlandzicht',
 		whiteHeader: true,
 		// headingTextColor: '#0D325A',
 		// bodyTextColor: '#0D325A',

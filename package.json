@@ -9,7 +9,7 @@
     "test": "playwright test",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "publish": "netlify build && netlify deploy --prod --site arguco",
+    "publish": "netlify build && netlify deploy --prod --site",
     "test:unit": "vitest",
     "lint": "prettier --plugin-search-dir --write . --check . && eslint .",
     "format": "prettier --plugin-search-dir . --write .",

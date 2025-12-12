@@ -16,7 +16,7 @@
 	const name = getValue<string>(resource, urls.properties.name);
 	const description = getValue<string>(resource, urls.properties.description);
 	const cover = getValue<string>(resource, domain.coverImage);
-	const argu = currentSiteConfig.homePath === 'argu';
+	const isArgu = currentSiteConfig.homePath === 'argu';
 </script>
 
 <svelte:head>
@@ -24,7 +24,7 @@
 	<meta name="description" content={$description} />
 </svelte:head>
 
-{#if argu}
+{#if isArgu}
 	<ArguHome />
 {:else}
 	<HeroArticle coverSubject={$cover}>

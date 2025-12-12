@@ -42,7 +42,7 @@ export const load = (async ({ params, fetch }) => {
 		throw error(500, r.error.message);
 	}
 
-	const childrenCollection = await getChildrenCollection(subject);
+	const childrenCollection = await getChildrenCollection(subject, store);
 
 	return {
 		childrenCollection,

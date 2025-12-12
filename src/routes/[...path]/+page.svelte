@@ -58,7 +58,7 @@
 				<Parent subject={$parent} />
 				<span class="dev-links">
 					{#if dateString}
-						<span>geplaatst op {dateString}</span>
+						<span>Geplaatst op {dateString}</span>
 					{/if}
 					{#if dev && $originalUrl}
 						<a href={$originalUrl}>source</a>
